@@ -1,4 +1,4 @@
-{% extends "layout-staff-full-sidebar.html" %}
+{% extends "layout-staff-full.html" %}
 
 {% block pageTitle %}
 {{ serviceName }}
@@ -8,75 +8,48 @@
 {{ serviceName }}
 {% endblock %}
 
-{% block leftPanel %}
-
-<p><a href="/v3">Return to dashboard</a></p>
-
-<div class="caseStatus">
-  <h2 class="main-status" id="case-status-default">
-    <span>Current referral status</span>Ready for review
-  </h2>
-  <h3 class="primary-action" id="suggested-case-action-default">
-    <span>Suggested case action</span>
-  </h3>
-  <a href="#" class="govuk-button button">
-    Make recommendation
-  </a>
-</div>
-
-<details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Other case actions
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    <ul>
-      <li><a href="#">Withdraw referral</a></li>
-      <li><a href="#">Delete referral</a></li>
-    </ul>
-  </div>
-</details>
-
+{% block beforeContent %}
+  <a href="/v3" class="govuk-back-link">Back to dashboard</a>
 {% endblock %}
 
 {% block content %}
 
-<div class="staff__heading govuk-!-margin-bottom-9">
   <div class="govuk-grid-row">
-    <section class="key-details" role="contentinfo" aria-label="Key details">
-      <div class="govuk-grid-column-one-half">
-        <div class="badges">
-          <div id="benefit-type" class="badge">PIP</div>
-        </div>
-        <dl>
-          <dt class="govuk-visually-hidden">Name:</dt>
-          <dd class="key-details-heading-large">Fred Flintstone</dd>
-        </dl>
-      </div><!-- column -->
-      <div class="govuk-grid-column-one-half">
-        <dl class="key-details-summary-list">
-          <div class="col1">
-            <dt>National Insurance number</dt>
-            <dd>RN 00 00 56 A</dd>
-          </div>
-          <div class="col2">
-            <dt>Date of birth</dt>
-            <dd>1 January 1982</dd>
-          </div>
-        </dl>
-      </div><!-- column -->
-    </section>
-  </div><!-- / govuk-grid-row -->
-</div><!-- / staff__heading -->
+    <div class="govuk-grid-column-two-thirds">
 
+      <p>Today<br>
+      Reviewed: 2</p>
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Your cases to review</h1>
 
-    <h1 class="govuk-heading-l">Main content</h1>
+      <p>Anything you can’t finish today will be removed from your list and re-allocated.</p>
 
-  </div>{# /govuk-grid-column #}
-</div>{# /govuk-grid-row #}
+      <table class="govuk-table">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="/v3/case">Fred Flintstone</a></th>
+          <td class="govuk-table__cell">Off critical path</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="/v3/case">Pink Panther</a></th>
+          <td class="govuk-table__cell">Electronic referral</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="/v3/case">Micky Mouse</a></th>
+          <td class="govuk-table__cell">Good cause referral</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="/v3/case">Bugs Bunny</a></th>
+          <td class="govuk-table__cell">First referral</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="/v3/case">Donald Duck/a></th>
+          <td class="govuk-table__cell">Second referral</td>
+        </tr>
+      </tbody>
+    </table>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
 
 {% endblock %}
