@@ -1,0 +1,99 @@
+{% extends "layout-staff-full-sidebar.html" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block serviceName %}
+{{ serviceName }}
+{% endblock %}
+
+
+{# Left panel #}
+
+{% block leftPanel %}
+
+<div class="govuk-inset-text alert-green">
+  <strong>Current referral status</strong><br>
+  Ready for review
+</div>
+
+<hr>
+
+{% include "v3/_other-case-actions.html" %}
+
+{% endblock %}
+
+{# Main content #}
+
+{% block content %}
+
+<div class="staff__heading">
+  <div class="govuk-grid-row">
+    <section class="key-details">
+      <div class="govuk-grid-column-one-half">
+        <div class="badges">
+          <div id="benefit-type" class="badge">PIP</div>
+        </div>
+        <dl>
+          <dt class="govuk-visually-hidden">Name:</dt>
+          <dd class="key-details-heading-large">Fred Flintstone</dd>
+        </dl>
+      </div><!-- column -->
+      <div class="govuk-grid-column-one-half">
+        <dl class="key-details-summary-list">
+          <div class="col1">
+            <dt>National Insurance number</dt>
+            <dd>XX 00 00 XX A</dd>
+          </div>
+          <div class="col2">
+            <dt>Date of birth</dt>
+            <dd>1 January 1982</dd>
+          </div>
+        </dl>
+      </div><!-- column -->
+    </section>
+  </div><!-- / govuk-grid-row -->
+</div><!-- / staff__heading -->
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+   <hr>
+
+   <a href="/v3/recommendation" class="govuk-back-link">Back</a>
+
+   <h2 class="govuk-heading-l">Request evidence</h2>
+
+   <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+
+      <legend class="govuk-fieldset__legend">
+        <strong>If medical evidence is not returned, how would you like to progress the case?</strong>
+      </legend>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="gp-report" name="radios" type="radio" value="gp-report" data-aria-controls="gp-report-conditional">
+        <label class="govuk-label govuk-radios__label" for="gp-report">
+          Further review required
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="gp-report" name="radios" type="radio" value="gp-report" data-aria-controls="gp-report-conditional">
+        <label class="govuk-label govuk-radios__label" for="gp-report">
+          Call for face to face assessment
+        </label>
+      </div>
+
+    </fieldset>
+
+  </div>{# /govuk-form-group #}
+
+  <a href="case-list" class="govuk-button">Save and continue</a>
+
+</div>{# /govuk-grid-full #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

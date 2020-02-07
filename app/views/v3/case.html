@@ -22,25 +22,15 @@
   Ready for review
 </div>
 
+<hr>
+
 <h3 class="govuk-heading-s">
   Suggested case action
 </h3>
 
-<a href="#" class="govuk-button button">Make recommendation</a>
+<a href="recommendation" class="govuk-button button">Make recommendation</a>
 
-<details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Other case actions
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    <ul class="govuk-list">
-      <li><a href="#">Withdraw referral</a></li>
-      <li><a href="#">Delete referral</a></li>
-    </ul>
-  </div>
-</details>
+{% include "v3/_other-case-actions.html" %}
 
 {% endblock %}
 

@@ -1,0 +1,85 @@
+{% extends "layout-staff-full-sidebar.html" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block serviceName %}
+{{ serviceName }}
+{% endblock %}
+
+
+{# Left panel #}
+
+{% block leftPanel %}
+
+<div class="govuk-inset-text alert-green">
+  <strong>Current referral status</strong><br>
+  Ready for review
+</div>
+
+<hr>
+
+{% include "v3/_other-case-actions.html" %}
+
+{% endblock %}
+
+{# Main content #}
+
+{% block content %}
+
+<div class="staff__heading">
+  <div class="govuk-grid-row">
+    <section class="key-details">
+      <div class="govuk-grid-column-one-half">
+        <div class="badges">
+          <div id="benefit-type" class="badge">PIP</div>
+        </div>
+        <dl>
+          <dt class="govuk-visually-hidden">Name:</dt>
+          <dd class="key-details-heading-large">Fred Flintstone</dd>
+        </dl>
+      </div><!-- column -->
+      <div class="govuk-grid-column-one-half">
+        <dl class="key-details-summary-list">
+          <div class="col1">
+            <dt>National Insurance number</dt>
+            <dd>XX 00 00 XX A</dd>
+          </div>
+          <div class="col2">
+            <dt>Date of birth</dt>
+            <dd>1 January 1982</dd>
+          </div>
+        </dl>
+      </div><!-- column -->
+    </section>
+  </div><!-- / govuk-grid-row -->
+</div><!-- / staff__heading -->
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+   <hr>
+
+   <a href="/v3/case" class="govuk-back-link">Back</a>
+
+   <h2 class="govuk-heading-l">Make your recommendation</h2>
+
+   <div class="card">
+    <div class="card-head">
+      <h3>Request evidence</h3>
+    </div>
+    <div class="card-body">
+      <p>I think further evidence will help Jane’s case</p>
+      <a href="/v3/choose-evidence" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-bottom-0">
+        Choose evidence
+      </a>
+    </div>
+   </div>{# /card #}
+
+
+  </div>{# /govuk-grid-full #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

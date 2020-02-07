@@ -1,0 +1,125 @@
+{% extends "layout-staff-full-sidebar.html" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block serviceName %}
+{{ serviceName }}
+{% endblock %}
+
+
+{# Left panel #}
+
+{% block leftPanel %}
+
+<div class="govuk-inset-text alert-green">
+  <strong>Current referral status</strong><br>
+  Ready for review
+</div>
+
+<hr>
+
+{% include "v3/_other-case-actions.html" %}
+
+{% endblock %}
+
+{# Main content #}
+
+{% block content %}
+
+<div class="staff__heading">
+  <div class="govuk-grid-row">
+    <section class="key-details">
+      <div class="govuk-grid-column-one-half">
+        <div class="badges">
+          <div id="benefit-type" class="badge">PIP</div>
+        </div>
+        <dl>
+          <dt class="govuk-visually-hidden">Name:</dt>
+          <dd class="key-details-heading-large">Fred Flintstone</dd>
+        </dl>
+      </div><!-- column -->
+      <div class="govuk-grid-column-one-half">
+        <dl class="key-details-summary-list">
+          <div class="col1">
+            <dt>National Insurance number</dt>
+            <dd>XX 00 00 XX A</dd>
+          </div>
+          <div class="col2">
+            <dt>Date of birth</dt>
+            <dd>1 January 1982</dd>
+          </div>
+        </dl>
+      </div><!-- column -->
+    </section>
+  </div><!-- / govuk-grid-row -->
+</div><!-- / staff__heading -->
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+   <hr>
+
+   <a href="/v3/case" class="govuk-back-link">Back</a>
+
+<div class="grid-row">
+    <div class="column-full">
+      <div class="withdraw-referral-reason">
+        <p class="no-kdBar">
+          
+  
+  
+  <a href="/cases/e0dcb806-7e0b-4340-8e09-ebb171633e92/withdraw" class="govuk-back-link link-back" id="link-withdraw-referral-back" data-ga-type="navigation-link">Back</a>
+
+
+        </p>
+        <p>
+          
+
+
+        </p>
+
+        <span class="form-hint">Step 2 of 2</span>
+        <h1 class="heading-large govuk-!-margin-top-0" id="withdraw_referral-legend" data-ga-reason="Withdraw referral">Withdraw referral</h1>
+
+
+        <div id="withdrawal-reason" class="bold-small">Reason:</div>
+        Claimant has returned to work
+
+        <br><br>
+
+        
+
+        <form id="withdraw-ref-confirm" name="withdraw-ref-confirm" enctype="application/json" method="post" action="/cases/e0dcb806-7e0b-4340-8e09-ebb171633e92/withdraw">
+          <input type="hidden" name="withdrawal_reason" value="returned_to_work">
+          <input type="hidden" name="withdrawal_details" value="">
+
+          <p>
+            
+  
+  
+    
+  
+  
+  
+    
+  
+  
+   <a href="/v3/case-list" class="govuk-button button">Save and continue</a>
+
+
+
+
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  </div>{# /govuk-grid-full #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
