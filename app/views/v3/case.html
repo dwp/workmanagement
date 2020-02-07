@@ -1,0 +1,147 @@
+{% extends "layout-staff-full-sidebar.html" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block serviceName %}
+{{ serviceName }}
+{% endblock %}
+
+
+{# Left panel #}
+
+{% block leftPanel %}
+
+<p><strong><a href="/v3">Return to dashboard</a></strong></p>
+
+<hr>
+
+<div class="govuk-inset-text alert-green">
+  <strong>Current referral status</strong><br>
+  Ready for review
+</div>
+
+<h3 class="govuk-heading-s">
+  Suggested case action
+</h3>
+
+<a href="#" class="govuk-button button">Make recommendation</a>
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Other case actions
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <ul class="govuk-list">
+      <li><a href="#">Withdraw referral</a></li>
+      <li><a href="#">Delete referral</a></li>
+    </ul>
+  </div>
+</details>
+
+{% endblock %}
+
+{# Main content #}
+
+{% block content %}
+
+<div class="staff__heading">
+  <div class="govuk-grid-row">
+    <section class="key-details">
+      <div class="govuk-grid-column-one-half">
+        <div class="badges">
+          <div id="benefit-type" class="badge">PIP</div>
+        </div>
+        <dl>
+          <dt class="govuk-visually-hidden">Name:</dt>
+          <dd class="key-details-heading-large">Fred Flintstone</dd>
+        </dl>
+      </div><!-- column -->
+      <div class="govuk-grid-column-one-half">
+        <dl class="key-details-summary-list">
+          <div class="col1">
+            <dt>National Insurance number</dt>
+            <dd>XX 00 00 XX A</dd>
+          </div>
+          <div class="col2">
+            <dt>Date of birth</dt>
+            <dd>1 January 1982</dd>
+          </div>
+        </dl>
+      </div><!-- column -->
+    </section>
+  </div><!-- / govuk-grid-row -->
+</div><!-- / staff__heading -->
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#timeline">
+        Timeline
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#details">
+        Details
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#appointment">
+        Appointment
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#evidence">
+        Evidence
+      </a>
+    </li>
+  </ul>
+
+  <section class="govuk-tabs__panel" id="timeline">
+
+    <ol class="dwp-timeline">
+      <li class="dwp-timeline__entry">
+        <h3 class="dwp-timeline__title">New referral created</h3>
+        <p class="dwp-timeline__info">
+          <span class="govuk-visually-hidden visually-hidden">Claim disallowed</span>
+          <span class="dwp-timeline__date">29 January 2020</span>
+        </p>
+      </li>
+    </ol>
+
+  </section>
+
+  <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="details">
+    <div class="placeholder-block">
+      Details about the Fred would be here
+    </div>
+  </section>
+
+  <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="appointment">
+    <div class="placeholder-block">
+      Details about the Fred would be here
+    </div>
+  </section>
+
+  <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="evidence">
+    <div class="placeholder-block">
+      All evidence, including the questionnaire would be here
+    </div>
+  </section>
+
+</div>
+
+  </div>{# /govuk-grid-full #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "layout_master.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-!-margin-top-8">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Work management prototypes (Team Mario)</h1>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Version 1</li>
+        <li>Version 2</li>
+        <li>Version 3
+          <ul>
+            <li><a href="#">Concept 1.2</a></li>
+            <li><a href="v3">Concept 3.0</a></li>
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

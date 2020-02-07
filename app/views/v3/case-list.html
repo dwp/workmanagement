@@ -1,0 +1,82 @@
+{% extends "layout-staff-full-sidebar.html" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block serviceName %}
+{{ serviceName }}
+{% endblock %}
+
+{% block leftPanel %}
+
+<p><a href="/v3">Return to dashboard</a></p>
+
+<div class="caseStatus">
+  <h2 class="main-status" id="case-status-default">
+    <span>Current referral status</span>Ready for review
+  </h2>
+  <h3 class="primary-action" id="suggested-case-action-default">
+    <span>Suggested case action</span>
+  </h3>
+  <a href="#" class="govuk-button button">
+    Make recommendation
+  </a>
+</div>
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Other case actions
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <ul>
+      <li><a href="#">Withdraw referral</a></li>
+      <li><a href="#">Delete referral</a></li>
+    </ul>
+  </div>
+</details>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="staff__heading govuk-!-margin-bottom-9">
+  <div class="govuk-grid-row">
+    <section class="key-details" role="contentinfo" aria-label="Key details">
+      <div class="govuk-grid-column-one-half">
+        <div class="badges">
+          <div id="benefit-type" class="badge">PIP</div>
+        </div>
+        <dl>
+          <dt class="govuk-visually-hidden">Name:</dt>
+          <dd class="key-details-heading-large">Fred Flintstone</dd>
+        </dl>
+      </div><!-- column -->
+      <div class="govuk-grid-column-one-half">
+        <dl class="key-details-summary-list">
+          <div class="col1">
+            <dt>National Insurance number</dt>
+            <dd>RN 00 00 56 A</dd>
+          </div>
+          <div class="col2">
+            <dt>Date of birth</dt>
+            <dd>1 January 1982</dd>
+          </div>
+        </dl>
+      </div><!-- column -->
+    </section>
+  </div><!-- / govuk-grid-row -->
+</div><!-- / staff__heading -->
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Main content</h1>
+
+  </div>{# /govuk-grid-column #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
