@@ -72,7 +72,10 @@
                 <a href="/v3" class="dwp-header__link dwp-header__link--service-name" style="float: left;">
                   {% block serviceName %}Service name here{% endblock %}
                 </a>
-                <a href="/v3/sign-in" style="float: right; font-size: 19px; position:relative; top: 5px;">Sign out</a>
+                {% if getData.signedout %}
+                {% else %}
+                  <a href="/v3/sign-in?signedout=true" style="float: right; font-size: 19px; position:relative; top: 5px;">Sign out</a>
+                {% endif %}
               </div>
             </div>
           </div>
@@ -90,10 +93,12 @@
           </div>
           <div class="govuk-grid-column-three-quarters right-panel d-table-cell">
             <div class="container-inner">
+              <div class="relative">
               {% block content %}Main content{% endblock %}
               {# Hack for now to force full width #}
               <span style="color: white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
               {# End of hack for now to force full width #}
+              </div>{# /relative #}
             </div>
           </div>
         </div>
@@ -101,7 +106,7 @@
     </main>
     
     {# Footer #}
-    <footer class="govuk-footer " role="contentinfo">
+    <footer class="govuk-footer" role="contentinfo">
       <div class="container-inner">
         <div class="govuk-footer__meta">
           <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">

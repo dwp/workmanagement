@@ -1,4 +1,4 @@
-{% extends "layout-staff-full.html" %}
+{% extends "layout-staff-full-sidebar.html" %}
 
 {% block pageTitle %}
 {{ serviceName }}
@@ -8,14 +8,24 @@
 {{ serviceName }}
 {% endblock %}
 
-{% block beforeContent %}
+{# {% block beforeContent %}
   <a href="/v3" class="govuk-back-link">Back to dashboard</a>
+{% endblock %} #}
+
+{# Left panel #}
+
+{% block leftPanel %}
+
+<p><a href="/v3" class="govuk-back-link">Back to dashboard</a></p>
+
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full">
+
+      <div style="margin-bottom: 30px;"></div>
 
       {% if getData.evidencemessage %}
         <div class="govuk-inset-text alert-green">
@@ -27,25 +37,34 @@
           Fred Flintstone’s referral has been withdrawn
         </div>
       {% endif %}
+      {% if getData.rejectmessage %}
+        <div class="govuk-inset-text alert-green">
+          Fred Flintstone’s referral case was rejected
+        </div>
+      {% endif %}
       {% if getData.savemessage %}
         <div class="govuk-inset-text alert-green">
           Fred Flintstone’s referral has been saved
         </div>
       {% endif %}
 
-      <p>Today<br>
-      Reviewed: 2</p>
+      <div class="relative">
+        <div class="review-count">
+          You have reviewed <span class="govuk-!-font-size-48"><strong>2</strong></span>
+          cases so far today
+        </div>
+      </div>{# /relative #}
 
       <h1 class="govuk-heading-l">Your cases to review</h1>
 
       <p>Anything you can’t finish today will be removed from your list and re-allocated.</p>
 
-      <table class="govuk-table">
+      <table class="govuk-table" style="max-width: 100%;">
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="/v3/case">Fred Flintstone</a></th>
           <td class="govuk-table__cell">Off critical path</td>
-          <td class="govuk-table__cell">{% if getData.saved %}Saved in your list until Monday at 4pm{% endif %}</td>
+          <td class="govuk-table__cell">&nbsp;</td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="/v3/case">Pink Panther</a></th>
@@ -64,6 +83,31 @@
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="/v3/case">Donald Duck</a></th>
+          <td class="govuk-table__cell">Second referral</td>
+          <td class="govuk-table__cell">&nbsp;</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="/v3/case">Charlie Brown</a></th>
+          <td class="govuk-table__cell">Off critical path</td>
+          <td class="govuk-table__cell"></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="/v3/case">Yosemite Sam</a></th>
+          <td class="govuk-table__cell">Electronic referral</td>
+          <td class="govuk-table__cell" style="text-align: right">{% if getData.saved %}<div class="badge">Saved in your list until tomorrow at 4pm</div>{% endif %}</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="/v3/case">Woody Woodpecker</a></th>
+          <td class="govuk-table__cell">Good cause referral</td>
+          <td class="govuk-table__cell">&nbsp;</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="/v3/case">Foghorn Leghorn</a></th>
+          <td class="govuk-table__cell">First referral</td>
+          <td class="govuk-table__cell">&nbsp;</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="/v3/case">Jessica Rabbit</a></th>
           <td class="govuk-table__cell">Second referral</td>
           <td class="govuk-table__cell">&nbsp;</td>
         </tr>

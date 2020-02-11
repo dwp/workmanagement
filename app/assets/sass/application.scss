@@ -290,6 +290,7 @@ html body div a.secondary-invert {
 
 .card {
   border: 1px solid $govuk-border-colour;
+  margin-bottom: 20px;
 }
 
 .card-head {
@@ -317,4 +318,32 @@ html body div a.secondary-invert {
 //   padding: 0.8em 1em 0.9em 1em !important;
 //   margin: 0;
 // }
+
+.review-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: govuk-colour("light-grey");
+  border: 1px solid govuk-colour("mid-grey");
+  padding: 10px;
+  text-align: center;
+  span {
+    display: block;
+    
+
+  }
+}
+
+.relative {
+  position: relative;
+}
+
+.card .review-count{
+  right: 20px;
+  top: 20px;
+}
+
+
+
+
 
