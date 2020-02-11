@@ -17,12 +17,24 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      {% if getData.evidencemessage %}
+        <div class="govuk-inset-text alert-green">
+          Evidence has been requested for Fred Flintstone 
+        </div>
+      {% endif %}
+      {% if getData.withdrawmessage %}
+        <div class="govuk-inset-text alert-green">
+          Fred Flintstone’s referral has been withdrawn
+        </div>
+      {% endif %}
+      {% if getData.savemessage %}
+        <div class="govuk-inset-text alert-green">
+          Fred Flintstone’s referral has been saved
+        </div>
+      {% endif %}
+
       <p>Today<br>
       Reviewed: 2</p>
-
-      <div class="govuk-inset-text alert-green">
-  Evidence has been requested for Fred Flintstone
-</div>
 
       <h1 class="govuk-heading-l">Your cases to review</h1>
 
@@ -33,22 +45,27 @@
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="/v3/case">Fred Flintstone</a></th>
           <td class="govuk-table__cell">Off critical path</td>
+          <td class="govuk-table__cell">{% if getData.saved %}Saved in your list until Monday at 4pm{% endif %}</td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="/v3/case">Pink Panther</a></th>
           <td class="govuk-table__cell">Electronic referral</td>
+          <td class="govuk-table__cell">&nbsp;</td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="/v3/case">Micky Mouse</a></th>
           <td class="govuk-table__cell">Good cause referral</td>
+          <td class="govuk-table__cell">&nbsp;</td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="/v3/case">Bugs Bunny</a></th>
           <td class="govuk-table__cell">First referral</td>
+          <td class="govuk-table__cell">&nbsp;</td>
         </tr>
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><a href="/v3/case">Donald Duck/a></th>
+          <th scope="row" class="govuk-table__header"><a href="/v3/case">Donald Duck</a></th>
           <td class="govuk-table__cell">Second referral</td>
+          <td class="govuk-table__cell">&nbsp;</td>
         </tr>
       </tbody>
     </table>

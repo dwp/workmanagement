@@ -20,6 +20,8 @@
 
 <hr>
 
+{# {% include "v3/_other-case-actions.html" %} #}
+
 {% endblock %}
 
 {# Main content #}
@@ -54,30 +56,23 @@
   </div><!-- / govuk-grid-row -->
 </div><!-- / staff__heading -->
 
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <hr>
+   <hr>
 
-    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+   <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
-    <div class="govuk-form-group">
+   <h2 class="govuk-heading-l">Why are you saving this referral?</h2>
 
-      <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+   <div class="govuk-form-group">
+    <textarea class="govuk-textarea govuk-!-width-two-thirds" id="save-reason" name="save-reason" rows="5" aria-describedby="more-detail-hint"></textarea>
+  </div>
 
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-          <h1 class="govuk-fieldset__heading">
-            <span class="govuk-caption-m">Step 2 of 2</span>
-            Withdraw referral
-          </h1>
-        </legend>
+  <p>Saved referrals will remain in your list for an extra business day.</p>
 
-        <p class="placeholder-block">Reason would be shown here</p>
-        
-      </fieldset>
-    </div>{# /govuk-form-group #}
-
-    <a href="case-list?withdrawmessage=true&amp;claimant=fred" class="govuk-button">Confirm withdrawal</a>
+  <a href="/v3/case-list?savemessage=true&amp;saved=true" class="govuk-button">Confirm save</a>
 
   </div>{# /govuk-grid-full #}
 </div>{# /govuk-grid-row #}

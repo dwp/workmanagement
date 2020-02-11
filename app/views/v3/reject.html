@@ -20,7 +20,7 @@
 
 <hr>
 
-{% include "v3/_other-case-actions.html" %}
+{# {% include "v3/_other-case-actions.html" %} #}
 
 {% endblock %}
 
@@ -62,218 +62,97 @@
 
    <hr>
 
-   <a href="/v3/case" class="govuk-back-link">Back</a>
+   <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
-<form id="withdraw-ref-reason" name="withdraw-referral-reason" enctype="application/json" method="post" action="/cases/e0dcb806-7e0b-4340-8e09-ebb171633e92/withdraw-summary">
-                    <span class="form-hint">Step 1 of 2</span>
-                    <h1 class="heading-large govuk-!-margin-top-0" id="withdraw_referral-legend" data-ga-reason="Withdraw referral">Withdraw referral</h1>
+   <h2 class="govuk-heading-l">Why are you rejecting this referral?</h2>
 
-                    
+   <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
 
-                    
-                    
-                    
-                    
-  
-  
-  
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-
-  
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-    
-  
-
-  
-    
-  
-<div class="govuk-form-group">
-
-  <fieldset class="govuk-fieldset">
-  
-
-  <div class="govuk-radios govuk-radios--conditional" data-module="radios">
-    
-    
-    
-    
-    
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="claimant_has_died" name="withdraw_reason" type="radio" value="deceased" aria-labelledby="claimant_has_died-label withdraw_reason-legend" data-ga-type="radio-button" data-ga-question="withdraw_reason-legend" data-ga-answer="Claimant has died">
-      <label class="govuk-label govuk-radios__label form-label" id="claimant_has_died-label" for="claimant_has_died">
-        Claimant has died
-      </label>
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="claimant_has_returned_to_work" name="withdraw_reason" type="radio" value="returned_to_work" aria-labelledby="claimant_has_returned_to_work-label withdraw_reason-legend" data-ga-type="radio-button" data-ga-question="withdraw_reason-legend" data-ga-answer="Claimant has returned to work">
-      <label class="govuk-label govuk-radios__label form-label" id="claimant_has_returned_to_work-label" for="claimant_has_returned_to_work">
-        Claimant has returned to work
-      </label>
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="ucb" name="withdraw_reason" type="radio" value="potentially_violent" aria-labelledby="ucb-label withdraw_reason-legend" data-ga-type="radio-button" data-ga-question="withdraw_reason-legend" data-ga-answer="Unacceptable claimant behaviour" aria-controls="conditional-ucb">
-      <label class="govuk-label govuk-radios__label form-label" id="ucb-label" for="ucb">
-        Unacceptable claimant behaviour
-      </label>
-    </div>
-    
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-ucb">
-        
-  
-  
-
-<div class="govuk-character-count" data-module="character-count" data-maxlength="1000">
-  
-
-<div class="govuk-form-group">
-  <label class="govuk-label form-label-bold" for="f-ucbDetails">
-    Details:
-  </label>
-
-
-  <textarea class="govuk-textarea js-character-count form-label form-control form-control-3-4" id="f-ucbDetails" name="ucbDetails" rows="6" aria-describedby="f-ucbDetails-info"></textarea><span id="f-ucbDetails-info" class="govuk-hint govuk-character-count__message" aria-live="polite">You have 1000 characters remaining</span>
-</div>
-
-  
-</div>
-
-
+      <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="option1" name="radios" type="radio" value="option1">
+        <label class="govuk-label govuk-radios__label" for="option1">
+          This is a duplicate referral
+        </label>
       </div>
-    
-    
-    
-    
-    
-    
-    
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="other" name="withdraw_reason" type="radio" value="other_reason" aria-labelledby="other-label withdraw_reason-legend" data-ga-type="radio-button" data-ga-question="withdraw_reason-legend" data-ga-answer="Other" aria-controls="conditional-other">
-      <label class="govuk-label govuk-radios__label form-label" id="other-label" for="other">
-        Other
-      </label>
-    </div>
-    
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-other">
-        
-                        <div id="other-details-conditional" blanked-by="f-withdraw_reason-other">
 
-                            
-  
-  
-    
-  
-  
-  
-  
-
-<div class="govuk-form-group">
-  <label class="govuk-label form-label-bold" for="f-otherReason">
-    Reason:
-  </label>
-
-
-  <input class="govuk-input govuk-!-width-one-half form-label" id="f-otherReason" name="otherReason" type="" maxlength="50">
-</div>
-
-
-
-                            
-  
-  
-
-<div class="govuk-character-count" data-module="character-count" data-maxlength="1000">
-  
-
-<div class="govuk-form-group">
-  <label class="govuk-label form-label-bold" for="f-otherDetails">
-    Details:
-  </label>
-
-
-  <textarea class="govuk-textarea js-character-count form-label form-control form-control-3-4" id="f-otherDetails" name="otherDetails" rows="6" aria-describedby="f-otherDetails-info"></textarea><span id="f-otherDetails-info" class="govuk-hint govuk-character-count__message" aria-live="polite">You have 1000 characters remaining</span>
-</div>
-
-  
-</div>
-
-
-                        </div>
-                    
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="option2" name="radios" type="radio" value="option2">
+        <label class="govuk-label govuk-radios__label" for="option2">
+          Form IB55/ESA55/UC55 not completed
+        </label>
       </div>
-    
-    
-    
-  </div>
-  </fieldset>
 
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="option3" name="radios" type="radio" value="option3">
+        <label class="govuk-label govuk-radios__label" for="option3">
+          Referral type is missing/incorrect
+        </label>
+      </div>
 
-</div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="option4" name="radios" type="radio" value="option4">
+        <label class="govuk-label govuk-radios__label" for="option4">
+          Details are not clear/legible
+        </label>
+      </div>
 
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="option5" name="radios" type="radio" value="option5">
+        <label class="govuk-label govuk-radios__label" for="option5">
+          Correct file jacket has not been used
+        </label>
+      </div>
 
-                    <p>
-                        
-  
-  
-    
-  
-  
-  
-    
-  
-  
-  <a href="/v3/withdraw2" class="govuk-button button">Save and continue</a>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="option6" name="radios" type="radio" value="option6">
+        <label class="govuk-label govuk-radios__label" for="option6">
+          Date of incapacity is missing/incorrect
+        </label>
+      </div>
 
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="option7" name="radios" type="radio" value="option7">
+        <label class="govuk-label govuk-radios__label" for="option7">
+          PV details are missing
+        </label>
+      </div>
 
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="option8" name="radios" type="radio" value="option8">
+        <label class="govuk-label govuk-radios__label" for="option8">
+          Missing document/ information
+        </label>
+      </div>
 
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="other" name="radios" type="radio" value="text" data-aria-controls="other-conditional">
+        <label class="govuk-label govuk-radios__label" for="other">
+          Other
+        </label>
+      </div>
 
-                    </p>
-                </form>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="other-conditional">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="event-name">
+            Reason
+          </label>
+          <input class="govuk-input govuk-!-width-one-half" id="event-name" name="event-name" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-by-text">
+            Details
+          </label>
+          <textarea class="govuk-textarea govuk-!-width-two-thirds" id="ucb-details" name="ucb-details" rows="5" aria-describedby="more-detail-hint"></textarea>
+        </div>
+      </div>
+      
+    </fieldset>
 
+  </div>{# /govuk-form-group #}
+
+  <a href="reject2" class="govuk-button">Save and continue</a>
 
   </div>{# /govuk-grid-full #}
 </div>{# /govuk-grid-row #}

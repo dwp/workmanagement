@@ -20,7 +20,7 @@
 
 <hr>
 
-{% include "v3/_other-case-actions.html" %}
+{# {% include "v3/_other-case-actions.html" %} #}
 
 {% endblock %}
 
@@ -74,15 +74,15 @@
       </legend>
 
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="gp-report" name="radios" type="radio" value="gp-report" data-aria-controls="gp-report-conditional">
-        <label class="govuk-label govuk-radios__label" for="gp-report">
+        <input class="govuk-radios__input" id="further-review" name="radios" type="radio" value="further-review">
+        <label class="govuk-label govuk-radios__label" for="further-review">
           Further review required
         </label>
       </div>
 
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="gp-report" name="radios" type="radio" value="gp-report" data-aria-controls="gp-report-conditional">
-        <label class="govuk-label govuk-radios__label" for="gp-report">
+        <input class="govuk-radios__input" id="call" name="radios" type="radio" value="call">
+        <label class="govuk-label govuk-radios__label" for="call">
           Call for face to face assessment
         </label>
       </div>
@@ -91,9 +91,9 @@
 
   </div>{# /govuk-form-group #}
 
-  <a href="case-list" class="govuk-button">Save and continue</a>
+  <a href="case-list?evidencemessage=true&amp;claimant=fred" class="govuk-button">Save and continue</a>
 
-</div>{# /govuk-grid-full #}
+  </div>{# /govuk-grid-full #}
 </div>{# /govuk-grid-row #}
 
 {% endblock %}

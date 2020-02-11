@@ -282,4 +282,39 @@ html body div a.secondary-invert {
   background-color: transparent;
   box-shadow: none;
   padding-bottom: 10px;
+  &:hover {
+    background: rgba(#00703c, 0.05);
+    background-color: transparent;
+  }
 }
+
+.card {
+  border: 1px solid $govuk-border-colour;
+}
+
+.card-head {
+  padding: 1em;
+  background-color: govuk-colour("light-grey");
+}
+
+.card-body {
+  padding: 1em;
+}
+
+// .launch-panel {
+//   background: #fff;
+  
+// }
+
+// .launch-panel h2 {
+//   margin: 0;
+  
+  
+//   background: #f8f8f8;
+// }
+
+// .launch-panel p {
+//   padding: 0.8em 1em 0.9em 1em !important;
+//   margin: 0;
+// }
+
