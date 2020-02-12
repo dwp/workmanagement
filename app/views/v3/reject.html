@@ -113,7 +113,7 @@
 
   </div>{# /govuk-form-group #}
 
-  <a href="case-list?task={{ getData.task }}-end&amp;person={{ getData.person }}&amp;rejectmessage=true" class="govuk-button">Confirm Return to DWP</a>
+  <a href="/v3/case-list?task={{ getData.task }}&amp;person={{ getData.person }}&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;rejectmessage=true" class="govuk-button">Confirm return to DWP</a>
 
   </div>{# /govuk-grid-full #}
 </div>{# /govuk-grid-row #}

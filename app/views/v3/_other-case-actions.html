@@ -6,9 +6,9 @@
   </summary>
   <div class="govuk-details__text">
     <ul class="govuk-list">
-      <li><a href="/v3/save?task={{ getData.task }}&amp;person={{ getData.person }}">Save and do this later</a></li>
-      <li><a href="/v3/reject?task={{ getData.task }}&amp;person={{ getData.person }}">Return to DWP</a></li>
-      <li><a href="/v3/withdraw?task={{ getData.task }}&amp;person={{ getData.person }}">Withdraw referral</a></li>
+      <li><a href="/v3/save{% include 'v3/_params.html' %}">Save and do this later</a></li>
+      <li><a href="/v3/reject{% include 'v3/_params.html' %}">Return to DWP</a></li>
+      <li><a href="/v3/withdraw{% include 'v3/_params.html' %}">Withdraw referral</a></li>
     </ul>
   </div>
 </details>

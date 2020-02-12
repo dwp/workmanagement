@@ -13,7 +13,7 @@
 
 {% block leftPanel %}
 
-<p><a href="/v3/case-list?task={{ getData.task }}" class="govuk-back-link">Back to your reviews</a></p>
+<a href="/v3/case-list{% include 'v3/_params.html' %}" class="govuk-back-link">Back to your reviews</a>
 
 <hr>
 
@@ -28,7 +28,7 @@
   Suggested action
 </h3>
 
-<a href="recommendation?task={{ getData.task }}&amp;person={{ getData.person }}" class="govuk-button button">Make recommendation</a>
+<a href="recommendation{% include 'v3/_params.html' %}" class="govuk-button button">Make recommendation</a>
 
 {% include "v3/_other-case-actions.html" %}
 

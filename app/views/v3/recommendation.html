@@ -49,7 +49,7 @@
           </div>{# /card-head #}
           <div class="card-body">
             <p>I think further evidence will help this case</p>
-            <a href="/v3/request-evidence?task={{ getData.task }}&amp;person={{ getData.person }}" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-bottom-0">
+            <a href="/v3/request-evidence{% include 'v3/_params.html' %}" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-bottom-0">
             Choose evidence
             </a>
           </div>{# /card-body #}
@@ -63,7 +63,7 @@
           </div>{# /card-head #}
           <div class="card-body">
             <p>I would like to call them in for a face-to-face assessment</p>
-            <a href="/v3/case-list?task={{ getData.task }}-end&amp;person={{ getData.person }}&amp;facemessage=true" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-bottom-0">
+            <a href="/v3/case-list?task={{ getData.task }}&amp;person={{ getData.person }}&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;facemessage=true" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-bottom-0">
             Call for assessment
             </a>
           </div>{# /card-body #}

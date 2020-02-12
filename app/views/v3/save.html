@@ -20,8 +20,6 @@
 
 <hr>
 
-{# {% include "v3/_other-case-actions.html" %} #}
-
 {% endblock %}
 
 {# Main content #}
@@ -45,7 +43,7 @@
 
   <p>This will keep it in your list until 11.59pm on the next business day.</p>
 
-  <a href="/v3/case-list?task={{ getData.task }}-end&amp;person={{ getData.person }}&amp;savemessage=true" class="govuk-button">Confirm save</a>
+  <a href="/v3/case-list?task={{ getData.task }}&amp;person={{ getData.person }}&amp;savemessage=true&amp;saved={{ getData.person }}&amp;missing={{ getData.missing }},{{ getData.person }}" class="govuk-button">Confirm save</a>
 
   </div>{# /govuk-grid-full #}
 </div>{# /govuk-grid-row #}

@@ -69,8 +69,8 @@
       {% endif %}
       {% if getData.savemessage %}
         <div class="govuk-inset-text alert-green">
-          {% if getData.task === "1-end" %}
-            Fred Flintstone’s
+          {% if getData.person %}
+            {{ getData.person }}’s
           {% else %}
             XXXX’s
           {% endif %} 
@@ -85,27 +85,27 @@
             <strong>
               {% if getData.count %}
                 {{ getData.count }}
-              {% elif getData.task === "1-end" %}
+              {% elif getData.task === "1" %}
                 1
-              {% elif getData.task === "2-end" %}
+              {% elif getData.task === "2" %}
                 2
-              {% elif getData.task === "3-end" %}
+              {% elif getData.task === "3" %}
                 3
-              {% elif getData.task === "4-end" %}
+              {% elif getData.task === "4" %}
                 4
-              {% elif getData.task === "5-end" %}
+              {% elif getData.task === "5" %}
                 5
-              {% elif getData.task === "6-end" %}
+              {% elif getData.task === "6" %}
                 6
-              {% elif getData.task === "7-end" %}
+              {% elif getData.task === "7" %}
                 7
-              {% elif getData.task === "8-end" %}
+              {% elif getData.task === "8" %}
                 8
-              {% elif getData.task === "9-end" %}
+              {% elif getData.task === "9" %}
                 9
-              {% elif getData.task === "10-end" %}
+              {% elif getData.task === "10" %}
                 10
-              {% elif getData.task === "11-end" %}
+              {% elif getData.task === "11" %}
                 11
               {% else %}
                 0
@@ -123,59 +123,76 @@
       <table class="govuk-table" style="max-width: 100%;">
       <tbody class="govuk-table__body">
 
-{#         {% if getData.task === "1" %} #}
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header"><a href="/v3/case?task={{ getData.task }}&amp;person=Fred%20Flintstone">Fred Flintstone</a></th>
-            <td class="govuk-table__cell">New referral</td>
-            <td class="govuk-table__cell">&nbsp;</td>
-          </tr>
-{#         {% endif %} #}
-
+      {% if "Fred Flintstone" in getData.missing %}
+      {% else %}
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><a href="/v3/case?task={{ getData.task }}&amp;person=Pink%20Panther">Pink Panther</a></th>
-          <td class="govuk-table__cell">No paper file</td>
-          <td class="govuk-table__cell">&nbsp;</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><a href="/v3/case?task={{ getData.task }}&amp;person=Micky%20Mouse">Micky Mouse</a></th>
-          <td class="govuk-table__cell">Claimant had good cause to miss appointment</td>
-          <td class="govuk-table__cell">&nbsp;</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><a href="/v3/case?task={{ getData.task }}&amp;person=Bugs%20Bunny">Bugs Bunny</a></th>
+          <th scope="row" class="govuk-table__header"><a href="/v3/case?task={{ getData.task | int + 1 }}&amp;person=Fred%20Flintstone&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }}">Fred Flintstone</a></th>
           <td class="govuk-table__cell">New referral</td>
           <td class="govuk-table__cell">&nbsp;</td>
         </tr>
+      {% endif %}
+      {% if "Pink Panther" in getData.missing %}
+      {% else %}
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><a href="/v3/case?task={{ getData.task }}&amp;person=Donald%20Duck">Donald Duck</a></th>
+          <th scope="row" class="govuk-table__header"><a href="/v3/case?task={{ getData.task | int + 1 }}&amp;person=Pink%20Panther&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }}">Pink Panther</a></th>
+          <td class="govuk-table__cell">No paper file</td>
+          <td class="govuk-table__cell">&nbsp;</td>
+        </tr>
+      {% endif %}
+      {% if "Micky Mouse" in getData.missing %}
+      {% else %}
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="/v3/case?task={{ getData.task | int + 1 }}&amp;person=Micky%20Mouse&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }}">Micky Mouse</a></th>
+          <td class="govuk-table__cell">Claimant had good cause to miss appointment</td>
+          <td class="govuk-table__cell">&nbsp;</td>
+        </tr>
+      {% endif %}
+      {% if "Bugs Bunny" in getData.missing %}
+      {% else %}
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="/v3/case?task={{ getData.task | int + 1 }}&amp;person=Bugs%20Bunny&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }}">Bugs Bunny</a></th>
+          <td class="govuk-table__cell">New referral</td>
+          <td class="govuk-table__cell">&nbsp;</td>
+        </tr>
+      {% endif %}
+      {% if "Donald Duck" in getData.missing %}
+      {% else %}
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="/v3/case?task={{ getData.task | int + 1 }}&amp;person=Donald%20Duck&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }}">Donald Duck</a></th>
           <td class="govuk-table__cell">Further evidence returned</td>
           <td class="govuk-table__cell">&nbsp;</td>
         </tr>
+      {% endif %}
+
+
+
+
+{# 
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><a href="/v3/case?task={{ getData.task }}&amp;person=Charlie%20Brown">Charlie Brown</a></th>
+          <th scope="row" class="govuk-table__header"><a href="/v3/case?task={{ getData.task | int + 1 }}&amp;person=Charlie%20Brown&amp;saved={{ getData.saved }}">Charlie Brown</a></th>
           <td class="govuk-table__cell">Changed assessment route</td>
           <td class="govuk-table__cell"></td>
         </tr>
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><a href="/v3/case?task={{ getData.task }}&amp;person=Yosemite%20Sam">Yosemite Sam</a></th>
+          <th scope="row" class="govuk-table__header"><a href="/v3/case?task={{ getData.task | int + 1 }}&amp;person=Yosemite%20Sam&amp;saved={{ getData.saved }}">Yosemite Sam</a></th>
           <td class="govuk-table__cell">No paper file</td>
           <td class="govuk-table__cell">&nbsp;</td>
         </tr>
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><a href="/v3/case?task={{ getData.task }}&amp;person=Woody%20Woodpecker">Woody Woodpecker</a></th>
+          <th scope="row" class="govuk-table__header"><a href="/v3/case?task={{ getData.task | int + 1 }}&amp;person=Woody%20Woodpecker&amp;saved={{ getData.saved }}">Woody Woodpecker</a></th>
           <td class="govuk-table__cell">New referral</td>
           <td class="govuk-table__cell" style="text-align: right">{% if getData.saved %}<div class="badge">Saved until tomorrow at 11:59pm</div>{% endif %}</td>
         </tr>
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><a href="/v3/case?task={{ getData.task }}&amp;person=Foghorn%20Leghorn">Foghorn Leghorn</a></th>
+          <th scope="row" class="govuk-table__header"><a href="/v3/case?task={{ getData.task | int + 1 }}&amp;person=Foghorn%20Leghorn&amp;saved={{ getData.saved }}">Foghorn Leghorn</a></th>
           <td class="govuk-table__cell">New referral</td>
           <td class="govuk-table__cell">&nbsp;</td>
         </tr>
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><a href="/v3/case?task={{ getData.task }}&amp;person=Jessica%20Rabbit">Jessica Rabbit</a></th>
+          <th scope="row" class="govuk-table__header"><a href="/v3/case?task={{ getData.task | int + 1 }}&amp;person=Jessica%20Rabbit&amp;saved={{ getData.saved }}">Jessica Rabbit</a></th>
           <td class="govuk-table__cell">Further evidence returned</td>
           <td class="govuk-table__cell">&nbsp;</td>
-        </tr>
+        </tr> #}
       </tbody>
     </table>
 
