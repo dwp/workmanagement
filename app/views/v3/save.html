@@ -70,9 +70,9 @@
     <textarea class="govuk-textarea govuk-!-width-two-thirds" id="save-reason" name="save-reason" rows="5" aria-describedby="more-detail-hint"></textarea>
   </div>
 
-  <p>Saved referrals will remain in your list for an extra business day.</p>
+  <p>This will keep it in your list until 11.59pm on the next business day.</p>
 
-  <a href="/v3/case-list?savemessage=true&amp;saved=true" class="govuk-button">Confirm save</a>
+  <a href="/v3/case-list?scenario={{ getData.scenario }}-end&amp;savemessage=true" class="govuk-button">Confirm save</a>
 
   </div>{# /govuk-grid-full #}
 </div>{# /govuk-grid-row #}

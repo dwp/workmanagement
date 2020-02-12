@@ -58,20 +58,21 @@
 
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
+  <div class="govuk-grid-column-two-thirds">
 
    <hr>
 
-   <a href="/v3/recommendation" class="govuk-back-link">Back</a>
+   <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
-   <h2 class="govuk-heading-l">Request evidence</h2>
+   <h2 class="govuk-heading-l">What should happen if medical evidence is
+not returned?</h2>
 
    <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
 
-      <legend class="govuk-fieldset__legend">
+{#       <legend class="govuk-fieldset__legend">
         <strong>If medical evidence is not returned, what should happen next?</strong>
-      </legend>
+      </legend> #}
 
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="further-review" name="radios" type="radio" value="further-review">
@@ -91,7 +92,7 @@
 
   </div>{# /govuk-form-group #}
 
-  <a href="case-list?evidencemessage=true&amp;claimant=fred" class="govuk-button">Save and continue</a>
+  <a href="case-list?scenario={{ getData.scenario }}-end&amp;evidencemessage=true" class="govuk-button">Save and continue</a>
 
   </div>{# /govuk-grid-full #}
 </div>{# /govuk-grid-row #}

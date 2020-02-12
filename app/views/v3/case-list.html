@@ -8,15 +8,11 @@
 {{ serviceName }}
 {% endblock %}
 
-{# {% block beforeContent %}
-  <a href="/v3" class="govuk-back-link">Back to dashboard</a>
-{% endblock %} #}
-
 {# Left panel #}
 
 {% block leftPanel %}
 
-<p><a href="/v3" class="govuk-back-link">Back to dashboard</a></p>
+<p><a href="/v3/index?scenario={{ getData.scenario }}" class="govuk-back-link">Back to dashboard</a></p>
 
 {% endblock %}
 
@@ -30,38 +26,73 @@
       {% if getData.evidencemessage %}
         <div class="govuk-inset-text alert-green">
           <strong>Review complete</strong><br>
-          Evidence requested for Donald Duck 
+          Evidence requested for 
+          {% if getData.scenario === "1-end" %}
+            Fred Flintstone
+          {% else %}
+            XXXX
+          {% endif %}
         </div>
       {% endif %}
       {% if getData.facemessage %}
         <div class="govuk-inset-text alert-green">
           <strong>Review complete</strong><br>
-          Jessica Rabbit’s appointment will be booked 
+          {% if getData.scenario === "1-end" %}
+            Fred Flintstone
+          {% else %}
+            XXXX
+          {% endif %}
+            will be called for an assessment 
         </div>
       {% endif %}
       {% if getData.withdrawmessage %}
         <div class="govuk-inset-text alert-green">
-          <strong>feewf</strong><br>
-          Fred Flintstone’s referral has been withdrawn
+          <strong>Review complete</strong><br>
+          {% if getData.scenario === "1-end" %}
+            Fred Flintstone’s
+          {% else %}
+            XXXX’s
+          {% endif %}
+          referral has been withdrawn
         </div>
       {% endif %}
       {% if getData.rejectmessage %}
         <div class="govuk-inset-text alert-green">
           <strong>Review complete</strong><br>
-          Yosemite Sam’s case has been returned to DWP 
+          {% if getData.scenario === "1-end" %}
+            Fred Flintstone’s
+          {% else %}
+            XXXX’s
+          {% endif %}
+          case has been returned to DWP 
         </div>
       {% endif %}
       {% if getData.savemessage %}
         <div class="govuk-inset-text alert-green">
-{#           <strong>feewf</strong><br> #}
-          Woody Woodpecker’s case has been saved
+          {% if getData.scenario === "1-end" %}
+            Fred Flintstone’s
+          {% else %}
+            XXXX’s
+          {% endif %} 
+          referral has been saved
         </div>
       {% endif %}
 
       <div class="relative">
         <div class="review-count">
-          You’ve reviewed <span class="govuk-!-font-size-48"><strong>8</strong></span>
-          so far today
+          You’ve done
+          <span class="govuk-!-font-size-48">
+            <strong>
+              {% if getData.count %}
+                {{ getData.count }}
+              {% elif getData.scenario === "1-end" %}
+                1
+              {% else %}
+                0
+              {% endif %}
+            </strong>
+          </span>
+          reviews so far today
         </div>
       </div>{# /relative #}
 
@@ -71,11 +102,15 @@
 
       <table class="govuk-table" style="max-width: 100%;">
       <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><a href="/v3/case">Fred Flintstone</a></th>
-          <td class="govuk-table__cell">Changed assessment route</td>
-          <td class="govuk-table__cell">&nbsp;</td>
-        </tr>
+
+        {% if getData.scenario === "1" %}
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header"><a href="/v3/case?scenario={{ getData.scenario }}">Fred Flintstone</a></th>
+            <td class="govuk-table__cell">New referral</td>
+            <td class="govuk-table__cell">&nbsp;</td>
+          </tr>
+        {% endif %}
+
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="/v3/case">Pink Panther</a></th>
           <td class="govuk-table__cell">No paper file</td>
@@ -108,7 +143,7 @@
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="/v3/case">Woody Woodpecker</a></th>
-          <td class="govuk-table__cell">Claimant had good cause to miss appointment</td>
+          <td class="govuk-table__cell">New referral</td>
           <td class="govuk-table__cell" style="text-align: right">{% if getData.saved %}<div class="badge">Saved until tomorrow at 11:59pm</div>{% endif %}</td>
         </tr>
         <tr class="govuk-table__row">
@@ -124,8 +159,9 @@
       </tbody>
     </table>
 
-<br>
-    <a href="#" class="govuk-button">Get more reviews</a>
+    <br>
+    
+{#     <a href="#" class="govuk-button">Get more reviews</a> #}
 
     </div>{# /govuk-grid-column-two-thirds #}
   </div>{# /govuk-grid-row #}

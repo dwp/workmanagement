@@ -58,13 +58,15 @@
 
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
+  <div class="govuk-grid-column-two-thirds">
 
    <hr>
 
    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
-   <h2 class="govuk-heading-l">Why are you returning this referral to DWP?</h2>
+   <h2 class="govuk-heading-l">You are about to return this referral to DWP</h2>
+
+   <h2 class="govuk-heading-m">Why do you need to return it?</h2>
 
    <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
@@ -138,7 +140,7 @@
 
   </div>{# /govuk-form-group #}
 
-  <a href="reject2" class="govuk-button">Save and continue</a>
+  <a href="case-list?scenario={{ getData.scenario }}-end&amp;rejectmessage=true" class="govuk-button">Confirm Return to DWP</a>
 
   </div>{# /govuk-grid-full #}
 </div>{# /govuk-grid-row #}

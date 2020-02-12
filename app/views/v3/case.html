@@ -13,7 +13,7 @@
 
 {% block leftPanel %}
 
-<p><a href="/v3/case-list" class="govuk-back-link">Back to your reviews</a></p>
+<p><a href="/v3/case-list?scenario={{ getData.scenario }}" class="govuk-back-link">Back to your reviews</a></p>
 
 <hr>
 
@@ -28,7 +28,7 @@
   Suggested action
 </h3>
 
-<a href="recommendation" class="govuk-button button">Make recommendation</a>
+<a href="recommendation?scenario={{ getData.scenario }}" class="govuk-button button">Make recommendation</a>
 
 {% include "v3/_other-case-actions.html" %}
 
