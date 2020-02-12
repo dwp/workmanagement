@@ -29,90 +29,103 @@
 
       {% if getData.evidencemessage %}
         <div class="govuk-inset-text alert-green">
-          Evidence has been requested for Fred Flintstone 
+          <strong>Review complete</strong><br>
+          Evidence requested for Donald Duck 
+        </div>
+      {% endif %}
+      {% if getData.facemessage %}
+        <div class="govuk-inset-text alert-green">
+          <strong>Review complete</strong><br>
+          Jessica Rabbit’s appointment will be booked 
         </div>
       {% endif %}
       {% if getData.withdrawmessage %}
         <div class="govuk-inset-text alert-green">
+          <strong>feewf</strong><br>
           Fred Flintstone’s referral has been withdrawn
         </div>
       {% endif %}
       {% if getData.rejectmessage %}
         <div class="govuk-inset-text alert-green">
-          Fred Flintstone’s referral case was rejected
+          <strong>Review complete</strong><br>
+          Yosemite Sam’s case has been returned to DWP 
         </div>
       {% endif %}
       {% if getData.savemessage %}
         <div class="govuk-inset-text alert-green">
-          Woody Woodpecker’s referral has been saved
+{#           <strong>feewf</strong><br> #}
+          Woody Woodpecker’s case has been saved
         </div>
       {% endif %}
 
       <div class="relative">
         <div class="review-count">
-          You’ve reviewed <span class="govuk-!-font-size-48"><strong>6</strong></span>
-          cases so far today
+          You’ve reviewed <span class="govuk-!-font-size-48"><strong>8</strong></span>
+          so far today
         </div>
       </div>{# /relative #}
 
-      <h1 class="govuk-heading-l">Your cases to review</h1>
+      <h1 class="govuk-heading-l">Your reviews</h1>
 
       <p>Anything you can’t finish today will be removed from your list and re-allocated.</p>
 
       <table class="govuk-table" style="max-width: 100%;">
       <tbody class="govuk-table__body">
-{#         <tr class="govuk-table__row">
+        <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="/v3/case">Fred Flintstone</a></th>
-          <td class="govuk-table__cell">Off critical path</td>
+          <td class="govuk-table__cell">Changed assessment route</td>
           <td class="govuk-table__cell">&nbsp;</td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="/v3/case">Pink Panther</a></th>
-          <td class="govuk-table__cell">Electronic referral</td>
+          <td class="govuk-table__cell">No paper file</td>
           <td class="govuk-table__cell">&nbsp;</td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="/v3/case">Micky Mouse</a></th>
-          <td class="govuk-table__cell">Good cause referral</td>
+          <td class="govuk-table__cell">Claimant had good cause to miss appointment</td>
           <td class="govuk-table__cell">&nbsp;</td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="/v3/case">Bugs Bunny</a></th>
-          <td class="govuk-table__cell">First referral</td>
+          <td class="govuk-table__cell">New referral</td>
           <td class="govuk-table__cell">&nbsp;</td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="/v3/case">Donald Duck</a></th>
-          <td class="govuk-table__cell">Second referral</td>
+          <td class="govuk-table__cell">Further evidence returned</td>
           <td class="govuk-table__cell">&nbsp;</td>
-        </tr> #}
+        </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="/v3/case">Charlie Brown</a></th>
-          <td class="govuk-table__cell">Off critical path</td>
+          <td class="govuk-table__cell">Changed assessment route</td>
           <td class="govuk-table__cell"></td>
         </tr>
-{#         <tr class="govuk-table__row">
+        <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="/v3/case">Yosemite Sam</a></th>
-          <td class="govuk-table__cell">Electronic referral</td>
+          <td class="govuk-table__cell">No paper file</td>
           <td class="govuk-table__cell">&nbsp;</td>
-        </tr> #}
+        </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="/v3/case">Woody Woodpecker</a></th>
-          <td class="govuk-table__cell">Good cause referral</td>
-          <td class="govuk-table__cell" style="text-align: right">{% if getData.saved %}<div class="badge">Saved in your list until tomorrow at 4pm</div>{% endif %}</td>
+          <td class="govuk-table__cell">Claimant had good cause to miss appointment</td>
+          <td class="govuk-table__cell" style="text-align: right">{% if getData.saved %}<div class="badge">Saved until tomorrow at 11:59pm</div>{% endif %}</td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="/v3/case">Foghorn Leghorn</a></th>
-          <td class="govuk-table__cell">First referral</td>
+          <td class="govuk-table__cell">New referral</td>
           <td class="govuk-table__cell">&nbsp;</td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="/v3/case">Jessica Rabbit</a></th>
-          <td class="govuk-table__cell">Second referral</td>
+          <td class="govuk-table__cell">Further evidence returned</td>
           <td class="govuk-table__cell">&nbsp;</td>
         </tr>
       </tbody>
     </table>
+
+<br>
+    <a href="#" class="govuk-button">Get more reviews</a>
 
     </div>{# /govuk-grid-column-two-thirds #}
   </div>{# /govuk-grid-row #}
