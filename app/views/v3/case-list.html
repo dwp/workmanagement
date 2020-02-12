@@ -12,7 +12,7 @@
 
 {% block leftPanel %}
 
-<p><a href="/v3/index?task={{ getData.task }}" class="govuk-back-link">Back to dashboard</a></p>
+<p><a href="/v3{% include 'v3/_params.html' %}" class="govuk-back-link">Back to dashboard</a></p>
 
 {% endblock %}
 
