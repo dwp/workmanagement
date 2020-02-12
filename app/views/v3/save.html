@@ -28,34 +28,7 @@
 
 {% block content %}
 
-<div class="staff__heading">
-  <div class="govuk-grid-row">
-    <section class="key-details">
-      <div class="govuk-grid-column-one-half">
-        <div class="badges">
-          <div id="benefit-type" class="badge">UC</div>
-        </div>
-        <dl>
-          <dt class="govuk-visually-hidden">Name:</dt>
-          <dd class="key-details-heading-large">Fred Flintstone</dd>
-        </dl>
-      </div><!-- column -->
-      <div class="govuk-grid-column-one-half">
-        <dl class="key-details-summary-list">
-          <div class="col1">
-            <dt>National Insurance number</dt>
-            <dd>XX XX XX XX A</dd>
-          </div>
-          <div class="col2">
-            <dt>Date of birth</dt>
-            <dd>1 January 1982</dd>
-          </div>
-        </dl>
-      </div><!-- column -->
-    </section>
-  </div><!-- / govuk-grid-row -->
-</div><!-- / staff__heading -->
-
+{% include "v3/_staff-heading.html" %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
@@ -72,7 +45,7 @@
 
   <p>This will keep it in your list until 11.59pm on the next business day.</p>
 
-  <a href="/v3/case-list?scenario={{ getData.scenario }}-end&amp;savemessage=true" class="govuk-button">Confirm save</a>
+  <a href="/v3/case-list?task={{ getData.task }}-end&amp;person={{ getData.person }}&amp;savemessage=true" class="govuk-button">Confirm save</a>
 
   </div>{# /govuk-grid-full #}
 </div>{# /govuk-grid-row #}

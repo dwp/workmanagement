@@ -28,34 +28,7 @@
 
 {% block content %}
 
-<div class="staff__heading">
-  <div class="govuk-grid-row">
-    <section class="key-details">
-      <div class="govuk-grid-column-one-half">
-        <div class="badges">
-          <div id="benefit-type" class="badge">UC</div>
-        </div>
-        <dl>
-          <dt class="govuk-visually-hidden">Name:</dt>
-          <dd class="key-details-heading-large">Fred Flintstone</dd>
-        </dl>
-      </div><!-- column -->
-      <div class="govuk-grid-column-one-half">
-        <dl class="key-details-summary-list">
-          <div class="col1">
-            <dt>National Insurance number</dt>
-            <dd>XX XX XX XX A</dd>
-          </div>
-          <div class="col2">
-            <dt>Date of birth</dt>
-            <dd>1 January 1982</dd>
-          </div>
-        </dl>
-      </div><!-- column -->
-    </section>
-  </div><!-- / govuk-grid-row -->
-</div><!-- / staff__heading -->
-
+{% include "v3/_staff-heading.html" %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
@@ -76,7 +49,7 @@
           </div>{# /card-head #}
           <div class="card-body">
             <p>I think further evidence will help this case</p>
-            <a href="/v3/request-evidence?scenario={{ getData.scenario }}" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-bottom-0">
+            <a href="/v3/request-evidence?task={{ getData.task }}&amp;person={{ getData.person }}" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-bottom-0">
             Choose evidence
             </a>
           </div>{# /card-body #}
@@ -90,7 +63,7 @@
           </div>{# /card-head #}
           <div class="card-body">
             <p>I would like to call them in for a face-to-face assessment</p>
-            <a href="/v3/case-list?scenario={{ getData.scenario }}-end&amp;facemessage=true" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-bottom-0">
+            <a href="/v3/case-list?task={{ getData.task }}-end&amp;person={{ getData.person }}&amp;facemessage=true" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-bottom-0">
             Call for assessment
             </a>
           </div>{# /card-body #}
