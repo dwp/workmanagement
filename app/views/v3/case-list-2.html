@@ -189,7 +189,7 @@
           <th scope="row" class="govuk-table__header"><a href="/v3/case?task={{ getData.task | int + 1 }}&amp;person=Charlie%20Brown&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }}">Charlie Brown</a></th>
           <td class="govuk-table__cell">Changed assessment route</td>
            <td class="govuk-table__cell" style="text-align: right">&nbsp;
-            {% if getData.saved === "Charlie Brown"%}
+            {% if getData.saved === "Donald Duck"%}
               <div class="badge">Saved until tomorrow at 11:59pm</div>
             {% endif %}
           </td>
@@ -231,7 +231,7 @@
           </td>
         </tr>
       {% endif %}
-      {% if "Jessica Rabbit" in getData.missing %}
+      {% if "Foghorn Leghorn" in getData.missing %}
       {% else %}
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="/v3/case?task={{ getData.task | int + 1 }}&amp;person=Jessica%20Rabbit&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }}">Jessica Rabbit</a></th>
@@ -243,79 +243,13 @@
           </td>
         </tr>
       {% endif %}
-
-      {# Extra stuff #}
-
-      {% if getData.extra %}
-
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><a href="#">Lisa Simpson</a></th>
-          <td class="govuk-table__cell">  New referral</td>
-           <td class="govuk-table__cell" style="text-align: right">&nbsp;
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><a href="#">Wilma Flintstone</a></th>
-          <td class="govuk-table__cell">  New referral</td>
-           <td class="govuk-table__cell" style="text-align: right">&nbsp;
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><a href="#">Tasmanian Devil</a></th>
-          <td class="govuk-table__cell">  New referral</td>
-           <td class="govuk-table__cell" style="text-align: right">&nbsp;
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><a href="#">Winnie-the-Pooh</a></th>
-          <td class="govuk-table__cell">Further evidence returned</td>
-           <td class="govuk-table__cell" style="text-align: right">&nbsp;
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><a href="#">Yogi Bear</a></th>
-          <td class="govuk-table__cell">No paper file</td>
-           <td class="govuk-table__cell" style="text-align: right">&nbsp;
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><a href="#">Scooby Doo</a></th>
-          <td class="govuk-table__cell">No paper file</td>
-           <td class="govuk-table__cell" style="text-align: right">&nbsp;
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><a href="#">Jessica Rabbit</a></th>
-          <td class="govuk-table__cell">Further evidence returned</td>
-           <td class="govuk-table__cell" style="text-align: right">&nbsp;
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><a href="#">Mr. Burns</a></th>
-          <td class="govuk-table__cell">New referral</td>
-           <td class="govuk-table__cell" style="text-align: right">&nbsp;
-          </td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><a href="#">George Jetson</a></th>
-          <td class="govuk-table__cell">Claimant had good cause to miss appointment</td>
-           <td class="govuk-table__cell" style="text-align: right">&nbsp;
-          </td>
-        </tr>
-
-      {% endif %}
-
-
       </tbody>
     </table>
 
     <br>
 
-    {% if getData.extra %}
-    {% else %}
-      {% if getData.task === "9" %}
-        <a href="/v3/case-list{% include 'v3/_params.html' %}&extra=true" class="govuk-button">Get more reviews</a>
-      {% endif %}
+    {% if getData.task === "9" %}
+      <a href="case-list-2" class="govuk-button">Get more reviews</a>
     {% endif %}
 
     </div>{# /govuk-grid-column-two-thirds #}
