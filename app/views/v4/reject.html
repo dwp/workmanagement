@@ -1,0 +1,121 @@
+{% extends "layout-staff-full-sidebar.html" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block serviceName %}
+{{ serviceName }}
+{% endblock %}
+
+
+{# Left panel #}
+
+{% block leftPanel %}
+
+<div class="govuk-inset-text alert-green">
+  <strong>Current status</strong><br>
+  Ready for review
+</div>
+
+<hr>
+
+{# {% include "v4/_other-case-actions.html" %} #}
+
+{% endblock %}
+
+{# Main content #}
+
+{% block content %}
+
+{% include "v4/_staff-heading.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+   <hr>
+
+   <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+   <h2 class="govuk-heading-l">You are about to return this referral to DWP</h2>
+
+   <h2 class="govuk-heading-m">Why do you need to return it?</h2>
+
+   <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+
+      <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="option1" name="radios" type="radio" value="option1">
+        <label class="govuk-label govuk-radios__label" for="option1">
+          Duplicate referral
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="option2" name="radios" type="radio" value="option2">
+        <label class="govuk-label govuk-radios__label" for="option2">
+          Incorrect referral
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="option3" name="radios" type="radio" value="option3">
+        <label class="govuk-label govuk-radios__label" for="option3">
+          Evidence is not clear or legible
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="option4" name="radios" type="radio" value="option4">
+        <label class="govuk-label govuk-radios__label" for="option4">
+          Don’t know when their condition started
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="option5" name="radios" type="radio" value="option5">
+        <label class="govuk-label govuk-radios__label" for="option5">
+          No details of unacceptable claimant behaviour
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="option6" name="radios" type="radio" value="option6">
+        <label class="govuk-label govuk-radios__label" for="option6">
+          Missing documents or evidence
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="other" name="radios" type="radio" value="text" data-aria-controls="other-conditional">
+        <label class="govuk-label govuk-radios__label" for="other">
+          Other
+        </label>
+      </div>
+
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="other-conditional">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="event-name">
+            Reason
+          </label>
+          <input class="govuk-input govuk-!-width-one-half" id="event-name" name="event-name" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-by-text">
+            Details
+          </label>
+          <textarea class="govuk-textarea govuk-!-width-two-thirds" id="ucb-details" name="ucb-details" rows="5" aria-describedby="more-detail-hint"></textarea>
+        </div>
+      </div>
+      
+    </fieldset>
+
+  </div>{# /govuk-form-group #}
+
+  <a href="/v4/case-list?task={{ getData.task | int + 1 }}&amp;person={{ getData.person }}&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;rejectmessage=true" class="govuk-button">Confirm return to DWP</a>
+
+  </div>{# /govuk-grid-full #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

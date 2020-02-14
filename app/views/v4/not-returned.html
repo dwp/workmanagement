@@ -1,0 +1,73 @@
+{% extends "layout-staff-full-sidebar.html" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block serviceName %}
+{{ serviceName }}
+{% endblock %}
+
+
+{# Left panel #}
+
+{% block leftPanel %}
+
+<div class="govuk-inset-text alert-green">
+  <strong>Current status</strong><br>
+  Ready for review
+</div>
+
+<hr>
+
+{# {% include "v4/_other-case-actions.html" %} #}
+
+{% endblock %}
+
+{# Main content #}
+
+{% block content %}
+
+{% include "v4/_staff-heading.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+   <hr>
+
+   <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+   <h2 class="govuk-heading-l">What should happen if medical evidence is
+not returned?</h2>
+
+   <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+
+{#       <legend class="govuk-fieldset__legend">
+        <strong>If medical evidence is not returned, what should happen next?</strong>
+      </legend> #}
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="further-review" name="radios" type="radio" value="further-review">
+        <label class="govuk-label govuk-radios__label" for="further-review">
+          Further review required
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="call" name="radios" type="radio" value="call">
+        <label class="govuk-label govuk-radios__label" for="call">
+          Call for face to face assessment
+        </label>
+      </div>
+
+    </fieldset>
+
+  </div>{# /govuk-form-group #}
+
+  <a href="case-list?task={{ getData.task | int + 1 }}&amp;person={{ getData.person }}&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;evidencemessage=true" class="govuk-button">Save and continue</a>
+
+  </div>{# /govuk-grid-full #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

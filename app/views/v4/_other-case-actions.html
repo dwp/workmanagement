@@ -1,0 +1,17 @@
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Other actions
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <ul class="govuk-list">
+      {% if getData.person in getData.saved %}
+      {% else %}
+        <li><a href="/v4/save{% include 'v4/_params.html' %}">Save and do this later</a></li>
+      {% endif %}
+      <li><a href="/v4/reject{% include 'v4/_params.html' %}">Return to DWP</a></li>
+      <li><a href="/v4/withdraw{% include 'v4/_params.html' %}">Withdraw referral</a></li>
+    </ul>
+  </div>
+</details>

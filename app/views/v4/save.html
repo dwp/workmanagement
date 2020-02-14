@@ -1,0 +1,51 @@
+{% extends "layout-staff-full-sidebar.html" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block serviceName %}
+{{ serviceName }}
+{% endblock %}
+
+
+{# Left panel #}
+
+{% block leftPanel %}
+
+<div class="govuk-inset-text alert-green">
+  <strong>Current status</strong><br>
+  Ready for review
+</div>
+
+<hr>
+
+{% endblock %}
+
+{# Main content #}
+
+{% block content %}
+
+{% include "v4/_staff-heading.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+   <hr>
+
+   <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+   <h2 class="govuk-heading-l">Why are you saving this referral?</h2>
+
+   <div class="govuk-form-group">
+    <textarea class="govuk-textarea govuk-!-width-two-thirds" id="save-reason" name="save-reason" rows="5" aria-describedby="more-detail-hint"></textarea>
+  </div>
+
+  <p>This will keep it in your list until 11.59pm on the next business day.</p>
+
+  <a href="/v4/case-list?task={{ getData.task }}&amp;person={{ getData.person }}&amp;savemessage=true&amp;saved={{ getData.person }},{{ getData.saved}}&amp;missing={{ getData.missing }}" class="govuk-button">Confirm save</a>
+
+  </div>{# /govuk-grid-full #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
