@@ -1,5 +1,7 @@
 {% extends "layout-staff-full-sidebar.html" %}
 
+{% set bodyClasses = "v4" %}
+
 {% block pageTitle %}
 {{ serviceName }}
 {% endblock %}
@@ -21,7 +23,45 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <div style="margin-bottom: 30px;"></div>
+      <div class="relative">
+        <div class="review-count">
+          You’ve done
+          <span >
+            <strong>
+              {% if getData.count %}
+                {{ getData.count }}
+              {% elif getData.task === "1" %}
+                0
+              {% elif getData.task === "2" %}
+                1
+              {% elif getData.task === "3" %}
+                2
+              {% elif getData.task === "4" %}
+                3
+              {% elif getData.task === "5" %}
+                4
+              {% elif getData.task === "6" %}
+                5
+              {% elif getData.task === "7" %}
+                6
+              {% elif getData.task === "8" %}
+                7
+              {% elif getData.task === "9" %}
+                8
+              {% elif getData.task === "10" %}
+                9
+              {% elif getData.task === "11" %}
+                10
+              {% else %}
+                0
+              {% endif %}
+            </strong>
+          </span>
+          reviews so far today
+        </div>
+      </div>{# /relative #}
+
+      <div style="margin-bottom: 60px;"></div>
 
       {% if getData.evidencemessage %}
         <div class="govuk-inset-text alert-green">
@@ -78,43 +118,7 @@
         </div>
       {% endif %}
 
-      <div class="relative">
-        <div class="review-count">
-          You’ve done
-          <span class="govuk-!-font-size-48">
-            <strong>
-              {% if getData.count %}
-                {{ getData.count }}
-              {% elif getData.task === "1" %}
-                0
-              {% elif getData.task === "2" %}
-                1
-              {% elif getData.task === "3" %}
-                2
-              {% elif getData.task === "4" %}
-                3
-              {% elif getData.task === "5" %}
-                4
-              {% elif getData.task === "6" %}
-                5
-              {% elif getData.task === "7" %}
-                6
-              {% elif getData.task === "8" %}
-                7
-              {% elif getData.task === "9" %}
-                8
-              {% elif getData.task === "10" %}
-                9
-              {% elif getData.task === "11" %}
-                10
-              {% else %}
-                0
-              {% endif %}
-            </strong>
-          </span>
-          reviews so far today
-        </div>
-      </div>{# /relative #}
+      
 
       <h1 class="govuk-heading-l">Your reviews</h1>
 
@@ -127,6 +131,7 @@
       {% else %}
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="/v4/case?task={{ getData.task }}&amp;person=Fred%20Flintstone&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }}">Fred Flintstone</a></th>
+          <td class="govuk-table__cell">Terminally ill</td>
           <td class="govuk-table__cell">New referral</td>
           <td class="govuk-table__cell" style="text-align: right">&nbsp;
             {% if "Fred Flintstone" in getData.saved %}
@@ -139,6 +144,7 @@
       {% else %}
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="/v4/case?task={{ getData.task }}&amp;person=Pink%20Panther&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }}">Pink Panther</a></th>
+          <td class="govuk-table__cell">Terminally ill</td>
           <td class="govuk-table__cell">No paper file</td>
            <td class="govuk-table__cell" style="text-align: right">&nbsp;
             {% if "Pink Panther" in getData.saved %}
@@ -151,6 +157,7 @@
       {% else %}
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="/v4/case?task={{ getData.task }}&amp;person=Micky%20Mouse&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }}">Micky Mouse</a></th>
+          <td class="govuk-table__cell">&nbsp;</td>
           <td class="govuk-table__cell">Claimant had good cause to miss appointment</td>
            <td class="govuk-table__cell" style="text-align: right">&nbsp;
             {% if "Micky Mouse" in getData.saved %}
@@ -163,6 +170,7 @@
       {% else %}
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="/v4/case?task={{ getData.task }}&amp;person=Bugs%20Bunny&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }}">Bugs Bunny</a></th>
+          <td class="govuk-table__cell">&nbsp;</td>
           <td class="govuk-table__cell">New referral</td>
            <td class="govuk-table__cell" style="text-align: right">&nbsp;
             {% if "Bugs Bunny" in getData.saved %}
@@ -175,6 +183,7 @@
       {% else %}
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="/v4/case?task={{ getData.task }}&amp;person=Donald%20Duck&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }}">Donald Duck</a></th>
+          <td class="govuk-table__cell">&nbsp;</td>
           <td class="govuk-table__cell">Further evidence returned</td>
            <td class="govuk-table__cell" style="text-align: right">&nbsp;
             {% if "Donald Duck" in getData.saved %}
@@ -187,6 +196,7 @@
       {% else %}
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="/v4/case?task={{ getData.task }}&amp;person=Charlie%20Brown&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }}">Charlie Brown</a></th>
+          <td class="govuk-table__cell">&nbsp;</td>
           <td class="govuk-table__cell">Changed assessment route</td>
            <td class="govuk-table__cell" style="text-align: right">&nbsp;
             {% if "Charlie Brown" in getData.saved %}
@@ -199,6 +209,7 @@
       {% else %}
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="/v4/case?task={{ getData.task }}&amp;person=Yosemite%20Sam&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }}">Yosemite Sam</a></th>
+          <td class="govuk-table__cell">&nbsp;</td>
           <td class="govuk-table__cell">No paper file</td>
            <td class="govuk-table__cell" style="text-align: right">&nbsp;
             {% if "Yosemite Sam" in getData.saved %}
@@ -211,6 +222,7 @@
       {% else %}
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="/v4/case?task={{ getData.task }}&amp;person=Woody%20Woodpecker&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }}">Woody Woodpecker</a></th>
+          <td class="govuk-table__cell">&nbsp;</td>
           <td class="govuk-table__cell">Claimant had good cause to miss appointment</td>
            <td class="govuk-table__cell" style="text-align: right">&nbsp;
             {% if "Woody Woodpecker" in getData.saved %}
@@ -223,6 +235,7 @@
       {% else %}
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="/v4/case?task={{ getData.task }}&amp;person=Foghorn%20Leghorn&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }}">Foghorn Leghorn</a></th>
+          <td class="govuk-table__cell">&nbsp;</td>
           <td class="govuk-table__cell">New referral</td>
            <td class="govuk-table__cell" style="text-align: right">&nbsp;
             {% if "Foghorn Leghorn" in getData.saved %}
@@ -235,6 +248,7 @@
       {% else %}
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="/v4/case?task={{ getData.task }}&amp;person=Jessica%20Rabbit&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }}">Jessica Rabbit</a></th>
+          <td class="govuk-table__cell">&nbsp;</td>
           <td class="govuk-table__cell">Further evidence returned</td>
            <td class="govuk-table__cell" style="text-align: right">&nbsp;
             {% if "Jessica Rabbit" in getData.saved %}
@@ -250,54 +264,63 @@
 
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="#">Lisa Simpson</a></th>
+          <td class="govuk-table__cell">&nbsp;</td>
           <td class="govuk-table__cell">  New referral</td>
            <td class="govuk-table__cell" style="text-align: right">&nbsp;
           </td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="#">Wilma Flintstone</a></th>
+          <td class="govuk-table__cell">&nbsp;</td>
           <td class="govuk-table__cell">  New referral</td>
            <td class="govuk-table__cell" style="text-align: right">&nbsp;
           </td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="#">Tasmanian Devil</a></th>
+          <td class="govuk-table__cell">&nbsp;</td>
           <td class="govuk-table__cell">  New referral</td>
            <td class="govuk-table__cell" style="text-align: right">&nbsp;
           </td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="#">Winnie-the-Pooh</a></th>
+          <td class="govuk-table__cell">&nbsp;</td>
           <td class="govuk-table__cell">Further evidence returned</td>
            <td class="govuk-table__cell" style="text-align: right">&nbsp;
           </td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="#">Yogi Bear</a></th>
+          <td class="govuk-table__cell">&nbsp;</td>
           <td class="govuk-table__cell">No paper file</td>
            <td class="govuk-table__cell" style="text-align: right">&nbsp;
           </td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="#">Scooby Doo</a></th>
+          <td class="govuk-table__cell">&nbsp;</td>
           <td class="govuk-table__cell">No paper file</td>
            <td class="govuk-table__cell" style="text-align: right">&nbsp;
           </td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="#">Jessica Rabbit</a></th>
+          <td class="govuk-table__cell">&nbsp;</td>
           <td class="govuk-table__cell">Further evidence returned</td>
            <td class="govuk-table__cell" style="text-align: right">&nbsp;
           </td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="#">Mr. Burns</a></th>
+          <td class="govuk-table__cell">&nbsp;</td>
           <td class="govuk-table__cell">New referral</td>
            <td class="govuk-table__cell" style="text-align: right">&nbsp;
           </td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="#">George Jetson</a></th>
+          <td class="govuk-table__cell">&nbsp;</td>
           <td class="govuk-table__cell">Claimant had good cause to miss appointment</td>
            <td class="govuk-table__cell" style="text-align: right">&nbsp;
           </td>

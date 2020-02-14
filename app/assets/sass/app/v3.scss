@@ -1,63 +1,5 @@
-// global styles for <a> and <p> tags
-$govuk-global-styles: true;
-
-// We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
-$govuk-assets-path: '/govuk/assets/';
-
-// Import GOV.UK Frontend and any extension styles if extensions have been configured
-@import "lib/extensions/extensions";
-
-// Patterns that aren't in Frontend
-@import "patterns/step-by-step-navigation";
-@import "patterns/task-list";
-@import "patterns/related-items";
-
-// Components that aren't in Frontend
-@import "components/cookie-banner";
-
-// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
-
-// DWP components
-@import 'dwp/dwp-alerts';
-@import 'dwp/dwp-header';
-@import 'dwp/dwp-timeline';
-@import 'dwp/dwp-key-details-bar';
-@import 'dwp/dwp-search-box';
-@import 'dwp/dwp-secondary-navigation';
-@import 'dwp/dwp-tags';
-
-// HMCTS components
-@import 'hmcts/hmcts-sub-navigation';
-
-// Patterns that aren't in Frontend
-@import 'patterns/task-list';
-@import 'patterns/related-items';
-
-// // Components that aren't in Frontend
-@import 'components/cookie-banner';
-@import 'components/info-box';
-@import 'components/misc';
-@import 'components/tile';
-@import 'components/border-box';
-
-// App styles go here
-
-* {
- font-family: "GDS Transport", Arial, sans-serif;
-}
-
-body {
-  overflow-x: hidden;
-}
-
-// // App specific
-@import 'app/v3';
-// @import 'app/v4';
-
-body.v4 {
-
-	// LAYOUT
-
+body.v3 {
+  
   .container-inner {
     padding: 0 15px;
     width: 100%;
@@ -118,15 +60,34 @@ body.v4 {
   }
 
   .key-details-heading-large {
-    @include govuk-font(48, $weight: bold)
+    color: govuk-colour("black");
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 35px;
+    @include govuk-media-query($from: tablet) {
+      font-size: 48px;
+      line-height: 50px;
+    }
   }
 
   .key-details-summary-list {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 0;
+    padding-top: 4000px;
+    background-color: green;
+    @include govuk-media-query($from: tablet) {
+      font-size: 19px;
+      line-height: 25px;
+    }
     dt {
-      @include govuk-font(16);
+      font-size: 16px;
+      line-height: 20px;
     }
     dd {
-      @include govuk-font(24, $weight: bold);
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 30px;
     }
     .col1, 
     .col2 {
@@ -246,16 +207,14 @@ body.v4 {
 
   .review-count {
     position: absolute;
-    @include govuk-font(19);
+    top: 0;
     right: 0;
     background: govuk-colour("light-grey");
     border: 1px solid govuk-colour("mid-grey");
-    border-top: 0;
     padding: 10px;
     text-align: center;
     span {
-      // display: block;
-      // @include govuk-font(16);
+      display: block;
     }
   }
 
