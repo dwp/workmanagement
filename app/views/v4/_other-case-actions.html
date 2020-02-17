@@ -1,26 +1,8 @@
-{# <details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Other actions
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    <ul class="govuk-list">
-      {% if getData.person in getData.saved %}
-      {% else %}
-        <li><a href="/v4/save{% include 'v4/_params.html' %}">Save and do this later</a></li>
-      {% endif %}
-      <li><a href="/v4/reject{% include 'v4/_params.html' %}">Return to DWP</a></li>
-      <li><a href="/v4/withdraw{% include 'v4/_params.html' %}">Withdraw referral</a></li>
-    </ul>
-  </div>
-</details> #}
-
-<ul class="govuk-list">
+<ul class="govuk-list govuk-!-font-size-16" style="margin-top: -10px">
   {% if getData.person in getData.saved %}
   {% else %}
-    <li><a href="/v4/save{% include 'v4/_params.html' %}">Save and do this later</a></li>
+    <li style="margin-bottom: 10px"><a href="/v4/save{% include 'v4/_params.html' %}">Save and do this later</a></li>
   {% endif %}
-  <li><a href="/v4/reject{% include 'v4/_params.html' %}">Return to DWP / Withdraw referral</a></li>
+  <li><a href="/v4/reject{% include 'v4/_params.html' %}">Reject</a></li>
 {#   <li><a href="/v4/withdraw{% include 'v4/_params.html' %}"></a></li> #}
 </ul>

@@ -19,6 +19,7 @@ $govuk-assets-path: '/govuk/assets/';
 
 // DWP components
 @import 'dwp/dwp-alerts';
+@import 'dwp/dwp-buttons';
 @import 'dwp/dwp-header';
 @import 'dwp/dwp-timeline';
 @import 'dwp/dwp-key-details-bar';
@@ -221,18 +222,6 @@ body.v4 {
     font-weight: bold;
   }
 
-  .secondary-invert {
-    border: 2px solid govuk-colour("green") !important;
-    color: govuk-colour("green") !important;
-    background-color: transparent !important;
-    box-shadow: none !important;
-    padding-bottom: 10px !important;
-    &:hover {
-      background: rgba(#00703c, 0.05) !important;
-      background-color: transparent !important;
-    }
-  }
-
   .card {
     border: 1px solid $govuk-border-colour;
     margin-bottom: 20px;
@@ -256,10 +245,6 @@ body.v4 {
     border-top: 0;
     padding: 10px;
     text-align: center;
-    span {
-      // display: block;
-      // @include govuk-font(16);
-    }
   }
 
   .relative {

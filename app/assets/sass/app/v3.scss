@@ -179,18 +179,6 @@ body.v3 {
     font-weight: bold;
   }
 
-  .secondary-invert {
-    border: 2px solid govuk-colour("green") !important;
-    color: govuk-colour("green") !important;
-    background-color: transparent !important;
-    box-shadow: none !important;
-    padding-bottom: 10px !important;
-    &:hover {
-      background: rgba(#00703c, 0.05) !important;
-      background-color: transparent !important;
-    }
-  }
-
   .card {
     border: 1px solid $govuk-border-colour;
     margin-bottom: 20px;

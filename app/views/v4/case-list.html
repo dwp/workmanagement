@@ -44,7 +44,7 @@
 
       <h1 class="govuk-heading-l">Your reviews</h1>
 
-      <p>Anything you can’t finish today will be removed from your list and re-allocated.</p>
+      <p>Anything you can’t finish {# today  #}will be removed from your list and re-allocated.</p>
 
       <table class="govuk-table" style="max-width: 100%;">
       <tbody class="govuk-table__body">
@@ -57,7 +57,7 @@
           <td class="govuk-table__cell">New referral</td>
           <td class="govuk-table__cell" style="text-align: right">&nbsp;
             {% if "Fred Flintstone" in getData.saved %}
-              <div class="badge">Saved until tomorrow at 11:59pm</div>
+              <div class="badge">Waiting for advice</div>
             {% endif %}
           </td>
         </tr>
@@ -70,7 +70,7 @@
           <td class="govuk-table__cell">No paper file</td>
            <td class="govuk-table__cell" style="text-align: right">&nbsp;
             {% if "Pink Panther" in getData.saved %}
-              <div class="badge">Saved until tomorrow at 11:59pm</div>
+              <div class="badge">Waiting for advice</div>
             {% endif %}
           </td>
         </tr>
@@ -83,7 +83,7 @@
           <td class="govuk-table__cell">Claimant had good cause to miss appointment</td>
            <td class="govuk-table__cell" style="text-align: right">&nbsp;
             {% if "Micky Mouse" in getData.saved %}
-              <div class="badge">Saved until tomorrow at 11:59pm</div>
+              <div class="badge">Waiting for advice</div>
             {% endif %}
           </td>
         </tr>
@@ -96,7 +96,7 @@
           <td class="govuk-table__cell">New referral</td>
            <td class="govuk-table__cell" style="text-align: right">&nbsp;
             {% if "Bugs Bunny" in getData.saved %}
-              <div class="badge">Saved until tomorrow at 11:59pm</div>
+              <div class="badge">Waiting for advice</div>
             {% endif %}
           </td>
         </tr>
@@ -109,7 +109,7 @@
           <td class="govuk-table__cell">Further evidence returned</td>
            <td class="govuk-table__cell" style="text-align: right">&nbsp;
             {% if "Donald Duck" in getData.saved %}
-              <div class="badge">Saved until tomorrow at 11:59pm</div>
+              <div class="badge">Waiting for advice</div>
             {% endif %}
           </td>
         </tr>
@@ -122,7 +122,8 @@
           <td class="govuk-table__cell">New evidence received</td>
            <td class="govuk-table__cell" style="text-align: right">&nbsp;
             {% if "Charlie Brown" in getData.saved %}
-              <div class="badge">Saved until tomorrow at 11:59pm</div>
+              <span style="font-weight: normal; font-size: 16px">Saved until 11:59pm tomorrow</span>
+              <div class="badge">Waiting for advice</div>
             {% endif %}
           </td>
         </tr>
@@ -135,7 +136,7 @@
           <td class="govuk-table__cell">No paper file</td>
            <td class="govuk-table__cell" style="text-align: right">&nbsp;
             {% if "Yosemite Sam" in getData.saved %}
-              <div class="badge">Saved until tomorrow at 11:59pm</div>
+              <div class="badge">Waiting for advice</div>
             {% endif %}
           </td>
         </tr>
@@ -148,7 +149,7 @@
           <td class="govuk-table__cell">Claimant had good cause to miss appointment</td>
            <td class="govuk-table__cell" style="text-align: right">&nbsp;
             {% if "Woody Woodpecker" in getData.saved %}
-              <div class="badge">Saved until tomorrow at 11:59pm</div>
+              <div class="badge">Waiting for advice</div>
             {% endif %}
           </td>
         </tr>
@@ -161,7 +162,7 @@
           <td class="govuk-table__cell">New referral</td>
            <td class="govuk-table__cell" style="text-align: right">&nbsp;
             {% if "Foghorn Leghorn" in getData.saved %}
-              <div class="badge">Saved until tomorrow at 11:59pm</div>
+              <div class="badge">Waiting for advice</div>
             {% endif %}
           </td>
         </tr>
@@ -174,7 +175,7 @@
           <td class="govuk-table__cell">Further evidence returned</td>
            <td class="govuk-table__cell" style="text-align: right">&nbsp;
             {% if "Jessica Rabbit" in getData.saved %}
-              <div class="badge">Saved until tomorrow at 11:59pm</div>
+              <div class="badge">Waiting for advice</div>
             {% endif %}
           </td>
         </tr>
