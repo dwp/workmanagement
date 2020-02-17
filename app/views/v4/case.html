@@ -44,363 +44,39 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-
     <div class="govuk-tabs" data-module="govuk-tabs">
-  <h2 class="govuk-tabs__title">
-    Contents
-  </h2>
-  <ul class="govuk-tabs__list">
-    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-      <a class="govuk-tabs__tab" href="#timeline">
-        Timeline
-      </a>
-    </li>
-    <li class="govuk-tabs__list-item">
-      <a class="govuk-tabs__tab" href="#details">
-        Details
-      </a>
-    </li>
-    <li class="govuk-tabs__list-item">
-      <a class="govuk-tabs__tab" href="#appointment">
-        Appointment
-      </a>
-    </li>
-    <li class="govuk-tabs__list-item">
-      <a class="govuk-tabs__tab" href="#evidence">
-        Evidence
-      </a>
-    </li>
-  </ul>
 
-  <section class="govuk-tabs__panel" id="timeline">
+      <h2 class="govuk-tabs__title">Contents</h2>
 
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#timeline">
+            Timeline
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#details">
+            Details
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#appointment">
+            Appointment
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#evidence">
+            Evidence
+          </a>
+        </li>
+      </ul>
 
-    {% if getData.person === "Fred Flintstone" %}
+      {% include "v4/_tab-timeline.html" %}
+      {% include "v4/_tab-details.html" %}
+      {% include "v4/_tab-appointment.html" %}
+      {% include "v4/_tab-evidence.html" %}
 
-    <ol class="dwp-timeline">
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">UC50 form received</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">12 February 2020</span>
-        </p>
-      </li>
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">UC5O form sent</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">13 January 2020</span>
-        </p>
-      </li>
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">New referral created</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">12 January 2020</span>
-        </p>
-      </li>
-    </ol>
-
-    {% elif getData.person === "Pink Panther" %}
-
-    <ol class="dwp-timeline">
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">UC50 form received</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">12 February 2020</span>
-        </p>
-      </li>
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">UC50 form sent</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">13 January 2020</span>
-        </p>
-      </li>
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">New referral created</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">12 January 2020</span>
-        </p>
-      </li>
-    </ol>
-
-    {% elif getData.person === "Micky Mouse" %}
-
-    <ol class="dwp-timeline">
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">DWP good cause decision: referred back for review</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">12 February 2020</span>
-        </p>
-      </li>
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">Referral returned to DWP</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">28 January 2020</span>
-        </p>
-      </li>
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">UC50 form sent</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">30 December 2020</span>
-        </p>
-      </li>
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">New referral created for review</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">27 December 2020</span>
-        </p>
-      </li>
-    </ol>
-
-    {% elif getData.person === "Bugs Bunny" %}
-
-    <ol class="dwp-timeline">
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">UC50 form received</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">12 February 2020</span>
-        </p>
-      </li>
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">UC5O form sent</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">13 January 2020</span>
-        </p>
-      </li>
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">New referral created</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">12 January 2020</span>
-        </p>
-      </li>
-    </ol>
-
-    {% elif getData.person === "Donald Duck" %}
-
-    <ol class="dwp-timeline">
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">GP report – evidence returned</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">12 February 2020</span>
-        </p>
-      </li>
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">GP report – evidence requested</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">31 January 2020</span>
-        </p>
-      </li>
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">UC50 form received</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">28 January 2020</span>
-        </p>
-      </li>
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">UC50 form sent</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">30 December 2020</span>
-        </p>
-      </li>
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">New referral created</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">27 December 2020</span>
-        </p>
-      </li>
-    </ol>
-
-    {% elif getData.person === "Charlie Brown" %}
-
-    <ol class="dwp-timeline">
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">DS1500 – evidence returned</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">12 February 2020</span>
-        </p>
-      </li>
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">Appointment letter sent</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">17 January 2020</span>
-        </p>
-      </li>
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">Appointment booked</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">17 January 2020</span>
-        </p>
-      </li>
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">GP report – evidence requested</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">2 January 2020</span>
-        </p>
-      </li>
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">UC50 form received</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">28 December 2019</span>
-        </p>
-      </li>
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">UC50 form sent</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">30 November 2019</span>
-        </p>
-      </li>
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">New referral created</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">27 November 2019</span>
-        </p>
-      </li>
-    </ol>
-
-    {% elif getData.person === "Yosemite Sam" %}
-
-    <ol class="dwp-timeline">
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">UC50 form received</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">12 February 2020</span>
-        </p>
-      </li>
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">UC5O form sent</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">13 January 2020</span>
-        </p>
-      </li>
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">New referral created</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">12 January 2020</span>
-        </p>
-      </li>
-    </ol>
-
-    {% elif getData.person === "Woody Woodpecker" %}
-
-    <ol class="dwp-timeline">
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">DWP good cause decision: referred back for review</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">12 February 2020</span>
-        </p>
-      </li>
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">Referral returned to DWP</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">28 January 2020</span>
-        </p>
-      </li>
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">UC50 form sent</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">30 December 2020</span>
-        </p>
-      </li>
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">New referral created</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">27 December 2020</span>
-        </p>
-      </li>
-    </ol>
-
-    {% elif getData.person === "Foghorn Leghorn" %}
-
-    <ol class="dwp-timeline">
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">UC50 form received</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">12 February 2020</span>
-        </p>
-      </li>
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">UC5O form sent</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">13 January 2020</span>
-        </p>
-      </li>
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">New referral created</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">12 January 2020</span>
-        </p>
-      </li>
-    </ol>
-
-    {% elif getData.person === "Jessica Rabbit" %}
-
-    <ol class="dwp-timeline">
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">GP report – evidence returned</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">12 February 2020</span>
-        </p>
-      </li>
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">GP report – evidence requested</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">31 January 2020</span>
-        </p>
-      </li>
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">UC50 form received</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">28 January 2020</span>
-        </p>
-      </li>
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">UC50 form sent</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">30 December 2020</span>
-        </p>
-      </li>
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">New referral created</h3>
-        <p class="dwp-timeline__info">
-          <span class="dwp-timeline__date">27 December 2020</span>
-        </p>
-      </li>
-    </ol>
-
-    {% else %}
-
-    <ol class="dwp-timeline">
-      <li class="dwp-timeline__entry">
-        <h3 class="dwp-timeline__title">New referral created</h3>
-        <p class="dwp-timeline__info">
-          <span class="govuk-visually-hidden visually-hidden">Claim disallowed</span>
-          <span class="dwp-timeline__date">29 January 2020</span>
-        </p>
-      </li>
-    </ol>
-
-    {% endif %}
-
-  </section>
-
-  <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="details">
-    <div class="placeholder-block">
-      Details about the Fred would be here
-    </div>
-  </section>
-
-  <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="appointment">
-    <div class="placeholder-block">
-      Details about the Fred would be here
-    </div>
-  </section>
-
-  <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="evidence">
-    <div class="placeholder-block">
-      All evidence, including the questionnaire would be here
-    </div>
-  </section>
-
-</div>
-
+    </div>{# /govuk-tabs #}
   </div>{# /govuk-grid-full #}
 </div>{# /govuk-grid-row #}
 

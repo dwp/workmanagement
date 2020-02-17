@@ -218,15 +218,15 @@ body.v4 {
     font-weight: bold;
   }
 
-  html body div a.secondary-invert {
-    border: 2px solid govuk-colour("green");
+  .secondary-invert {
+    border: 2px solid govuk-colour("green") !important;
     color: govuk-colour("green") !important;
-    background-color: transparent;
-    box-shadow: none;
-    padding-bottom: 10px;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    padding-bottom: 10px !important;
     &:hover {
-      background: rgba(#00703c, 0.05);
-      background-color: transparent;
+      background: rgba(#00703c, 0.05) !important;
+      background-color: transparent !important;
     }
   }
 
