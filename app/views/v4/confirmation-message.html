@@ -1,0 +1,50 @@
+{% extends "layout-staff-full-sidebar.html" %}
+
+{% set bodyClasses = "v4" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block serviceName %}
+{{ serviceName }}
+{% endblock %}
+
+{# Left panel #}
+
+{% block leftPanel %}
+
+{% endblock %}
+
+{# Main content #}
+
+{% block content %}
+
+{# <div style="margin-bottom: 25px;"></div> #}
+
+{% include "v4/_staff-heading.html" %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <div class="govuk-panel govuk-panel--confirmation" style="padding: 20px">
+      <h1 class="govuk-panel__title" style="font-size: 36px; margin-bottom: 10px">Review complete</h1>
+      <div class="govuk-panel__body" style="font-size: 24px">
+        {% if getData.confirmationmessage === "evidence" %}
+          Evidence requested for {{ getData.person }}
+        {% elif getData.confirmationmessage === "face" %}
+          {{ getData.person }} will be called for an assessment
+        {% elif getData.confirmationmessage === "rejected" %}
+          {{ getData.person }}’s case has been rejected
+        {% endif %}
+      </div>{# /govuk-panel__body #}
+    </div>{# /govuk-panel #}
+
+    <a href="case-list?task={{ getData.task | int + 1 }}&amp;person={{ getData.person }}&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;evidencemessage=true" class="govuk-button">OK</a>
+
+  </div>{# /govuk-grid-full #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

@@ -39,9 +39,7 @@
 
    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
-   <h2 class="govuk-heading-l">You are about to return this referral to DWP</h2>
-
-   <h2 class="govuk-heading-m">Why do you need to return it?</h2>
+   <h2 class="govuk-heading-l">Why do you need to return this referral to DWP?</h2>
 
    <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
@@ -55,37 +53,37 @@
       </div>
 
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="option2" name="radios" type="radio" value="option2">
-        <label class="govuk-label govuk-radios__label" for="option2">
-          Incorrect referral
+        <input class="govuk-radios__input" id="wrong-queue" name="radios" type="radio" value="wrong-queue">
+        <label class="govuk-label govuk-radios__label" for="wrong-queue">
+          Referred to the wrong queue
         </label>
       </div>
 
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="option3" name="radios" type="radio" value="option3">
-        <label class="govuk-label govuk-radios__label" for="option3">
-          Evidence is not clear or legible
+        <input class="govuk-radios__input" id="no-gp" name="radios" type="radio" value="no-gp">
+        <label class="govuk-label govuk-radios__label" for="no-gp">
+          No GP details
         </label>
       </div>
 
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="option4" name="radios" type="radio" value="option4">
-        <label class="govuk-label govuk-radios__label" for="option4">
-          Don’t know when their condition started
+        <input class="govuk-radios__input" id="no-ucb" name="radios" type="radio" value="no-ucb">
+        <label class="govuk-label govuk-radios__label" for="no-ucb">
+          No detail of unacceptable claimant behaviour
         </label>
       </div>
 
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="option5" name="radios" type="radio" value="option5">
-        <label class="govuk-label govuk-radios__label" for="option5">
-          No details of unacceptable claimant behaviour
+        <input class="govuk-radios__input" id="no-questionnaire" name="radios" type="radio" value="no-questionnaire">
+        <label class="govuk-label govuk-radios__label" for="no-questionnaire">
+          No questionnaire
         </label>
       </div>
 
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="option6" name="radios" type="radio" value="option6">
-        <label class="govuk-label govuk-radios__label" for="option6">
-          Missing documents or evidence
+        <input class="govuk-radios__input" id="died" name="radios" type="radio" value="died">
+        <label class="govuk-label govuk-radios__label" for="died">
+          Claimant has died
         </label>
       </div>
 
@@ -101,13 +99,13 @@
           <label class="govuk-label" for="event-name">
             Reason
           </label>
-          <input class="govuk-input govuk-!-width-one-half" id="event-name" name="event-name" type="text">
+          <input class="govuk-input govuk-!-width-two-thirds" id="event-name" name="event-name" type="text">
         </div>
         <div class="govuk-form-group">
           <label class="govuk-label" for="contact-by-text">
             Details
           </label>
-          <textarea class="govuk-textarea govuk-!-width-two-thirds" id="ucb-details" name="ucb-details" rows="5" aria-describedby="more-detail-hint"></textarea>
+          <textarea class="govuk-textarea" id="ucb-details" name="ucb-details" rows="5" aria-describedby="more-detail-hint"></textarea>
         </div>
       </div>
       
@@ -115,7 +113,7 @@
 
   </div>{# /govuk-form-group #}
 
-  <a href="/v4/case-list?task={{ getData.task | int + 1 }}&amp;person={{ getData.person }}&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;rejectmessage=true" class="govuk-button">Confirm return to DWP</a>
+  <a href="confirmation-message{% include 'v4/_params.html' %}&amp;confirmationmessage=rejected" class="govuk-button">Confirm return to DWP</a>
 
   </div>{# /govuk-grid-full #}
 </div>{# /govuk-grid-row #}

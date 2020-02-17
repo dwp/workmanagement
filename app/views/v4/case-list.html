@@ -42,63 +42,6 @@
 
       <div style="margin-bottom: 60px;"></div>
 
-      {% if getData.evidencemessage %}
-        <div class="govuk-inset-text alert-green">
-          <strong>Review complete</strong><br>
-          Evidence requested for 
-          {% if getData.person %}
-            {{ getData.person }}
-          {% else %}
-            XXXX
-          {% endif %}
-        </div>
-      {% endif %}
-      {% if getData.facemessage %}
-        <div class="govuk-inset-text alert-green">
-          <strong>Review complete</strong><br>
-          {% if getData.person %}
-            {{ getData.person }}
-          {% else %}
-            XXXX
-          {% endif %}
-            will be called for an assessment 
-        </div>
-      {% endif %}
-      {% if getData.withdrawmessage %}
-        <div class="govuk-inset-text alert-green">
-          <strong>Review complete</strong><br>
-          {% if getData.person %}
-            {{ getData.person }}’s
-          {% else %}
-            XXXX’s
-          {% endif %}
-          referral has been withdrawn
-        </div>
-      {% endif %}
-      {% if getData.rejectmessage %}
-        <div class="govuk-inset-text alert-green">
-          <strong>Review complete</strong><br>
-          {% if getData.person %}
-            {{ getData.person }}’s
-          {% else %}
-            XXXX’s
-          {% endif %}
-          case has been returned to DWP 
-        </div>
-      {% endif %}
-      {% if getData.savemessage %}
-        <div class="govuk-inset-text alert-green">
-          {% if getData.person %}
-            {{ getData.person }}’s
-          {% else %}
-            XXXX’s
-          {% endif %} 
-          referral has been saved
-        </div>
-      {% endif %}
-
-      
-
       <h1 class="govuk-heading-l">Your reviews</h1>
 
       <p>Anything you can’t finish today will be removed from your list and re-allocated.</p>
@@ -176,7 +119,7 @@
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><a href="/v4/case?task={{ getData.task }}&amp;person=Charlie%20Brown&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }}">Charlie Brown</a></th>
           <td class="govuk-table__cell">&nbsp;</td>
-          <td class="govuk-table__cell">Changed assessment route</td>
+          <td class="govuk-table__cell">New evidence received</td>
            <td class="govuk-table__cell" style="text-align: right">&nbsp;
             {% if "Charlie Brown" in getData.saved %}
               <div class="badge">Saved until tomorrow at 11:59pm</div>
@@ -306,7 +249,6 @@
         </tr>
 
       {% endif %}
-
 
       </tbody>
     </table>

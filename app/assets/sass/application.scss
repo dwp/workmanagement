@@ -122,7 +122,10 @@ body.v4 {
   }
 
   .key-details-summary-list {
+    position: relative;
+    top: -2px;
     dt {
+      
       @include govuk-font(16);
     }
     dd {
