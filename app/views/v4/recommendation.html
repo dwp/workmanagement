@@ -20,7 +20,7 @@
   Ready for review
 </div>
 
-<hr>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 {% include "v4/_other-case-actions.html" %}
 
@@ -32,10 +32,11 @@
 
 {% include "v4/_staff-heading.html" %}
 
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-
-    <hr>
 
     <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
@@ -65,7 +66,7 @@
           </div>{# /card-head #}
           <div class="card-body">
             <p>I would like to call them in for a face-to-face assessment</p>
-            <a href="/v4/case-list?task={{ getData.task | int + 1 }}&amp;person={{ getData.person }}&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;facemessage=true" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-bottom-0">
+            <a href="/v4/face-to-face-justification{% include 'v4/_params.html' %}" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-bottom-0">
             Call for assessment
             </a>
           </div>{# /card-body #}
