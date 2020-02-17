@@ -22,8 +22,6 @@
 
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-{# {% include "v4/_other-case-actions.html" %} #}
-
 {% endblock %}
 
 {# Main content #}
@@ -89,7 +87,7 @@
       </div>
     </div>
     <div class="govuk-form-group">
-      <a href="/v4/not-returned{% include 'v4/_params.html' %}" class="govuk-button">Save and continue</a>
+      <a href="case-list?task={{ getData.task | int + 1 }}&amp;person={{ getData.person }}&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;facemessage=true" class="govuk-button">Save and continue</a>
     </div>
   </div>{# /govuk-grid-full #}
 </div>{# /govuk-grid-row #}

@@ -28,36 +28,15 @@
           You’ve done
           <span >
             <strong>
-              {% if getData.count %}
-                {{ getData.count }}
-              {% elif getData.task === "1" %}
-                0
-              {% elif getData.task === "2" %}
-                1
-              {% elif getData.task === "3" %}
-                2
-              {% elif getData.task === "4" %}
-                3
-              {% elif getData.task === "5" %}
-                4
-              {% elif getData.task === "6" %}
-                5
-              {% elif getData.task === "7" %}
-                6
-              {% elif getData.task === "8" %}
-                7
-              {% elif getData.task === "9" %}
-                8
-              {% elif getData.task === "10" %}
-                9
-              {% elif getData.task === "11" %}
-                10
-              {% else %}
-                0
-              {% endif %}
+              {{ getData.task | int - 1 }}
             </strong>
           </span>
-          reviews so far today
+          {% if getData.task === "2" %}
+            review
+          {% else %}
+            reviews
+          {% endif %}
+           so far today
         </div>
       </div>{# /relative #}
 
