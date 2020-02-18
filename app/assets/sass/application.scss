@@ -51,6 +51,14 @@ body {
   overflow-x: hidden;
 }
 
+a:visited {
+  color: $govuk-link-colour;
+}
+
+header a:visited {
+  color: govuk-colour("white");
+}
+
 // // App specific
 @import 'app/v3';
 // @import 'app/v4';
@@ -259,5 +267,6 @@ body.v4 {
   table tr th,
   table tr td {
     vertical-align: middle;
-  }
+  } 
+
 }
