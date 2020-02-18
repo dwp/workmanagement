@@ -1,0 +1,178 @@
+{% extends "layout-staff-full-sidebar.html" %}
+
+{% set bodyClasses = "v4" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block serviceName %}
+{{ serviceName }}
+{% endblock %}
+
+{# Left panel #}
+
+{% block leftPanel %}
+
+<p><a href="#" class="govuk-back-link">Back to dashboard</a></p>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="relative">
+        <div class="review-count">
+          You’ve done
+          <span >
+            <strong>
+              4
+            </strong>
+          </span>
+           so far today
+        </div>
+      </div>{# /relative #}
+
+      <div style="margin-bottom: 60px;"></div>
+
+      <h1 class="govuk-heading-xl">Your reviews</h1>
+
+      <p style="width: 80%">If you cannot finish something today, you can either save it for the next business day or leave it in your list to be removed and re-allocated.</p>
+
+      <table class="govuk-table" style="max-width: 100%;">
+      <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="#">Donald Duck</a></th>
+          <td class="govuk-table__cell">Further evidence returned</td>
+           <td class="govuk-table__cell">&nbsp;
+              {% include 'v4/_saved-badge-v2.html' %}
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="#">Charlie Brown</a></th>
+          <td class="govuk-table__cell">New evidence received</td>
+           <td class="govuk-table__cell">&nbsp;
+              {% include 'v4/_saved-badge.html' %}
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="#">Yosemite Sam</a></th>
+          <td class="govuk-table__cell">No paper file</td>
+           <td class="govuk-table__cell">&nbsp;
+              {% include 'v4/_saved-badge-v2.html' %}
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="#">Woody Woodpecker</a></th>
+          <td class="govuk-table__cell">Had good cause to miss appointment</td>
+           <td class="govuk-table__cell">&nbsp;
+              {% include 'v4/_saved-badge.html' %}
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="#">Foghorn Leghorn</a></th>
+          <td class="govuk-table__cell">New referral</td>
+           <td class="govuk-table__cell">&nbsp;
+              {% include 'v4/_saved-badge-v3.html' %}
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="#">Jessica Rabbit</a></th>
+          <td class="govuk-table__cell">Further evidence returned</td>
+           <td class="govuk-table__cell">&nbsp;
+              {% include 'v4/_saved-badge-v4.html' %}
+          </td>
+        </tr>
+
+      {# Extra stuff #}
+
+      {% if getData.extra %}
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="#">Lisa Simpson</a></th>
+          <td class="govuk-table__cell">  New referral</td>
+           <td class="govuk-table__cell" style="text-align: right">&nbsp;
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="#">Wilma Flintstone</a></th>
+          <td class="govuk-table__cell">  New referral</td>
+           <td class="govuk-table__cell" style="text-align: right">&nbsp;
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="#">Tasmanian Devil</a></th>
+          <td class="govuk-table__cell">  New referral</td>
+           <td class="govuk-table__cell" style="text-align: right">&nbsp;
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="#">Winnie-the-Pooh</a></th>
+          <td class="govuk-table__cell">Further evidence returned</td>
+           <td class="govuk-table__cell" style="text-align: right">&nbsp;
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="#">Yogi Bear</a></th>
+          <td class="govuk-table__cell">No paper file</td>
+           <td class="govuk-table__cell" style="text-align: right">&nbsp;
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="#">Scooby Doo</a></th>
+          <td class="govuk-table__cell">No paper file</td>
+           <td class="govuk-table__cell" style="text-align: right">&nbsp;
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="#">Jessica Rabbit</a></th>
+          <td class="govuk-table__cell">Further evidence returned</td>
+           <td class="govuk-table__cell" style="text-align: right">&nbsp;
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="#">Mr. Burns</a></th>
+          <td class="govuk-table__cell">New referral</td>
+           <td class="govuk-table__cell" style="text-align: right">&nbsp;
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="#">George Jetson</a></th>
+          <td class="govuk-table__cell">Had good cause to miss appointment</td>
+           <td class="govuk-table__cell" style="text-align: right">&nbsp;
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="#">Peter Rabbit</a></th>
+          <td class="govuk-table__cell">New referral</td>
+           <td class="govuk-table__cell" style="text-align: right">&nbsp;
+          </td>
+        </tr>
+
+      {% endif %}
+
+      </tbody>
+    </table>
+
+
+
+    {% if getData.extra %}
+    {% else %}
+        <a href="/v4/case-list-later-10{% include 'v4/_params.html' %}&extra=true" class="govuk-button">Get more reviews</a>
+    {% endif %}
+
+
+{#     {% if getData.extra %}
+    {% else %}
+      {% if getData.task === "10" %}
+        <a href="/v4/case-list{% include 'v4/_params.html' %}&extra=true" class="govuk-button">Get more reviews</a>
+      {% endif %}
+    {% endif %} #}
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}
