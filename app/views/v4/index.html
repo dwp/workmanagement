@@ -24,7 +24,18 @@
   <ul class="govuk-list">
     <li>
       <a href="/v4/case-list{% include 'v4/_params.html' %}" class="govuk-heading-s govuk-!-margin-bottom-0">Review referrals and evidence</a>
-      You’ve done 0 reviews so far today
+      You’ve done
+
+
+              {{ getData.task | int - 1 }}
+
+
+          {% if getData.task === "2" %}
+            review
+          {% else %}
+            reviews
+          {% endif %}
+           so far today
     </li>
     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
     <li>

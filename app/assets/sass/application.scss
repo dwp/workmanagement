@@ -255,4 +255,9 @@ body.v4 {
     right: 20px;
     top: 20px;
   }
+
+  table tr th,
+  table tr td {
+    vertical-align: middle;
+  }
 }

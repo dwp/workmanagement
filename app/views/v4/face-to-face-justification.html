@@ -42,7 +42,7 @@
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend form-label-bold">
-          <h1 class="govuk-fieldset__heading" data-ga-type="legend" data-ga-question="Why does [claimant forenames] need a face to face assessment?" id="face_to_face_reason-legend"><strong>Why does Joe need a face to face assessment?</strong></h1>
+          <h1 class="govuk-fieldset__heading" data-ga-type="legend" data-ga-question="Why does [claimant forenames] need a face to face assessment?" id="face_to_face_reason-legend"><strong>Why does {{ getData.person }} need a face-to-face assessment?</strong></h1>
         </legend>
         <div class="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
@@ -79,7 +79,7 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="f-evidence_summary_text-No evidence has been recorded for Joe" name="evidence_summary_text" type="checkbox" value="No evidence has been recorded for Joe" aria-labelledby="f-evidence_summary_text-No evidence has been recorded for Joe-label evidence_summary_text-legend" data-ga-type="checkbox" data-ga-question="evidence_summary_text-legend" data-ga-answer="No evidence has been recorded for Joe">
               <label class="govuk-label govuk-checkboxes__label form-label" id="f-evidence_summary_text-No evidence has been recorded for Joe-label" for="f-evidence_summary_text-No evidence has been recorded for Joe">
-                No evidence has been recorded for Joe
+                No evidence has been recorded for {{ getData.person }}
               </label>
             </div>
           </div>
