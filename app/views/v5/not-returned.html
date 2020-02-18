@@ -1,0 +1,73 @@
+{% extends "layout-staff-full-sidebar.html" %}
+
+{% set bodyClasses = "v5" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block serviceName %}
+{{ serviceName }}
+{% endblock %}
+
+
+{# Left panel #}
+
+{% block leftPanel %}
+
+<div class="govuk-inset-text alert-green">
+  <strong>Current status</strong><br>
+  Ready for review
+</div>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{# Main content #}
+
+{% block content %}
+
+{% include "v5/_staff-heading.html" %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+   <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+   <h2 class="govuk-heading-l">What should happen if medical evidence is
+not returned?</h2>
+
+   <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+
+{#       <legend class="govuk-fieldset__legend">
+        <strong>If medical evidence is not returned, what should happen next?</strong>
+      </legend> #}
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="further-review" name="radios" type="radio" value="further-review">
+        <label class="govuk-label govuk-radios__label" for="further-review">
+          Further review required
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="call" name="radios" type="radio" value="call">
+        <label class="govuk-label govuk-radios__label" for="call">
+          Call for face to face assessment
+        </label>
+      </div>
+
+    </fieldset>
+
+  </div>{# /govuk-form-group #}
+
+  <a href="confirmation-message{% include 'v5/_params.html' %}&amp;confirmationmessage=evidence" class="govuk-button">Save and continue</a>
+
+  </div>{# /govuk-grid-full #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
