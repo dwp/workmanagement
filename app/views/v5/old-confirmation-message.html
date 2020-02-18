@@ -1,0 +1,38 @@
+{% extends "layout-staff-full-sidebar.html" %}
+
+{% set bodyClasses = "v5" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block serviceName %}
+{{ serviceName }}
+{% endblock %}
+
+{# Left panel #}
+
+{% block leftPanel %}
+
+<a href="/v5/{% include 'v5/_params.html' %}" class="govuk-back-link">Back to dashboard</a>
+
+{% endblock %}
+
+{# Main content #}
+
+{% block content %}
+
+<ul>
+  {% if sectionStatus.fred === "saved" %}
+  <li>
+    <strong>Fred</strong><br>Saved
+  </li>
+  {% endif %}
+  {% if sectionStatus.pink === "saved" %}
+  <li>
+    <strong>Pink</strong><br>Saved
+  </li>
+  {% endif %}
+</ul>
+
+{% endblock %}

@@ -22,156 +22,129 @@
 
 {% block content %}
 
+{# <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> #}
+
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full">
 
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-8">Apply for ‘new style’ Employment Support Allowance</h1>
+    <div style="margin-bottom: 25px;"></div>
 
-      <ol class="app-task-list">
-        <li>
-          <h2 class="app-task-list__section"><span class="app-task-list__section-number">1. </span> Before you start</h2>
-          <ul class="app-task-list__items">
-            <li class="app-task-list__item">
-              <a class="app-task-list__task-name" href="before-you-start" aria-describedby="#">
-                Check what you need
-                <span><strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong></span>
-              </a>
-              
-            </li>
-          </ul>
-        </li>
-        <li>
-          <h2 class="app-task-list__section"><span class="app-task-list__section-number">2. </span> Prepare application</h2>
-          <ul class="app-task-list__items">
-            <li>
-              <ul class="app-task-list__items" style="padding: 0">
-                <li class="app-task-list__item">
-                  {% if sectionStatus.yourhealth === "completed" %}
-                    <a class="app-task-list__task-name " href="health/checkanswers" aria-describedby="#">Your health <span><strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong></span></a>
-                    
-                  {% elif sectionStatus.yourhealth === "started" %}
-                    <a class="app-task-list__task-name " href="health/condition" aria-describedby="#">Your health <span><strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong></span></a>
-                  {% else %}
-                    <a class="app-task-list__task-name " href="health/condition" aria-describedby="#">
-                      Your health
-                    </a>
-                  {% endif %}
-                </li>
+    <div class="govuk-panel govuk-panel--confirmation" style="padding: 20px">
+      <h1 class="govuk-panel__title" style="font-size: 36px; margin-bottom: 10px">Review complete</h1>
+      <div class="govuk-panel__body" style="font-size: 24px">
+        {% if getData.confirmationmessage === "evidence" %}
+          Evidence requested for {{ getData.person }}
+        {% elif getData.confirmationmessage === "face" %}
+          {{ getData.person }} will be called for an assessment
+        {% elif getData.confirmationmessage === "rejected" %}
+          {{ getData.person }}’s case will be checked to see if it should go back to DWP
+        {% elif getData.confirmationmessage === "saved" %}
+          {{ getData.person }}’s has been saved SAVED MESSAGE NEEDS A DIFFERENT HEADING 
+        {% endif %}
+      </div>{# /govuk-panel__body #}
+    </div>{# /govuk-panel #}
 
-                <li class="app-task-list__item">
-                  {% if sectionStatus.paidwork === "completed" %}
-                    <a class="app-task-list__task-name " href="work/checkanswers-2" aria-describedby="#">Paid work <span><strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong></span></a>
-                  {% elif sectionStatus.paidwork === "started" %}
-                    <a class="app-task-list__task-name " href="work/work" aria-describedby="#">Paid work <span><strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong></span></a>
-                  {% else %}
-                    <a class="app-task-list__task-name " href="work/work" aria-describedby="#">
-                      Paid work
-                    </a>
-                  {% endif %}
-                </li>
+    <p>You’ve done
+      <span >
+        <strong>
+          {{ getData.task }}
+        </strong>
+      </span>
+      {% if getData.task === "1" %}
+        review
+      {% else %}
+        reviews
+      {% endif %}
+    so far today.</p>
 
-                <li class="app-task-list__item">
-                  {% if sectionStatus.ssp === "completed" %}
-                    <a class="app-task-list__task-name " href="ssp/checkanswers-2" aria-describedby="#">Statutory pay <span><strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong></span></a>
-                  {% elif sectionStatus.ssp === "started" %}
-                    <a class="app-task-list__task-name " href="ssp/statutory-pay" aria-describedby="#">Statutory pay <span><strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong></span></a>
-                  {% else %}
-                    <a class="app-task-list__task-name " href="ssp/statutory-pay" aria-describedby="#">
-                      Statutory pay
-                    </a>
-                  {% endif %}
-                </li>
+    {% if getData.person == "Fred Flintstone" %}
+      <a href="case?task={{ getData.task | int + 1 }}&amp;person=Pink%20Panther&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;evidencemessage=true" class="govuk-button">Review another case</a>
+    {% elif getData.person == "Pink Panther" %}
+      <a href="case?task={{ getData.task | int + 1 }}&amp;person=Micky%20Mouse&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;evidencemessage=true" class="govuk-button">Review another case</a>
+    {% elif getData.person == "Micky Mouse" %}
+      <a href="case?task={{ getData.task | int + 1 }}&amp;person=Bugs%20Bunny&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;evidencemessage=true" class="govuk-button">Review another case</a>
+    {% elif getData.person == "Bugs Bunny" %}
+      <a href="case?task={{ getData.task | int + 1 }}&amp;person=Donald%20Duck&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;evidencemessage=true" class="govuk-button">Review another case</a>
+    {% elif getData.person == "Donald Duck" %}
+      <a href="case?task={{ getData.task | int + 1 }}&amp;person=Charlie%20Brown&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;evidencemessage=true" class="govuk-button">Review another case</a>
+    {% elif getData.person == "Charlie Brown" %}
+      <a href="case?task={{ getData.task | int + 1 }}&amp;person=Yosemite%20Sam&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;evidencemessage=true" class="govuk-button">Review another case</a>
+    {% elif getData.person == "Yosemite Sam" %}
+      <a href="case?task={{ getData.task | int + 1 }}&amp;person=Woody%20Woodpecker&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;evidencemessage=true" class="govuk-button">Review another case</a>
+    {% elif getData.person == "Woody Woodpecker" %}
+      <a href="case?task={{ getData.task | int + 1 }}&amp;person=Foghorn%20Leghorn&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;evidencemessage=true" class="govuk-button">Review another case</a>
+    {% elif getData.person == "Foghorn Leghorn" %}
+      <a href="case?task={{ getData.task | int + 1 }}&amp;person=Jessica%20Rabbit&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;evidencemessage=true" class="govuk-button">Review another case</a>
+    {% endif %}
 
-                <li class="app-task-list__item">
-                  {% if sectionStatus.voluntarywork === "completed" %}
-                    <a class="app-task-list__task-name " href="volunteering/checkanswers-2" aria-describedby="#">Voluntary work <span><strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong></span></a>
-                  {% elif sectionStatus.voluntarywork === "started" %}
-                    <a class="app-task-list__task-name " href="volunteering/voluntary-work" aria-describedby="#">Voluntary work <span><strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong></span></a>
-                  {% else %}
-                    <a class="app-task-list__task-name " href="volunteering/voluntary-work" aria-describedby="#">
-                      Voluntary work
-                    </a>
-                  {% endif %}
-                </li>
 
-                <li class="app-task-list__item">
-                  {% if sectionStatus.pension === "completed" %}
-                    <a class="app-task-list__task-name " href="pension/checkanswers-2" aria-describedby="#">Pensions <span><strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong></span></a>
-                  {% elif sectionStatus.pension === "started" %}
-                    <a class="app-task-list__task-name " href="pension/pension" aria-describedby="#">Pensions <span><strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong></span></a>
-                  {% else %}
-                    <a class="app-task-list__task-name " href="pension/pension" aria-describedby="#">
-                      Pensions
-                    </a>
-                  {% endif %}
-                </li>
+    {% if savedReferrals.pink === "" %}
+    {% else %}
+      <h3 class="govuk-heading-m">Cases you’ve saved</h3>
 
-                <li class="app-task-list__item">
-                  {% if sectionStatus.insurance === "completed" %}
-                    <a class="app-task-list__task-name " href="insurance/checkanswers-2" aria-describedby="#">Income protection insurance <span><strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong></span></a>
-                  {% elif sectionStatus.insurance === "started" %}
-                    <a class="app-task-list__task-name " href="insurance/insurance" aria-describedby="#">Income protection insurance <span><strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong></span></a>
-                  {% else %}
-                    <a class="app-task-list__task-name " href="insurance/insurance" aria-describedby="#">
-                      Income protection insurance
-                    </a>
-                  {% endif %}
-                </li>
+      <table class="govuk-table" style="max-width: 100%;">
+        <tbody class="govuk-table__body">
+          {% if savedReferrals.fred === "saved" %}
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header"><a href="#">Fred Flintstone</a></th>
+              <td class="govuk-table__cell">New referral</td>
+              <td class="govuk-table__cell" style="text-align: right">&nbsp;
+              {% include 'v5/_saved-badge-v2.html' %} 
+              </td>
+            </tr>
+          {% endif %}
+          {% if savedReferrals.pink === "saved" %}
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header"><a href="#">Pink Panther</a></th>
+              <td class="govuk-table__cell">New referral</td>
+              <td class="govuk-table__cell" style="text-align: right">&nbsp;
+              {% include 'v5/_saved-badge-v2.html' %} 
+              </td>
+            </tr>
+          {% endif %}
+          {% if savedReferrals.micky === "saved" %}
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header"><a href="#">Micky Mouse</a></th>
+              <td class="govuk-table__cell">New referral</td>
+              <td class="govuk-table__cell" style="text-align: right">&nbsp;
+              {% include 'v5/_saved-badge-v2.html' %} 
+              </td>
+            </tr>
+          {% endif %}
+          {% if savedReferrals.bugs === "saved" %}
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header"><a href="#">Bugs Bunny</a></th>
+              <td class="govuk-table__cell">New referral</td>
+              <td class="govuk-table__cell" style="text-align: right">&nbsp;
+              {% include 'v5/_saved-badge-v4.html' %} 
+              </td>
+            </tr>
+          {% endif %}
+          {% if savedReferrals.donald === "saved" %}
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header"><a href="#">Donald Duck</a></th>
+              <td class="govuk-table__cell">New referral</td>
+              <td class="govuk-table__cell" style="text-align: right">&nbsp;
+              {% include 'v5/_saved-badge-v1.html' %} 
+              </td>
+            </tr>
+          {% endif %}
+          {% if savedReferrals.charlie === "saved" %}
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header"><a href="#">Charlie Brown</a></th>
+              <td class="govuk-table__cell">New referral</td>
+              <td class="govuk-table__cell" style="text-align: right">&nbsp;
+              {% include 'v5/_saved-badge-v2.html' %} 
+              </td>
+            </tr>
+          {% endif %}
+        </tbody>
+      </table>
+    {% endif %}
 
-                <li class="app-task-list__item">
-                  {% if sectionStatus.yourdetails === "completed" %}
-                    <a class="app-task-list__task-name " href="about-you/checkanswers" aria-describedby="#">Your details <span><strong class="govuk-tag app-task-list__task-completed" id="#">Completed</strong></span></a>
-                  {% elif sectionStatus.yourdetails === "started" %}
-                    <a class="app-task-list__task-name " href="about-you/name" aria-describedby="#">Your details <span><strong class="govuk-tag tag-started app-task-list__task-completed" id="#">Started</strong></span></a>
-                  {% else %}
-                    <a class="app-task-list__task-name " href="about-you/name" aria-describedby="#">
-                      Your details
-                    </a>
-                  {% endif %}
-                </li>
-                
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <h2 class="app-task-list__section"><span class="app-task-list__section-number">3. </span> Apply</h2>
-          <ul class="app-task-list__items">
-            <li class="app-task-list__item">
+{#     <p><a href="case{% include 'v5/_params.html' %}" class="govuk-button">Review another case</a></p> #}
 
-              {% if
-                (sectionStatus.yourhealth === "completed")
-                and (sectionStatus.paidwork === "completed")
-                and (sectionStatus.ssp === "completed")
-                and (sectionStatus.voluntarywork === "completed")
-                and (sectionStatus.pension === "completed")
-                and (sectionStatus.insurance === "completed")
-                and (sectionStatus.yourdetails === "completed")
-              %}
+  </div>{# /govuk-grid-full #}
+</div>{# /govuk-grid-row #}
 
-                {# If dynamic date, go to the claim date screen. If not, go to the generic claim date screen #}
-                {% if whichDate %}
-                  <a class="app-task-list__task-name " href="claim-date-declaration/claimdate" aria-describedby="#">Submit your application</a>
-                {% else %}
-                  <a class="app-task-list__task-name " href="claim-date-declaration/claimdate-blank" aria-describedby="#">Submit your application</a>
-                {% endif %}
-
-              {% else %}
-
-                <span class="app-task-list__task-name " href="#" aria-describedby="#">
-                  <span style="opacity: 0.6">Submit your application <span style="font-weight: normal">(do this last)</span></span>
-                </span>
-
-              {% endif %}
-
-            </li>
-          </ul>
-        </li>
-      </ol>
-
-      <p><a href="cancel-application">Cancel application</a></p>
-
-    </div>{# /govuk-grid-column-two-thirds #}
-  </div>{# /govuk-grid-row #}
-  
 {% endblock %}

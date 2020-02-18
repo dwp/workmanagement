@@ -81,16 +81,27 @@
 
     <table class="govuk-table" style="max-width: 100%;">
       <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><a href="/v4/case?task=1&amp;person=Micky%20Mouse&amp;saved=Micky Mouse,&amp;missing=">Micky Mouse</a></th>
-          <td class="govuk-table__cell">New referral</td>
-          <td class="govuk-table__cell" style="text-align: right">&nbsp;
-          <div class="badge" style="font-size: 16px; line-height: 20px; text-align: left;">
-            <strong>Waiting for advice</strong><br>
-            <span style="font-weight: normal; font-size: 16px; line-height: 20px; text-align: left;">Saved until 11:59pm today</span>
-          </div>
-          </td>
-        </tr>
+
+        {% if sectionStatus.fred === "saved" %}
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header"><a href="#">Fred Flintstone</a></th>
+            <td class="govuk-table__cell">New referral</td>
+            <td class="govuk-table__cell" style="text-align: right">&nbsp;
+            {% include 'v5/_saved-badge-v2.html' %} 
+            </td>
+          </tr>
+        {% endif %}
+
+        {% if sectionStatus.pink === "saved" %}
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header"><a href="#">Pink Panther</a></th>
+            <td class="govuk-table__cell">New referral</td>
+            <td class="govuk-table__cell" style="text-align: right">&nbsp;
+            {% include 'v5/_saved-badge-v2.html' %} 
+            </td>
+          </tr>
+        {% endif %}
+        
       </tbody>
     </table>
 

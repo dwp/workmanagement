@@ -14,53 +14,40 @@ module.exports = function (app) {
     next();
   });
 
-  // Code from Steven for dealing with variables on list page
+  // Code from Stephen for dealing with variables on list page
 
   app.get('/v5/confirmation-message', (req, res, next) => {
 
-    if (!req.session.sectionStatus){
-      console.log('no session');
-      req.session.sectionStatus = {
-        // cwyn: 'complete',
-        yourhealth: undefined,
-        paidwork: undefined,
-        ssp: undefined,
-        voluntarywork: undefined,
-        pension: undefined,
-        insurance: undefined,
-        yourdetails: undefined,
-        // submitted: undefined,
+    if (!req.session.savedReferrals){
+      req.session.savedReferrals = {
+        fred: undefined,
+        pink: undefined,
+        micky: undefined,
+        bugs: undefined,
+        donald: undefined,
+        charlie: undefined,
       }
     }
-
-    if (req.query.yourhealth) {
-      req.session.sectionStatus.yourhealth = req.query.yourhealth
+    if (req.query.fred) {
+      req.session.savedReferrals.fred = req.query.fred
     };
-    if (req.query.paidwork) {
-      req.session.sectionStatus.paidwork = req.query.paidwork
+    if (req.query.pink) {
+      req.session.savedReferrals.pink = req.query.pink
     };
-    if (req.query.ssp) {
-      req.session.sectionStatus.ssp = req.query.ssp
+    if (req.query.micky) {
+      req.session.savedReferrals.micky = req.query.micky
     };
-    if (req.query.voluntarywork) {
-      req.session.sectionStatus.voluntarywork = req.query.voluntarywork
+    if (req.query.bugs) {
+      req.session.savedReferrals.bugs = req.query.bugs
     };
-    if (req.query.pension) {
-      req.session.sectionStatus.pension = req.query.pension
+    if (req.query.donald) {
+      req.session.savedReferrals.donald = req.query.donald
     };
-    if (req.query.insurance) {
-      req.session.sectionStatus.insurance = req.query.insurance
+    if (req.query.charlie) {
+      req.session.savedReferrals.charlie = req.query.charlie
     };
-    if (req.query.yourdetails) {
-      req.session.sectionStatus.yourdetails = req.query.yourdetails
-    };
-    if (req.query.submitted) {
-      req.session.sectionStatus.submitted = req.query.submitted
-    };
-
-    res.render('v5/confirmation-message.html', {sectionStatus: req.session.sectionStatus});
-    
+    res.render('v5/confirmation-message.html', {savedReferrals: req.session.savedReferrals});
   });
-
+  
 
 }
