@@ -15,7 +15,7 @@
 
 {% block leftPanel %}
 
-<a href="/v5/{% include 'v5/_params.html' %}" class="govuk-back-link">Back to dashboard</a>
+<a href="/v5/?task={{ getData.task }}&amp;person={{ getData.person }}&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }}" class="govuk-back-link">Back to dashboard</a>
 
 <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible"
 style="margin-top: 10px;">

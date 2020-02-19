@@ -81,5 +81,12 @@ module.exports = function (app) {
     };
     res.render('v5/index.html', {savedReferrals: req.session.savedReferrals});
   });
+
+  // Clear data on the index screen
+
+  app.get('/index', function (req, res) {
+    req.session.destroy()
+    res.render('index')
+  })
   
 }

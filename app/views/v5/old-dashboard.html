@@ -1,0 +1,140 @@
+{% extends "layout-staff-wide.html" %}
+
+{% set bodyClasses = "v5" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block serviceName %}
+{{ serviceName }}
+{% endblock %}
+
+{% block leftPanel %}
+{% endblock %}
+
+{% block content %}
+
+  <h1 class="govuk-heading-xl">Your dashboard</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+
+      <div class="card">
+        <div class="card-head">
+          <h3 class="govuk-heading-m govuk-!-margin-0">Reviews</h3>
+        </div>
+        <div class="card-body">
+          <p>You’ve done
+                {{ getData.task | int - 1 }}
+                {% if getData.task === "2" %}
+                  review
+                {% else %}
+                  reviews
+                {% endif %}
+                so far today</p>
+          <a href="/v5/case?task=1&person=Fred%20Flintstone&saved=&missing=" role="button" draggable="false" class="govuk-button button secondary-invert">Review referrals and evidence</a>
+
+          <table class="govuk-table" style="max-width: 100%; margin-bottom: 0">
+            <thead>
+              <tr>
+                <th colspan="3" class="govuk-table__header">Referrals you have saved</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              {% if savedReferrals.fred === "saved" %}
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header"><a href="#">Fred Flintstone</a></th>
+                  <td class="govuk-table__cell">New referral</td>
+                  <td class="govuk-table__cell" style="text-align: right">&nbsp;
+                  {% include 'v5/_saved-badge-v2.html' %} 
+                  </td>
+                </tr>
+              {% endif %}
+              {% if savedReferrals.pink === "saved" %}
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header"><a href="#">Pink Panther</a></th>
+                  <td class="govuk-table__cell">New referral</td>
+                  <td class="govuk-table__cell" style="text-align: right">&nbsp;
+                  {% include 'v5/_saved-badge-v2.html' %} 
+                  </td>
+                </tr>
+              {% endif %}
+              {% if savedReferrals.micky === "saved" %}
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header"><a href="#">Micky Mouse</a></th>
+                  <td class="govuk-table__cell">New referral</td>
+                  <td class="govuk-table__cell" style="text-align: right">&nbsp;
+                  {% include 'v5/_saved-badge-v2.html' %} 
+                  </td>
+                </tr>
+              {% endif %}
+              {% if savedReferrals.bugs === "saved" %}
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header"><a href="#">Bugs Bunny</a></th>
+                  <td class="govuk-table__cell">New referral</td>
+                  <td class="govuk-table__cell" style="text-align: right">&nbsp;
+                  {% include 'v5/_saved-badge-v4.html' %} 
+                  </td>
+                </tr>
+              {% endif %}
+              {% if savedReferrals.donald === "saved" %}
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header"><a href="#">Donald Duck</a></th>
+                  <td class="govuk-table__cell">New referral</td>
+                  <td class="govuk-table__cell" style="text-align: right">&nbsp;
+                  {% include 'v5/_saved-badge-v1.html' %} 
+                  </td>
+                </tr>
+              {% endif %}
+              {% if savedReferrals.charlie === "saved" %}
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header"><a href="#">Charlie Brown</a></th>
+                  <td class="govuk-table__cell">New referral</td>
+                  <td class="govuk-table__cell" style="text-align: right">&nbsp;
+                  {% include 'v5/_saved-badge-v2.html' %} 
+                  </td>
+                </tr>
+              {% endif %}
+            </tbody>
+          </table>
+        </div>{# /card-body #}
+      </div>{# /card #}
+
+      <div class="card">
+        <div class="card-head">
+          <h3 class="govuk-heading-m govuk-!-margin-0">Reports based on written evidence</h3>
+        </div>{# /card-head #}
+        <div class="card-body">
+          <p>You’ve done 0 file-based reports so far today</p>
+          <a href="#" role="button" draggable="false" class="govuk-button button secondary-invert">Complete reports based on written evidence</a>
+        </div>{# /card-body #}
+      </div>{# /card #}
+
+    </div>{# /govuk-grid-column-one-half #}
+
+    <div class="govuk-grid-column-one-half">
+      <div class="card">
+        <div class="card-head">
+          <h3 class="govuk-heading-m govuk-!-margin-0">Face-to-face assessments</h3>
+        </div>{# /card-head #}
+        <div class="card-body">
+          <p>You’ve done 0 face-to-face assessments so far today</p>
+          <a href="#" role="button" draggable="false" class="govuk-button button secondary-invert">Complete reports based on written evidence</a>
+        </div>{# /card-body #}
+      </div>{# /card #}
+
+      <div class="card">
+        <div class="card-head">
+          <h3 class="govuk-heading-m govuk-!-margin-0">Audits</h3>
+        </div>{# /card-head #}
+        <div class="card-body">
+          <p>You’ve done 0 audits so far today</p>
+          <a href="#" role="button" draggable="false" class="govuk-button button secondary-invert">Audit completed reports</a>
+        </div>{# /card-body #}
+      </div>{# /card #}
+    </div>{# /govuk-grid-column-one-half #}
+
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

@@ -1,4 +1,4 @@
-{% extends "layout-staff-full-sidebar.html" %}
+{% extends "layout-staff-full.html" %}
 
 {% set bodyClasses = "v5" %}
 
@@ -12,9 +12,9 @@
 
 {# Left panel #}
 
-{% block leftPanel %}
+{% block beforeContent %}
 
-<a href="/v5/{% include 'v5/_params.html' %}" class="govuk-back-link">Back to dashboard</a>
+<a href="/v5/{% include 'v5/_params.html' %}" class="govuk-back-link">Your dashboard</a>
 
 {% endblock %}
 
@@ -27,7 +27,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    <div style="margin-bottom: 25px;"></div>
+{#     <div style="margin-bottom: 25px;"></div> #}
 
     {% if getData.confirmationmessage === "evidence" %}
     <div class="govuk-panel govuk-panel--confirmation">
@@ -58,20 +58,20 @@
 
     {% if getData.confirmationmessage === "saved" %}
     <div class="govuk-panel govuk-panel--confirmation">
-      <h1 class="govuk-panel__title">Saved</h1>
-        <div class="govuk-panel__body">
-          {{ getData.person }}’s has been added to your saved list
-        </div>{# /govuk-panel__body #}
+      <h1 class="govuk-panel__title">Referral saved</h1>
+{#         <div class="govuk-panel__body">
+          {{ getData.person }}’s referral has been added to your saved list
+        </div> #}{# /govuk-panel__body #}
       </div>{# /govuk-panel #}
     {% endif %}
 
     <p>You’ve done
       <span >
         <strong>
-          {{ getData.task }}
+          {{ getData.task | int -1 }}
         </strong>
       </span>
-      {% if getData.task === "1" %}
+      {% if getData.task === "2" %}
         review
       {% else %}
         reviews
@@ -99,65 +99,7 @@
     {% endif %}
 
     {% if getData.saved != "" %}
-      <h3 class="govuk-heading-m">Referrals you have saved</h3>
-      <table class="govuk-table" style="max-width: 100%;">
-        <tbody class="govuk-table__body">
-          {% if savedReferrals.fred === "saved" %}
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header"><a href="#">Fred Flintstone</a></th>
-              <td class="govuk-table__cell">New referral</td>
-              <td class="govuk-table__cell" style="text-align: right">&nbsp;
-              {% include 'v5/_saved-badge-v2.html' %} 
-              </td>
-            </tr>
-          {% endif %}
-          {% if savedReferrals.pink === "saved" %}
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header"><a href="#">Pink Panther</a></th>
-              <td class="govuk-table__cell">New referral</td>
-              <td class="govuk-table__cell" style="text-align: right">&nbsp;
-              {% include 'v5/_saved-badge-v2.html' %} 
-              </td>
-            </tr>
-          {% endif %}
-          {% if savedReferrals.micky === "saved" %}
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header"><a href="#">Micky Mouse</a></th>
-              <td class="govuk-table__cell">New referral</td>
-              <td class="govuk-table__cell" style="text-align: right">&nbsp;
-              {% include 'v5/_saved-badge-v2.html' %} 
-              </td>
-            </tr>
-          {% endif %}
-          {% if savedReferrals.bugs === "saved" %}
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header"><a href="#">Bugs Bunny</a></th>
-              <td class="govuk-table__cell">New referral</td>
-              <td class="govuk-table__cell" style="text-align: right">&nbsp;
-              {% include 'v5/_saved-badge-v4.html' %} 
-              </td>
-            </tr>
-          {% endif %}
-          {% if savedReferrals.donald === "saved" %}
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header"><a href="#">Donald Duck</a></th>
-              <td class="govuk-table__cell">New referral</td>
-              <td class="govuk-table__cell" style="text-align: right">&nbsp;
-              {% include 'v5/_saved-badge-v1.html' %} 
-              </td>
-            </tr>
-          {% endif %}
-          {% if savedReferrals.charlie === "saved" %}
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header"><a href="#">Charlie Brown</a></th>
-              <td class="govuk-table__cell">New referral</td>
-              <td class="govuk-table__cell" style="text-align: right">&nbsp;
-              {% include 'v5/_saved-badge-v2.html' %} 
-              </td>
-            </tr>
-          {% endif %}
-        </tbody>
-      </table>
+      {% include 'v5/_saved-table.html' %} 
     {% endif %}
 
 {#     <p><a href="case{% include 'v5/_params.html' %}" class="govuk-button">Review another case</a></p> #}

@@ -1,0 +1,69 @@
+<table class="govuk-table" style="max-width: 100%; margin-bottom: 0; margin-top: 15px;">
+  <thead>
+    <tr>
+      <th colspan="5" class="govuk-table__header">Referrals you have saved</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    {% if savedReferrals.fred === "saved" %}
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"><a href="/v5/case?task={{ getData.task }}&amp;person=Fred%20Flintstone&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }}">Fred Flintstone</a></th>
+        <td class="govuk-table__cell">New referral</td>
+        <td class="govuk-table__cell">Saved until 11:59pm today</td>
+        <td class="govuk-table__cell">&nbsp;
+          <div class="badge" style="font-size: 16px; line-height: 20px; text-align: left;"><strong>Waiting to receive a phone call</strong></div> 
+        </td>
+      </tr>
+    {% endif %}
+    {% if savedReferrals.pink === "saved" %}
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"><a href="/v5/case?task={{ getData.task }}&amp;person=Pink%20Panther&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }}">Pink Panther</a></th>
+        <td class="govuk-table__cell">New referral</td>
+        <td class="govuk-table__cell">Saved until 11:59pm tomorrow</td>
+        <td class="govuk-table__cell">&nbsp;
+          <div class="badge" style="font-size: 16px; line-height: 20px; text-align: left;"><strong>Waiting for advice</strong></div> 
+        </td>
+      </tr>
+    {% endif %}
+    {% if savedReferrals.micky === "saved" %}
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"><a href="/v5/case?task={{ getData.task }}&amp;person=Micky%20Mouse&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }}">Micky Mouse</a></th>
+        <td class="govuk-table__cell">New referral</td>
+        <td class="govuk-table__cell">Saved until 11:59pm tomorrow</td>
+        <td class="govuk-table__cell">&nbsp;
+          <div class="badge" style="font-size: 16px; line-height: 20px; text-align: left;"><strong>Waiting to receive a phone call</strong></div> 
+        </td>
+      </tr>
+    {% endif %}
+    {% if savedReferrals.bugs === "saved" %}
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"><a href="/v5/case?task={{ getData.task }}&amp;person=Bugs%20Bunny&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }}">Bugs Bunny</a></th>
+        <td class="govuk-table__cell">New referral</td>
+        <td class="govuk-table__cell">Saved until 11:59pm today</td>
+        <td class="govuk-table__cell">&nbsp;
+          <div class="badge" style="font-size: 16px; line-height: 20px; text-align: left;"><strong>Waiting to receive a phone call</strong></div> 
+        </td>
+      </tr>
+    {% endif %}
+    {% if savedReferrals.donald === "saved" %}
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"><a href="/v5/case?task={{ getData.task }}&amp;person=Donald%20Duck&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }}">Donald Duck</a></th>
+        <td class="govuk-table__cell">New referral</td>
+        <td class="govuk-table__cell">Saved until 11:59pm tomorrow</td>
+        <td class="govuk-table__cell">&nbsp;
+          <div class="badge" style="font-size: 16px; line-height: 20px; text-align: left;"><strong>Waiting for advice</strong></div> 
+        </td>
+      </tr>
+    {% endif %}
+    {% if savedReferrals.charlie === "saved" %}
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"><a href="/v5/case?task={{ getData.task }}&amp;person=Charlie%20Brown&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }}">Charlie Brown</a></th>
+        <td class="govuk-table__cell">New referral</td>
+        <td class="govuk-table__cell">Saved until 11:59pm tomorrow</td>
+        <td class="govuk-table__cell">&nbsp;
+          <div class="badge" style="font-size: 16px; line-height: 20px; text-align: left;"><strong>Waiting to receive a phone call</strong></div> 
+        </td>
+      </tr>
+    {% endif %}
+  </tbody>
+</table>

@@ -65,7 +65,7 @@ not returned?</h2>
 
   </div>{# /govuk-form-group #}
 
-  <a href="confirmation-message{% include 'v5/_params.html' %}&amp;confirmationmessage=evidence" class="govuk-button">Save and continue</a>
+  <a href="confirmation-message?task={{ getData.task | int +1 }}&amp;person={{ getData.person }}&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }}&amp;confirmationmessage=evidence" class="govuk-button">Save and continue</a>
 
   </div>{# /govuk-grid-full #}
 </div>{# /govuk-grid-row #}
