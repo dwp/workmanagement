@@ -27,7 +27,7 @@
 
         <div class="card-body">
           <p>Done today: <strong>{{ getData.task | int -1 }}</strong> &nbsp;&nbsp;&nbsp;</p>
-          <a href="/v5/case{% include 'v5/_params.html' %} " role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-0">Review referrals and evidence</a>
+          <a href="/v5/case{% include 'v5/_params.html' %} " role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-0">Review a referral</a>
           {% if getData.saved %}
             {% include 'v5/_saved-table.html' %} 
           {% endif %} 
@@ -40,7 +40,7 @@
         </div>{# /card-head #}
         <div class="card-body">
           <p>Done today: <strong>0</strong>{#  &nbsp;&nbsp;&nbsp; Saved: <strong>0</strong> #}</p>
-          <a href="#" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-0">Complete reports based on written evidence</a>
+          <a href="#" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-0">Write a report</a>
         </div>{# /card-body #}
       </div>{# /card #}
 
@@ -50,7 +50,7 @@
         </div>{# /card-head #}
         <div class="card-body">
           <p>Done today: <strong>0</strong>{#  &nbsp;&nbsp;&nbsp; Saved: <strong>0</strong> #}</p>
-          <a href="#" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-0">Complete reports based on written evidence</a>
+          <a href="#" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-0">Start a face-to-face assessment</a>
         </div>{# /card-body #}
       </div>{# /card #}
 

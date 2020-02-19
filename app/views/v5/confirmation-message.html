@@ -79,30 +79,30 @@
     so far today.</p>
 
     {% if getData.person == "Fred Flintstone" %}
-      <a href="case?task={{ getData.task | int + 1 }}&amp;person=Pink%20Panther&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;evidencemessage=true" class="govuk-button">Review another case</a>
+      <a href="case?task={{ getData.task | int + 1 }}&amp;person=Pink%20Panther&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;evidencemessage=true" class="govuk-button">Review another referral</a>
     {% elif getData.person == "Pink Panther" %}
-      <a href="case?task={{ getData.task | int + 1 }}&amp;person=Micky%20Mouse&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;evidencemessage=true" class="govuk-button">Review another case</a>
+      <a href="case?task={{ getData.task | int + 1 }}&amp;person=Micky%20Mouse&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;evidencemessage=true" class="govuk-button">Review another referral</a>
     {% elif getData.person == "Micky Mouse" %}
-      <a href="case?task={{ getData.task | int + 1 }}&amp;person=Bugs%20Bunny&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;evidencemessage=true" class="govuk-button">Review another case</a>
+      <a href="case?task={{ getData.task | int + 1 }}&amp;person=Bugs%20Bunny&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;evidencemessage=true" class="govuk-button">Review another referral</a>
     {% elif getData.person == "Bugs Bunny" %}
-      <a href="case?task={{ getData.task | int + 1 }}&amp;person=Donald%20Duck&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;evidencemessage=true" class="govuk-button">Review another case</a>
+      <a href="case?task={{ getData.task | int + 1 }}&amp;person=Donald%20Duck&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;evidencemessage=true" class="govuk-button">Review another referral</a>
     {% elif getData.person == "Donald Duck" %}
-      <a href="case?task={{ getData.task | int + 1 }}&amp;person=Charlie%20Brown&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;evidencemessage=true" class="govuk-button">Review another case</a>
+      <a href="case?task={{ getData.task | int + 1 }}&amp;person=Charlie%20Brown&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;evidencemessage=true" class="govuk-button">Review another referral</a>
     {% elif getData.person == "Charlie Brown" %}
-      <a href="case?task={{ getData.task | int + 1 }}&amp;person=Yosemite%20Sam&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;evidencemessage=true" class="govuk-button">Review another case</a>
+      <a href="case?task={{ getData.task | int + 1 }}&amp;person=Yosemite%20Sam&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;evidencemessage=true" class="govuk-button">Review another referral</a>
     {% elif getData.person == "Yosemite Sam" %}
-      <a href="case?task={{ getData.task | int + 1 }}&amp;person=Woody%20Woodpecker&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;evidencemessage=true" class="govuk-button">Review another case</a>
+      <a href="case?task={{ getData.task | int + 1 }}&amp;person=Woody%20Woodpecker&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;evidencemessage=true" class="govuk-button">Review another referral</a>
     {% elif getData.person == "Woody Woodpecker" %}
-      <a href="case?task={{ getData.task | int + 1 }}&amp;person=Foghorn%20Leghorn&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;evidencemessage=true" class="govuk-button">Review another case</a>
+      <a href="case?task={{ getData.task | int + 1 }}&amp;person=Foghorn%20Leghorn&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;evidencemessage=true" class="govuk-button">Review another referral</a>
     {% elif getData.person == "Foghorn Leghorn" %}
-      <a href="done" class="govuk-button">Review another case</a>
+      <a href="done" class="govuk-button">Review another referral</a>
     {% endif %}
 
     {% if getData.saved != "" %}
       {% include 'v5/_saved-table.html' %} 
     {% endif %}
 
-{#     <p><a href="case{% include 'v5/_params.html' %}" class="govuk-button">Review another case</a></p> #}
+{#     <p><a href="case{% include 'v5/_params.html' %}" class="govuk-button">Review another referral</a></p> #}
 
   </div>{# /govuk-grid-full #}
 </div>{# /govuk-grid-row #}
