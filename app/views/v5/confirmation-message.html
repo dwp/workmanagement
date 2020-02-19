@@ -29,20 +29,41 @@
 
     <div style="margin-bottom: 25px;"></div>
 
-    <div class="govuk-panel govuk-panel--confirmation" style="padding: 20px">
-      <h1 class="govuk-panel__title" style="font-size: 36px; margin-bottom: 10px">Review complete</h1>
-      <div class="govuk-panel__body" style="font-size: 24px">
-        {% if getData.confirmationmessage === "evidence" %}
+    {% if getData.confirmationmessage === "evidence" %}
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">Review complete</h1>
+        <div class="govuk-panel__body">
           Evidence requested for {{ getData.person }}
-        {% elif getData.confirmationmessage === "face" %}
+        </div>{# /govuk-panel__body #}
+      </div>{# /govuk-panel #}
+    {% endif %}
+
+    {% if getData.confirmationmessage === "face" %}
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">Review complete</h1>
+        <div class="govuk-panel__body">
           {{ getData.person }} will be called for an assessment
-        {% elif getData.confirmationmessage === "rejected" %}
+        </div>{# /govuk-panel__body #}
+      </div>{# /govuk-panel #}
+    {% endif %}
+
+    {% if getData.confirmationmessage === "rejected" %}
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">Review complete</h1>
+        <div class="govuk-panel__body">
           {{ getData.person }}’s case will be checked to see if it should go back to DWP
-        {% elif getData.confirmationmessage === "saved" %}
-          {{ getData.person }}’s has been saved SAVED MESSAGE NEEDS A DIFFERENT HEADING 
-        {% endif %}
-      </div>{# /govuk-panel__body #}
-    </div>{# /govuk-panel #}
+        </div>{# /govuk-panel__body #}
+      </div>{# /govuk-panel #}
+    {% endif %}
+
+    {% if getData.confirmationmessage === "saved" %}
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">Saved</h1>
+        <div class="govuk-panel__body">
+          {{ getData.person }}’s has been added to your saved list
+        </div>{# /govuk-panel__body #}
+      </div>{# /govuk-panel #}
+    {% endif %}
 
     <p>You’ve done
       <span >
@@ -74,14 +95,11 @@
     {% elif getData.person == "Woody Woodpecker" %}
       <a href="case?task={{ getData.task | int + 1 }}&amp;person=Foghorn%20Leghorn&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;evidencemessage=true" class="govuk-button">Review another case</a>
     {% elif getData.person == "Foghorn Leghorn" %}
-      <a href="case?task={{ getData.task | int + 1 }}&amp;person=Jessica%20Rabbit&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;evidencemessage=true" class="govuk-button">Review another case</a>
+      <a href="done" class="govuk-button">Review another case</a>
     {% endif %}
 
-
-    {% if savedReferrals.pink === "" %}
-    {% else %}
-      <h3 class="govuk-heading-m">Cases you’ve saved</h3>
-
+    {% if getData.saved != "" %}
+      <h3 class="govuk-heading-m">Referrals you have saved</h3>
       <table class="govuk-table" style="max-width: 100%;">
         <tbody class="govuk-table__body">
           {% if savedReferrals.fred === "saved" %}
