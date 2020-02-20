@@ -88,5 +88,7 @@ module.exports = function (app) {
     req.session.destroy()
     res.render('index')
   })
+
+
   
 }
