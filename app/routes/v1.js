@@ -26,6 +26,10 @@ module.exports = function (app) {
         bugs: undefined,
         donald: undefined,
         charlie: undefined,
+        yosemite: undefined,
+        woody: undefined,
+        foghorn: undefined,
+        jessica: undefined,
       }
     }
     if (req.query.fred) {
@@ -45,6 +49,18 @@ module.exports = function (app) {
     };
     if (req.query.charlie) {
       req.session.savedReferrals.charlie = req.query.charlie
+    };
+    if (req.query.yosemite) {
+      req.session.savedReferrals.yosemite = req.query.yosemite
+    };
+    if (req.query.woody) {
+      req.session.savedReferrals.woody = req.query.woody
+    };
+    if (req.query.foghorn) {
+      req.session.savedReferrals.foghorn = req.query.foghorn
+    };
+    if (req.query.jessica) {
+      req.session.savedReferrals.jessica = req.query.jessica
     };
     res.render('v5/confirmation-message.html', {savedReferrals: req.session.savedReferrals});
   });
@@ -59,6 +75,10 @@ module.exports = function (app) {
         bugs: undefined,
         donald: undefined,
         charlie: undefined,
+        yosemite: undefined,
+        woody: undefined,
+        foghorn: undefined,
+        jessica: undefined,
       }
     }
     if (req.query.fred) {
@@ -79,6 +99,18 @@ module.exports = function (app) {
     if (req.query.charlie) {
       req.session.savedReferrals.charlie = req.query.charlie
     };
+    if (req.query.yosemite) {
+      req.session.savedReferrals.yosemite = req.query.yosemite
+    };
+    if (req.query.woody) {
+      req.session.savedReferrals.woody = req.query.woody
+    };
+    if (req.query.foghorn) {
+      req.session.savedReferrals.foghorn = req.query.foghorn
+    };
+    if (req.query.jessica) {
+      req.session.savedReferrals.jessica = req.query.jessica
+    };
     res.render('v5/index.html', {savedReferrals: req.session.savedReferrals});
   });
 
@@ -88,7 +120,5 @@ module.exports = function (app) {
     req.session.destroy()
     res.render('index')
   })
-
-
   
 }

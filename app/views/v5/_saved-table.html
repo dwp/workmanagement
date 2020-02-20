@@ -11,7 +11,7 @@
         <td class="govuk-table__cell">New referral</td>
         <td class="govuk-table__cell">Saved until 11:59pm today</td>
         <td class="govuk-table__cell">&nbsp;
-          <div class="badge" style="font-size: 16px; line-height: 20px; text-align: left;"><strong>Waiting to receive a phone call</strong></div> 
+          <div class="badge" style="font-size: 16px; line-height: 20px; text-align: left;"><strong>Waiting for advice</strong></div> 
         </td>
       </tr>
     {% endif %}
@@ -31,7 +31,7 @@
         <td class="govuk-table__cell">New referral</td>
         <td class="govuk-table__cell">Saved until 11:59pm tomorrow</td>
         <td class="govuk-table__cell">&nbsp;
-          <div class="badge" style="font-size: 16px; line-height: 20px; text-align: left;"><strong>Waiting to receive a phone call</strong></div> 
+          <div class="badge" style="font-size: 16px; line-height: 20px; text-align: left;"><strong>Waiting for advice</strong></div> 
         </td>
       </tr>
     {% endif %}
@@ -41,7 +41,7 @@
         <td class="govuk-table__cell">New referral</td>
         <td class="govuk-table__cell">Saved until 11:59pm today</td>
         <td class="govuk-table__cell">&nbsp;
-          <div class="badge" style="font-size: 16px; line-height: 20px; text-align: left;"><strong>Waiting to receive a phone call</strong></div> 
+          <div class="badge" style="font-size: 16px; line-height: 20px; text-align: left;"><strong>Waiting for advice</strong></div> 
         </td>
       </tr>
     {% endif %}
@@ -61,7 +61,47 @@
         <td class="govuk-table__cell">New referral</td>
         <td class="govuk-table__cell">Saved until 11:59pm tomorrow</td>
         <td class="govuk-table__cell">&nbsp;
-          <div class="badge" style="font-size: 16px; line-height: 20px; text-align: left;"><strong>Waiting to receive a phone call</strong></div> 
+          <div class="badge" style="font-size: 16px; line-height: 20px; text-align: left;"><strong>Waiting for advice</strong></div> 
+        </td>
+      </tr>
+    {% endif %}
+    {% if savedReferrals.yosemite === "saved" %}
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"><a href="/v5/case?task={{ getData.task }}&amp;person=Yosemite%20Sam&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }}">Yosemite Sam</a></th>
+        <td class="govuk-table__cell">New referral</td>
+        <td class="govuk-table__cell">Saved until 11:59pm tomorrow</td>
+        <td class="govuk-table__cell">&nbsp;
+          <div class="badge" style="font-size: 16px; line-height: 20px; text-align: left;"><strong>Waiting for advice</strong></div> 
+        </td>
+      </tr>
+    {% endif %}
+    {% if savedReferrals.woody === "saved" %}
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"><a href="/v5/case?task={{ getData.task }}&amp;person=Woody%20Woodpecker&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }}">Woody Woodpecker</a></th>
+        <td class="govuk-table__cell">New referral</td>
+        <td class="govuk-table__cell">Saved until 11:59pm tomorrow</td>
+        <td class="govuk-table__cell">&nbsp;
+          <div class="badge" style="font-size: 16px; line-height: 20px; text-align: left;"><strong>Waiting for advice</strong></div> 
+        </td>
+      </tr>
+    {% endif %}
+    {% if savedReferrals.foghorn === "saved" %}
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"><a href="/v5/case?task={{ getData.task }}&amp;person=Foghorn%20Leghorn&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }}">Foghorn Leghorn</a></th>
+        <td class="govuk-table__cell">New referral</td>
+        <td class="govuk-table__cell">Saved until 11:59pm tomorrow</td>
+        <td class="govuk-table__cell">&nbsp;
+          <div class="badge" style="font-size: 16px; line-height: 20px; text-align: left;"><strong>Waiting for advice</strong></div> 
+        </td>
+      </tr>
+    {% endif %}
+    {% if savedReferrals.jessica === "saved" %}
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"><a href="/v5/case?task={{ getData.task }}&amp;person=Jessica%20Rabbit&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }}">Jessica Rabbit</a></th>
+        <td class="govuk-table__cell">New referral</td>
+        <td class="govuk-table__cell">Saved until 11:59pm tomorrow</td>
+        <td class="govuk-table__cell">&nbsp;
+          <div class="badge" style="font-size: 16px; line-height: 20px; text-align: left;"><strong>Waiting for advice</strong></div> 
         </td>
       </tr>
     {% endif %}

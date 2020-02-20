@@ -95,6 +95,8 @@
     {% elif getData.person == "Woody Woodpecker" %}
       <a href="case?task={{ getData.task }}&amp;person=Foghorn%20Leghorn&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;evidencemessage=true" class="govuk-button">Review another referral</a>
     {% elif getData.person == "Foghorn Leghorn" %}
+      <a href="case?task={{ getData.task }}&amp;person=Jessica%20Rabbit&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }},{{ getData.person }}&amp;evidencemessage=true" class="govuk-button">Review another referral</a>
+    {% elif getData.person == "Jessica Rabbit" %}
       <a href="done" class="govuk-button">Review another referral</a>
     {% endif %}
 
