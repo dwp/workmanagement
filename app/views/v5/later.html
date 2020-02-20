@@ -1,0 +1,137 @@
+{% extends "layout-staff-full-wide.html" %}
+
+{% set bodyClasses = "v5" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block serviceName %}
+{{ serviceName }}
+{% endblock %}
+
+{% block leftPanel %}
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-xl">Your dashboard</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="card">
+        <div class="card-head">
+          <h3 class="govuk-heading-m govuk-!-margin-0">Reviews</h3>
+        </div>
+
+        <div class="card-body">
+          <p>Done today: <strong>12</strong> &nbsp;&nbsp;&nbsp;</p>
+          <a href="#" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-0">Review a referral</a>
+          
+            <table class="govuk-table" style="max-width: 100%; margin-bottom: 0; margin-top: 15px;">
+  <thead>
+    <tr>
+      <th colspan="5" class="govuk-table__header">Saved referrals</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    
+    
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"><a href="#">Pink Panther</a></th>
+        <td class="govuk-table__cell">New referral</td>
+        <td class="govuk-table__cell">Saved until 11:59pm tomorrow</td>
+        <td class="govuk-table__cell">&nbsp;
+          <div class="badge" style="font-size: 16px; line-height: 20px; text-align: left;"><strong>Waiting for advice</strong></div> 
+        </td>
+      </tr>
+    
+    
+    
+      
+    
+          <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"><a href="#">Bugs Bunny</a></th>
+        <td class="govuk-table__cell">New referral</td>
+        <td class="govuk-table__cell">Saved until 11:59pm today</td>
+        <td class="govuk-table__cell">&nbsp;
+          <div class="badge" style="font-size: 16px; line-height: 20px; text-align: left;"><strong>Waiting to receive a phone call</strong></div> 
+        </td>
+      </tr>
+    
+          <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"><a href="#">Charlie Brown</a></th>
+        <td class="govuk-table__cell">No paper file</td>
+        <td class="govuk-table__cell">Saved until 11:59pm today</td>
+        <td class="govuk-table__cell">&nbsp;
+          <div class="badge" style="font-size: 16px; line-height: 20px; text-align: left;"><strong>Waiting to receive a phone call</strong></div> 
+        </td>
+      </tr>
+    
+          <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"><a href="#">Yosemite Sam</a></th>
+        <td class="govuk-table__cell">New referral</td>
+        <td class="govuk-table__cell">Saved until 11:59pm today</td>
+        <td class="govuk-table__cell">&nbsp;
+          <div class="badge" style="font-size: 16px; line-height: 20px; text-align: left;"><strong>Waiting to make a phone call</strong></div> 
+        </td>
+      </tr>
+    
+          <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"><a href="#">Woody Woodpecker</a></th>
+        <td class="govuk-table__cell">New referral</td>
+        <td class="govuk-table__cell">Saved until 11:59pm tomorrow</td>
+        <td class="govuk-table__cell">&nbsp;
+          <div class="badge" style="font-size: 16px; line-height: 20px; text-align: left;"><strong>Waiting for advice</strong></div> 
+        </td>
+      </tr>
+    
+          <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"><a href="#">Jessica Rabbit</a></th>
+        <td class="govuk-table__cell">Further evidence returned</td>
+        <td class="govuk-table__cell">Saved until 11:59pm today</td>
+        <td class="govuk-table__cell">&nbsp;
+          <div class="badge" style="font-size: 16px; line-height: 20px; text-align: left;"><strong>Waiting to receive a phone call</strong></div> 
+        </td>
+      </tr>
+  </tbody>
+</table> 
+           
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <h3 class="govuk-heading-m govuk-!-margin-0">Reports based on written evidence</h3>
+        </div>
+        <div class="card-body">
+          <p>Done today: <strong>0</strong></p>
+          <a href="#" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-0">Write a report</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <h3 class="govuk-heading-m govuk-!-margin-0">Face-to-face assessments</h3>
+        </div>
+        <div class="card-body">
+          <p>Done today: <strong>0</strong></p>
+          <a href="#" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-0">Start a face-to-face assessment</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <h3 class="govuk-heading-m govuk-!-margin-0">Audits</h3>
+        </div>
+        <div class="card-body">
+          <p>Done today: <strong>0</strong></p>
+          <a href="#" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-0">Audit completed reports</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  {% endblock %}
