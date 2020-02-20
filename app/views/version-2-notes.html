@@ -1,0 +1,52 @@
+t{% extends "layout_master.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-!-margin-top-8">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Version 2 notes</h1>
+      <h2 class="govuk-heading-m">What we wanted to test</h2>
+      <p>In this version we tested the same 2 concepts as in version 1:</p>
+       <ul class="govuk-list govuk-list--bullet">
+         <li>giving people their tasks one at a time</li>
+         <li>showing people a list of cases that they can work on in any order</li>
+       </ul>
+      <p>This time we tested with a PIP healthcare professional. They were not trained in what they call the ‘initial review’ stage but they had some understanding of it.</p>
+      <p>We wanted to find out how a PIP healthcare professional would respond to the two approaches and if they understood the process and the language.</p>
+
+      <h2 class="govuk-heading-m">Changes since version 1</h2>
+      <p>In version 2 we mostly iterated on concept 2:</p>
+       <ul class="govuk-list govuk-list--bullet">
+         <li>added a progress bar</li>
+         <li>removed the 'save' option</li>
+         <li>added  a list of referral types on to the case list (using WCA language) after it was highlighted as a priority in version 1</li>
+         <li>added ‘ordered by priority’ next to ‘Your cases’ to help user to understand urgency</li>
+         <li>removed the filters in the ‘Your cases’ list so they can see all their work</li>
+         <li>phrased the target reached message in a gentler way (‘Well done, you’ve completed your work. Here are some more cases if you have time.’)</li>
+       </ul>
+
+      <h2 class="govuk-heading-m">What testing showed</h2>
+      <p>Testing showed that:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Getting cases one at a time seemed ‘very one way’ and the participant was looking for how to get back.</li>
+        <li>They suspected that the save feature could be used to ‘reverse cherry pick’. A user might save all the undesirable tasks for later and then wait for them to be reallocated at the end of the day.</li>
+        <li>Acknowledging completed work is important. Noticed straight away if a rejected case hadn’t been counted in their total and appreciated confirmation messages.</li>
+        <li>Expected the dashboard to do more, like show saved tasks and those awaiting FME.</li>
+        <li>Being presented with their personal record seemed like a challenge, rather than motivation.</li>
+        <li>Did not respond well to the target-reached message. Seemed ‘condescending’. Thought people were being ‘penalised for being good’. Had been watching the progress bar move and was frustrated when it moved back.</li>
+        <li>Explaining that the cases are ‘ordered by priority’ just confused them. They wanted to know what the priorities were.</li>
+        <li>WCA language is not clear at all for PIP healthcare professionals. They did not recognise many of the types of referrals and also didn’t recognise ‘reject’ (they call it RAF-ing back - RAF means ‘return as failed’).</li>
+        <li>Wasn’t sure what ‘Review applications’ meant as a first prompt, as with the first participant. Got there through a process of elimination.</li>
+        <li>It wasn’t clear that you request FME by selecting ‘Make recommendation’ because the wording seemed too final. They had similar issues with the wording of buttons in the screen that followed - such as ‘call for assessment’. Was expecting to justify first.</li>
+        <li>Type of referral was less important to her than for WCA practitioners (PIP don’t currently categorise referrals - they just work on ‘initial review’), but she might use that information to help organise her day. Mentioned that it’s good to get variety so you don’t get too fatigued looking at complex cases with lots of evidence.</li>
+      </ul>
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+</div>{# /govuk-!-margin-top-8 #}
+
+{% endblock %}

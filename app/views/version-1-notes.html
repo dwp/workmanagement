@@ -1,0 +1,52 @@
+t{% extends "layout_master.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-!-margin-top-8">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Version 1 notes</h1>
+      <h2 class="govuk-heading-m">Where we started</h2>
+      <p>Research in our discovery showed us:</p>
+       <ul class="govuk-list govuk-list--bullet">
+        <li>manually allocating tasks to people involves lots of work, can mean work gets stuck in people’s queues, and can be negatively influenced by targets</li>
+        <li>people who pick up their own tasks can end up cherry picking the easier cases</li>
+        <li>people like to have control over their work as they might need to ask for advice or may have to wait for other people</li>
+        <li>users need to feel motivated and not pressured by things that are out of their control</li>
+        <li>users need manageable workloads that are varied and suited to them</li>
+        <li>users like to feel they’ve achieved something</li>
+      </ul>
+     <p>Our design challenge was to find out how to give people control over their work whilst also making sure they get the next important task.</p>
+
+      <h2 class="govuk-heading-m">What we wanted to test</h2>
+      <p>In this version we tested 2  concepts:</p>
+       <ul class="govuk-list govuk-list--bullet">
+         <li>giving people their tasks one at a time</li>
+         <li>showing people a list of cases that they can work on in any order</li>
+       </ul>
+      <p>We tested it with a DWP healthcare professional who is trained on doing ‘file work’ for work capability assessments.</p>
+      <p>We also gave the participant a card sort to do to highlight which information was important at the point at which they pick up their work and how that influences their actions.</p>
+
+      <h2 class="govuk-heading-m">What testing showed</h2>
+      <p>Testing showed us that:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Being able to pick your cases yourself was preferred.</li>
+          <li>They liked the option to save, but wanted to know how they would navigate to it without losing their place.</li>
+          <li>Thought that taking one thing at a time could end up with them saving everything.</li>
+          <li>They expected saved tasks to stay in their account and be visible on their dashboard.</li>
+          <li>It wasn’t clear why something would be ‘not suitable’ for them. Most file work healthcare professionals can do the work. Would use the word ‘reject’ to describe the process of returning cases that are incomplete or incorrect in some way.</li>
+          <li>The following information was important to see: age of case, urgency and type of referral.</li>
+          <li>Some information was more useful once they started the work: </li>
+          <li>Other information might lead to cherry picking: evidence attached, complexity</li>
+          <li>The 'target-reached' message (‘Well done on meeting your target. Here are some more cases.’) could cause stress or make people rush . They suggested the tone could be ‘friendly not basic’ and ‘gently motivating’.</li>
+          <li>Wasn’t sure what ‘review applications’ meant as a first prompt. Got there through a process of elimination.</li>
+      </ul>
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+</div>{# /govuk-!-margin-top-8 #}
+
+{% endblock %}
