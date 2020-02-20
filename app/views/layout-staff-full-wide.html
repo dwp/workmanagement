@@ -65,17 +65,17 @@
 
   {% block header %}
     <header class="dwp-header " role="banner" data-module="dwp-header">
-      <div class="container-inner">
+      <div class="container-inner" style="margin: 0 auto">
         <div class="dwp-header__contents">
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
               <a href="/" class="dwp-header__link dwp-header__link--service-name" style="float: left;">
                 {% block serviceName %}Service name here{% endblock %}
               </a>
-{#               {% if getData.signedout %}
+              {% if getData.signedout %}
                 {% else %}
-                  <a href="/v3/sign-in?signedout=true" style="float: right; font-size: 19px; position:relative; top: 5px;">Sign out</a>
-                {% endif %} #}
+                  <a href="#" style="float: right; font-size: 19px; position:relative; top: 5px;">Sign out</a>
+                {% endif %}
             </div>
           </div>
         </div>
@@ -83,7 +83,7 @@
     </header>
   {% endblock %}
 
-  <div class="full-width-container container-inner">
+  <div class="full-width-container container-inner" style="max-width: 1040px; margin: 0 auto">
     {% block main %}
       {% block beforeContent %}{% endblock %}
       <main class="govuk-main-wrapper govuk-main-wrapper--auto-spacing" id="main-content" role="main">
