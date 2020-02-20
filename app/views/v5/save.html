@@ -87,7 +87,7 @@
       </fieldset>
     </div>
 
-    <a href='confirmation-message?task={{ getData.task | int -1 }}&amp;person={{ getData.person }}&amp;missing={{ getData.missing }}&amp;confirmationmessage=saved&amp;{% if getData.person === "Fred Flintstone" %}fred=saved{% endif %}{% if getData.person === "Pink Panther" %}pink=saved{% endif %}{% if getData.person === "Micky Mouse" %}micky=saved{% endif %}{% if getData.person === "Bugs Bunny" %}bugs=saved{% endif %}{% if getData.donald === "Donald Duck" %}donald=saved{% endif %}{% if getData.donald === "Donald Duck" %}donald=saved{% endif %}{% if getData.person === "Charlie Brown" %}charlie=saved{% endif %}&amp;saved={{ getData.person }},{{ getData.saved}}' class="govuk-button">Save for later</a>
+    <a href='confirmation-message?task={{ getData.task }}&amp;person={{ getData.person }}&amp;missing={{ getData.missing }}&amp;confirmationmessage=saved&amp;{% if getData.person === "Fred Flintstone" %}fred=saved{% endif %}{% if getData.person === "Pink Panther" %}pink=saved{% endif %}{% if getData.person === "Micky Mouse" %}micky=saved{% endif %}{% if getData.person === "Bugs Bunny" %}bugs=saved{% endif %}{% if getData.donald === "Donald Duck" %}donald=saved{% endif %}{% if getData.donald === "Donald Duck" %}donald=saved{% endif %}{% if getData.person === "Charlie Brown" %}charlie=saved{% endif %}&amp;saved={{ getData.person }},{{ getData.saved}}' class="govuk-button">Save for later</a>
 
   </div>{# /govuk-grid-full #}
 </div>{# /govuk-grid-row #}

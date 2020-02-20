@@ -87,7 +87,7 @@
       </div>
     </div>
     <div class="govuk-form-group">
-      <a href="confirmation-message{% include 'v5/_params.html' %}&amp;confirmationmessage=face" class="govuk-button">Save and continue</a>
+      <a href="confirmation-message?task={{ getData.task | int +1 }}&amp;person={{ getData.person }}&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }}&amp;confirmationmessage=face" class="govuk-button">Save and continue</a>
     </div>
   </div>{# /govuk-grid-full #}
 </div>{# /govuk-grid-row #}
