@@ -116,7 +116,7 @@ module.exports = function (app) {
 
   // Clear data on the index screen
 
-  app.get('/index', function (req, res) {
+  app.get('/clear', function (req, res) {
     req.session.destroy()
     res.render('index')
   })
