@@ -1,20 +1,33 @@
-module.exports = {
+const express = require('express')
+const router = express.Router()
+const v6Data = require('./data/v6-data')
 
-  bind: function (app) {
+// Add your routes here - above the module.exports line
 
-    app.get('/', function (req, res) {
-      res.render('index');
-    });
+// Deal with query strings
 
-    app.get('/examples/template-data', function (req, res) {
-      res.render('examples/template-data', { 'name' : 'Foo' });
-    });
+router.use(function(req, res, next){
 
-    // Includes
+  Object.assign(res.locals,{
+    postData: (req.body ? req.body : false)
+  });
 
-    // Version 1
-    require('./routes/v1.js')(app);
+  Object.assign(res.locals,{
+    getData: (req.query ? req.query : false)
+  });
 
+  next();
+});
 
-  }
-}
+// Includes
+require('./routes/v5.js')(router);
+require('./routes/v6.js')(router, v6Data);
+
+// Clear data on the index screen
+
+router.get('/clear', function (req, res) {
+  req.session.destroy()
+  res.render('index')
+})
+
+module.exports = router
