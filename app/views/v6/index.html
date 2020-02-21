@@ -9,6 +9,15 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+    {% set caseNumber = getData.case %}
+
+    {{ caseNumber }}
+
+
+    <p>{{ cases[caseNumber].benefit }}</p>
+
+
+
     <p>{{ savedReferrals.saved }}</p>
 
     {% macro displayCase(name='', benefit='', nino='') %}
@@ -16,8 +25,6 @@
       <p>Benefit: {{ benefit }}</p>
       <p>National Insurance number: {{ nino }}</p>
     {% endmacro %}
-
-    {{name}}
 
     <ul class="govuk-list">
       {% for item in cases %}
@@ -32,8 +39,6 @@
       {% endfor %}
     </ul>
 
-
-
 {#     <p>{{ cases[1].benefit }}</p> #}
 
 {#     {% for item in cases %}
@@ -42,7 +47,7 @@
 
 {#     {{ getData.number }} #}
 
-    {% set caseNumber = getData.case %}
+    {{caseNumber }}
 
     {{ displayCase(name=cases[caseNumber].name, benefit=cases[caseNumber].benefit, nino=cases[caseNumber].nino ) }}
 
