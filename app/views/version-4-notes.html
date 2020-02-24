@@ -9,12 +9,19 @@ t{% extends "layout_master.html" %}
 <div class="govuk-!-margin-top-8">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+
       <h1 class="govuk-heading-l">Version 4 - tested in Belfast on 21 February 2020</h1>
-      <h2 class="govuk-heading-m">What we wanted to test</h2>
       <p>In this version we tested the case list design in more depth.</p>
       <p>We tested with 6 PIP healthcare professionals at Capita.</p>
-      <h2 class="govuk-heading-m">Changes since version 3</h2>
-      <p>Changes since version 3:<p>
+      <h2 class="govuk-heading-m">Screens tested</h2>
+        <ul class="govuk-list govuk-list--bullet">
+        <li><a href="/v4/sign-in?task=1">Start</a></li>
+        <li><a href="/v4/case-list-later-4">Later shorter (short list)</a></li>
+        <li><a href="/v4/case-list-later-10">Later in the day (long list)</a></li>
+      </ul>
+        <h2 class="govuk-heading-m">Changes since version 3</h2>
+
+        <p>Changes since version 3:<p>
        <ul class="govuk-list govuk-list--bullet">
          <li>totals are less prominent on the dashboard</li>
          <li>users are taken straight to the ‘Details’ tab rather than the ‘Timeline’ tab - this is what happens in the service now but it also helps us to see if it clarifies at what point they'd click on 'make recommendation'</li>
@@ -26,6 +33,7 @@ t{% extends "layout_master.html" %}
       <li>made some of the plain English text clearer - for example, ‘Changed assessment route’ is now ‘New evidence received’</li>
       <li>changed the hint text on the case list so it doesn't contradict the saved labels</li>
     </ul>
+
 
       <h2 class="govuk-heading-m">What testing showed</h2>
       <ul>

@@ -9,16 +9,17 @@ t{% extends "layout_master.html" %}
 <div class="govuk-!-margin-top-8">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Version 3 notes</h1>
-
-      <h2 class="govuk-heading-m">What we wanted to test</h2>
+      <h1 class="govuk-heading-l">Version 3 - tested in Salford on 13 February 2020</h1>
       <p>In this version we tested  an iteration of the case list design (concept 2).</p>
-      <p>This was the first digital prototype and uses many of the patterns from the existing service.</p>
       <p>We tested with 4 WCA healthcare professionals at CHDA in Salford.</p>
-      <p>We wanted to find out more about the case list approach and to test general understanding of navigation and language.</p>
+      <h2 class=""govuk-heading-m"">Screens tested</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="/v3/sign-in?task=0">Start</a></li>
+        <li><a href="/v3/case-list?task=7&person=Jessica%20Rabbit&saved=&missing=,Fred%20Flintstone,Pink%20Panther,Micky%20Mouse,Yosemite%20Sam,Donald%20Duck,Bugs%20Bunny,Jessica%20Rabbit">Later that day</a></li>
+      </ul>
 
-      <h2 class="govuk-heading-m">Changes since version 2</h2>
-<p>We iterated further upon concept 2:</p>
+    <h2 class="govuk-heading-m">Changes since version 2</h2>
+<p>We iterated further upon the case list concept:</p>
  <ul class="govuk-list govuk-list--bullet">
    <li>tried shorter labels on the dashboard - for example ‘Reviews’ rather than ‘Review applications’</li>
    <li>replaced any WCA jargon with plain English equivalents to test comprehension</li>
@@ -32,22 +33,23 @@ t{% extends "layout_master.html" %}
 <li>changed ‘Save for later’ to ‘Save and do this later’ to make it clear it is still their task to do, and changed ‘Reject’ to ‘Return to DWP’ to better describe what is happening</li>
 </ul>
 
+
       <h2 class="govuk-heading-m">What testing showed</h2>
       <p>We learned that</li>
         <ul class="govuk-list govuk-list--bullet">
-          <li>Users like to alternate or group their work so seeing referral type is useful to them.</li>
+          <li>CHDA users like to alternate or group their work so seeing referral type is useful to them.</li>
           <li>They would assume the order of cases reflects their priority.</li>
-          <li>They would find it easier to skim through saved tasks if they could see their reason for saving as well.</li>
+          <li>They would find it easier to skim through saved tasks if they could also see why they saved them.</li>
           <li>Claimant names are useful in the case list. They help you to remember the case as you're skimming through the list.</li>
           <li>The ‘Anything you can’t finish will be reallocated’ message was conflicting with the ‘Saved until (day and time) label’.</li>
           <li>They missed the confirmation banner in some cases.</li>
           <li>They expect to justify their actions and thought it might be too easy to complete particular actions, like call for an assessment. ‘Make recommendation’ felt like a decision.</li>
           <li>Totals may be too prominent, particularly if the person has had hard cases that day.</li>
           <li>Most of the plain English equivalents were understood, with a few exceptions - for example, ‘Changed assessment route’ wasn’t understood, and neither was ‘Incorrect referral’.</li>
-          <li>‘File-based report’ isn’t right. It is too similar to ‘file work’ and suggests no interaction with claimant at all.</li>
+          <li>‘File-based report’ isn’t right for CHDA users. It is too similar to ‘file work’ and suggests no interaction with claimant at all.</li>
           <li>The short labels were less effective as it is not clear it’s an action you’re taking. ‘Review’ still wasn’t clear.</li>
           <li>Users are not clear on the difference between ‘Return to DWP’ and ‘Withdraw’. They wouldn’t usually do the returning to DWP. They would highlight the problem and send to someone else to decide what to do.</li>
-          <li>Some of the reasons for returning to DWP didn’t seem right - for example, if there wasn’t enough evidence, or the evidence was unclear, they could deal with that.</li>
+          <li>Some of the reasons for returning to DWP didn’t seem right - for example, they could deal with it themselves if there wasn’t enough evidence, or the evidence was unclear.</li>
         </ul>
 
     </div>{# /govuk-grid-column-two-thirds #}
