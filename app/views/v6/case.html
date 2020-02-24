@@ -1,0 +1,85 @@
+{% set bodyClasses = "v6" %}
+{% set caseNumber = getData.case %}
+
+{% extends "layout-staff-full-sidebar.html" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block serviceName %}
+{{ serviceName }}
+{% endblock %}
+
+{# Left panel #}
+
+{% block leftPanel %}
+
+<a href="#" class="govuk-back-link">Back to your reviews</a>
+
+<hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible"
+style="margin-top: 10px;">
+
+<div class="govuk-inset-text alert-green">
+  <strong>Current status</strong><br>
+  Ready for review
+</div>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<h3 class="govuk-heading-s">
+  Suggested action
+</h3>
+
+<a href="#" class="govuk-button button">Make recommendation</a>
+
+{% include "v6/_other-case-actions.html" %}
+
+{% endblock %}
+
+{# Main content #}
+
+{% block content %}
+
+{% include "v6/_staff-heading.html" %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-tabs" data-module="govuk-tabs">
+
+      <h2 class="govuk-tabs__title">Contents</h2>
+
+      <ul class="govuk-tabs__list">
+        
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#details">
+            Details
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#timeline">
+            Timeline
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#appointment">
+            Appointment
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#evidence">
+            Evidence
+          </a>
+        </li>
+      </ul>
+      
+      {% include "v6/_tab-details.html" %}
+      {% include "v6/_tab-timeline.html" %}
+      {% include "v6/_tab-appointment.html" %}
+      {% include "v6/_tab-evidence.html" %}
+
+    </div>{# /govuk-tabs #}
+  </div>{# /govuk-grid-full #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

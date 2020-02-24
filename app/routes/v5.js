@@ -1,23 +1,10 @@
-module.exports = function (app) {
+///////////////////////////////////////
+// VERSION 5
+//////////////////////////////////////
 
-  // Code supplied by Gary for dealing with query strings
+module.exports = function(router) {
 
-  app.use(function(req, res, next){
-    Object.assign(res.locals,{
-      postData: (req.body ? req.body : false)
-    });
-
-    Object.assign(res.locals,{
-      getData: (req.query ? req.query : false)
-    });
-
-    next();
-  });
-
-  // Code from Stephen for dealing with variables on list page
-
-  app.get('/v5/confirmation-message', (req, res, next) => {
-
+  router.get('/v5/confirmation-message', (req, res, next) => {
     if (!req.session.savedReferrals){
       req.session.savedReferrals = {
         fred: undefined,
@@ -65,8 +52,7 @@ module.exports = function (app) {
     res.render('v5/confirmation-message.html', {savedReferrals: req.session.savedReferrals});
   });
 
-  app.get('/v5', (req, res, next) => {
-
+  router.get('/v5', (req, res, next) => {
     if (!req.session.savedReferrals){
       req.session.savedReferrals = {
         fred: undefined,
@@ -114,11 +100,4 @@ module.exports = function (app) {
     res.render('v5/index.html', {savedReferrals: req.session.savedReferrals});
   });
 
-  // Clear data on the index screen
-
-  app.get('/clear', function (req, res) {
-    req.session.destroy()
-    res.render('index')
-  })
-  
 }
