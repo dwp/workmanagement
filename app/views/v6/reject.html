@@ -1,6 +1,7 @@
-{% extends "layout-staff-full-sidebar.html" %}
+{% set bodyClasses = "v6" %}
+{% set caseNumber = getData.case %}
 
-{% set bodyClasses = "v5" %}
+{% extends "layout-staff-full-sidebar.html" %}
 
 {% block pageTitle %}
 {{ serviceName }}
@@ -19,7 +20,7 @@
 
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-{# {% include "v5/_other-case-actions.html" %} #}
+{# {% include "v6/_other-case-actions.html" %} #}
 
 {% endblock %}
 
@@ -27,7 +28,7 @@
 
 {% block content %}
 
-{% include "v5/_staff-heading.html" %}
+{% include "v6/_staff-heading.html" %}
 
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
@@ -110,7 +111,7 @@
 
   </div>{# /govuk-form-group #}
 
-  <a href="confirmation-message?task={{ getData.task | int +1 }}&amp;person={{ getData.person }}&amp;saved={{ getData.saved }}&amp;missing={{ getData.missing }}&amp;confirmationmessage=rejected" class="govuk-button">Save and continue</a>
+  <a href="confirmation-message?case={{ getData.case }}&amp;rejected={{ getData.case }}&amp;confirmationmessage=rejected" class="govuk-button">Save and continue</a>
 
   </div>{# /govuk-grid-full #}
 </div>{# /govuk-grid-row #}

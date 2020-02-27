@@ -28,7 +28,16 @@
 
         <div class="card-body">
           <p>Done today: <strong>{{ getData.task | int -1 }}</strong> &nbsp;&nbsp;&nbsp;</p>
-          <a href="/v6/case?case=0" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-0">Review a referral</a>
+
+          {% if getData.case %}
+            <a href="/v6/case?case={{ getData.case }}" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-0">Review a referral</a>
+          {% else %}
+            <a href="/v6/case?case=0" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-0">Review a referral</a>  
+          {% endif %}
+
+
+{#           <a href="/v6/case?case=0" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-0">Review a referral</a> #}
+
           {% if getData.saved %}
             {% include 'v6/_saved-table.html' %} 
           {% endif %} 

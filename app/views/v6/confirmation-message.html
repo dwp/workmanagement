@@ -15,7 +15,7 @@
 
 {% block beforeContent %}
 
-<a href="/v6/" class="govuk-back-link">Your dashboard</a>
+<a href="/v6/dashboard?case={{getData.case}}" class="govuk-back-link">Your dashboard</a>
 
 {% endblock %}
 
@@ -52,7 +52,7 @@
     <div class="govuk-panel govuk-panel--confirmation">
       <h1 class="govuk-panel__title">Review complete</h1>
         <div class="govuk-panel__body">
-          {{ cases[caseNumber].name }}’s case will be checked to see if it should go back to DWP
+          MESSAGE NEEDED HERE
         </div>{# /govuk-panel__body #}
       </div>{# /govuk-panel #}
     {% endif %}
@@ -63,7 +63,20 @@
       </div>{# /govuk-panel #}
     {% endif %}
 
-    <p>You’ve done
+{#     {% set caseNumber = getData.case | int + 1 %}
+    {% set rejectedNumber = rejectedReferrals.rejected | length %}
+    {% set savedNumber = savedReferrals.saved | length %}
+    {% set doneNumber = caseNumber - rejectedNumber - savedNumber %}
+
+    <p>You’ve just looked at your {{caseNumber}} case</p>
+    <p>You’ve rejected {{rejectedNumber}} cases</p>
+    <p>You’ve saved {{savedNumber}} cases</p> #}
+
+{#     <p>You’ve done {{ caseNumber - rejectedNumber - savedNumber }} reviews so far today.</p>
+
+    <p>You’ve done {{ (getData.case | int) + 1 - (rejectedReferrals.rejected | length) - (rejectedReferrals.saved | length) }} reviews so far today.</p> #}
+
+{#     <p>You’ve done
       <span >
         <strong>
           {{ getData.task | int -1 }}
@@ -74,33 +87,21 @@
       {% else %}
         reviews
       {% endif %}
-    so far today.</p>
+    so far today.</p> #}
 
-{#     {% if getData.saved != "" %}
-      {% include 'v6/_saved-table.html' %} 
-    {% endif %} #}
+    {% if savedReferrals.saved != "" %}
+      {% include 'v6/_saved-table.html' %}
+    {% endif %}
 
-    <table class="govuk-table" style="max-width: 100%; margin-top: 15px;">
-      <thead>
-        <tr>
-          <th colspan="5" class="govuk-table__header">Saved referrals</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        {% for item in cases %}
-          {% if savedReferrals.saved.includes(loop.index -1) %}
-            <tr class="govuk-table__row">
-              <th scope="row" class="govuk-table__header"><a href="/v6/case?case={{ loop.index -1 }}">{{ item.name }}</a></th>
-              <td class="govuk-table__cell">New referral</td>
-              <td class="govuk-table__cell">Saved until 11:59pm today</td>
-              <td class="govuk-table__cell">&nbsp;
-                <div class="badge" style="font-size: 16px; line-height: 20px; text-align: left;"><strong>Waiting for advice</strong></div> 
-              </td>
-            </tr>
-          {% endif %}
-        {% endfor %}
-      </tbody>
-    </table>
+
+    <h1>Rejected</h1>
+
+    <p>Saved: {{ savedReferrals.saved | length }}</p>
+
+    <p>Rejected: {{ rejectedReferrals.rejected | length }}</p>
+
+    <p>Done: {{ doneReferrals.done | length }}</p>
+
 
     <p><a href="/v6/case?case={{ getData.case | int +1}}" class="govuk-button">Review another referral</a></p>
 

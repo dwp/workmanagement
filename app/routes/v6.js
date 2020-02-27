@@ -10,6 +10,8 @@ module.exports = function(router, v6Data) {
 
   // Playing with saved stuff
   router.get('/v6/confirmation-message', (req, res, next) => {
+
+    // Saved
     if (!req.session.savedReferrals){
       req.session.savedReferrals = {
         saved: '',
@@ -21,7 +23,25 @@ module.exports = function(router, v6Data) {
     if (req.query.removesaved) {
       req.session.savedReferrals.saved = req.session.savedReferrals.saved.replace(req.query.removesaved, "");
     };
-    res.render('v6/confirmation-message.html', {savedReferrals: req.session.savedReferrals});
+    // Rejected
+    if (!req.session.rejectedReferrals){
+      req.session.rejectedReferrals = {
+        rejected: '',
+      }
+    }
+    if (req.query.rejected) {
+      req.session.rejectedReferrals.rejected = (req.session.rejectedReferrals.rejected + req.query.rejected)
+    };
+    // done
+    if (!req.session.doneReferrals){
+      req.session.doneReferrals = {
+        done: '',
+      }
+    }
+    if (req.query.done) {
+      req.session.doneReferrals.done = (req.session.doneReferrals.done + req.query.done)
+    };
+    res.render('v6/confirmation-message.html', {savedReferrals: req.session.savedReferrals, rejectedReferrals: req.session.rejectedReferrals, doneReferrals: req.session.doneReferrals});
   });
 
 }
