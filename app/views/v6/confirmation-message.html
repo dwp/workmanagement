@@ -1,0 +1,110 @@
+{% set bodyClasses = "v6" %}
+{% set caseNumber = getData.case %}
+
+{% extends "layout-staff-full-wide.html" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block serviceName %}
+{{ serviceName }}
+{% endblock %}
+
+{# Left panel #}
+
+{% block beforeContent %}
+
+<a href="/v6/" class="govuk-back-link">Your dashboard</a>
+
+{% endblock %}
+
+{# Main content #}
+
+{% block content %}
+
+{# <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> #}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+{#     <div style="margin-bottom: 25px;"></div> #}
+
+    {% if getData.confirmationmessage === "evidence" %}
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">Review complete</h1>
+        <div class="govuk-panel__body">
+          Evidence requested for {{ cases[caseNumber].name }}
+        </div>{# /govuk-panel__body #}
+      </div>{# /govuk-panel #}
+    {% endif %}
+
+    {% if getData.confirmationmessage === "face" %}
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">Review complete</h1>
+        <div class="govuk-panel__body">
+          {{ cases[caseNumber].name }} will be called for an assessment
+        </div>{# /govuk-panel__body #}
+      </div>{# /govuk-panel #}
+    {% endif %}
+
+    {% if getData.confirmationmessage === "rejected" %}
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">Review complete</h1>
+        <div class="govuk-panel__body">
+          {{ cases[caseNumber].name }}’s case will be checked to see if it should go back to DWP
+        </div>{# /govuk-panel__body #}
+      </div>{# /govuk-panel #}
+    {% endif %}
+
+    {% if getData.confirmationmessage === "saved" %}
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">Referral saved</h1>
+      </div>{# /govuk-panel #}
+    {% endif %}
+
+    <p>You’ve done
+      <span >
+        <strong>
+          {{ getData.task | int -1 }}
+        </strong>
+      </span>
+      {% if getData.task === "2" %}
+        review
+      {% else %}
+        reviews
+      {% endif %}
+    so far today.</p>
+
+{#     {% if getData.saved != "" %}
+      {% include 'v6/_saved-table.html' %} 
+    {% endif %} #}
+
+    <table class="govuk-table" style="max-width: 100%; margin-top: 15px;">
+      <thead>
+        <tr>
+          <th colspan="5" class="govuk-table__header">Saved referrals</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        {% for item in cases %}
+          {% if savedReferrals.saved.includes(loop.index -1) %}
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header"><a href="/v6/case?case={{ loop.index -1 }}">{{ item.name }}</a></th>
+              <td class="govuk-table__cell">New referral</td>
+              <td class="govuk-table__cell">Saved until 11:59pm today</td>
+              <td class="govuk-table__cell">&nbsp;
+                <div class="badge" style="font-size: 16px; line-height: 20px; text-align: left;"><strong>Waiting for advice</strong></div> 
+              </td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <p><a href="/v6/case?case={{ getData.case | int +1}}" class="govuk-button">Review another referral</a></p>
+
+  </div>{# /govuk-grid-full #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

@@ -9,7 +9,7 @@ module.exports = function(router, v6Data) {
   });
 
   // Playing with saved stuff
-  router.get('/v6/', (req, res, next) => {
+  router.get('/v6/confirmation-message', (req, res, next) => {
     if (!req.session.savedReferrals){
       req.session.savedReferrals = {
         saved: '',
@@ -21,7 +21,7 @@ module.exports = function(router, v6Data) {
     if (req.query.removesaved) {
       req.session.savedReferrals.saved = req.session.savedReferrals.saved.replace(req.query.removesaved, "");
     };
-    res.render('v6/index.html', {savedReferrals: req.session.savedReferrals});
+    res.render('v6/confirmation-message.html', {savedReferrals: req.session.savedReferrals});
   });
 
 }

@@ -1,0 +1,93 @@
+{% set bodyClasses = "v6" %}
+{% set caseNumber = getData.case %}
+
+{% extends "layout-staff-full-sidebar.html" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block serviceName %}
+{{ serviceName }}
+{% endblock %}
+
+
+{# Left panel #}
+
+{% block leftPanel %}
+
+{% include "v6/_current-status.html" %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{# Main content #}
+
+{% block content %}
+
+{% include "v6/_staff-heading.html" %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+    <h2 class="govuk-heading-l">Save and do this later</h2>
+
+    <h3 class="govuk-heading-m">Why are you saving this referral?</h3>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="receive-phone-call" name="radios" type="radio" value="receive-phone-call">
+            <label class="govuk-label govuk-radios__label" for="receive-phone-call">
+            Waiting to receive a phone call
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="make-phone-call" name="radios" type="radio" value="make-phone-call">
+            <label class="govuk-label govuk-radios__label" for="make-phone-call">
+            Waiting to make a phone call
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="advice" name="radios" type="radio" value="advice">
+            <label class="govuk-label govuk-radios__label" for="advice">
+            Waiting for advice
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <h3 class="govuk-heading-m">How long would you like it to remain in your list?</h3>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="end-of-day" name="radios2" type="radio" value="end-of-day">
+            <label class="govuk-label govuk-radios__label" for="end-of-day">
+            Until the end of today
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="tomorrow" name="radios2" type="radio" value="tomorrow">
+            <label class="govuk-label govuk-radios__label" for="tomorrow">
+            Until the end of tomorrow
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <a href="confirmation-message?case={{ getData.case }}&amp;confirmationmessage=saved&amp;saved={{getData.case}}" class="govuk-button">Save for later</a>
+
+  </div>{# /govuk-grid-full #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

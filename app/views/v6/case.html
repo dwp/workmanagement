@@ -20,10 +20,7 @@
 <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible"
 style="margin-top: 10px;">
 
-<div class="govuk-inset-text alert-green">
-  <strong>Current status</strong><br>
-  Ready for review
-</div>
+{% include "v6/_current-status.html" %}
 
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
@@ -31,7 +28,9 @@ style="margin-top: 10px;">
   Suggested action
 </h3>
 
-<a href="#" class="govuk-button button">Make recommendation</a>
+<a href="/v6/recommendation?case={{ getData.case }}" class="govuk-button button">Make recommendation</a>
+
+<a href="/v6/request-evidence?case={{ getData.case }}" role="button" draggable="false" class="govuk-button button secondary-invert" style="margin-top: -10px">Request evidence</a>
 
 {% include "v6/_other-case-actions.html" %}
 

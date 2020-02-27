@@ -1,0 +1,71 @@
+{% set bodyClasses = "v6" %}
+{% set caseNumber = getData.case %}
+
+{% extends "layout-staff-full-wide.html" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block serviceName %}
+{{ serviceName }}
+{% endblock %}
+
+{% block leftPanel %}
+{% endblock %}
+
+{% block content %}
+
+  <h1 class="govuk-heading-xl">Your dashboard</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="card">
+        <div class="card-head">
+          <h3 class="govuk-heading-m govuk-!-margin-0">Reviews</h3>
+        </div>
+
+        <div class="card-body">
+          <p>Done today: <strong>{{ getData.task | int -1 }}</strong> &nbsp;&nbsp;&nbsp;</p>
+          <a href="/v6/case?case=0" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-0">Review a referral</a>
+          {% if getData.saved %}
+            {% include 'v6/_saved-table.html' %} 
+          {% endif %} 
+        </div>{# /card-body #}
+      </div>{# /card #}
+
+      <div class="card">
+        <div class="card-head">
+          <h3 class="govuk-heading-m govuk-!-margin-0">Reports based on written evidence</h3>
+        </div>{# /card-head #}
+        <div class="card-body">
+          <p>Done today: <strong>0</strong>{#  &nbsp;&nbsp;&nbsp; Saved: <strong>0</strong> #}</p>
+          <a href="#" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-0">Write a report</a>
+        </div>{# /card-body #}
+      </div>{# /card #}
+
+      <div class="card">
+        <div class="card-head">
+          <h3 class="govuk-heading-m govuk-!-margin-0">Face-to-face assessments</h3>
+        </div>{# /card-head #}
+        <div class="card-body">
+          <p>Done today: <strong>0</strong>{#  &nbsp;&nbsp;&nbsp; Saved: <strong>0</strong> #}</p>
+          <a href="#" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-0">Start a face-to-face assessment</a>
+        </div>{# /card-body #}
+      </div>{# /card #}
+
+      <div class="card">
+        <div class="card-head">
+          <h3 class="govuk-heading-m govuk-!-margin-0">Audits</h3>
+        </div>{# /card-head #}
+        <div class="card-body">
+          <p>Done today: <strong>0</strong>{#  &nbsp;&nbsp;&nbsp; Saved: <strong>0</strong> #}</p>
+          <a href="#" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-0">Audit completed reports</a>
+        </div>{# /card-body #}
+      </div>{# /card #}
+    </div>{# /govuk-grid-column-full #}
+
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}
