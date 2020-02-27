@@ -4,9 +4,13 @@ t{% extends "layout_master.html" %}
   {{ serviceName }}
 {% endblock %}
 
+{% block beforeContent %}
+  <a href="/" class="govuk-back-link">Back</a>
+{% endblock %}
+
 {% block content %}
 
-<div class="govuk-!-margin-top-8">
+<div class="govuk-!-margin-top-4">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
