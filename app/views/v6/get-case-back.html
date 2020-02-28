@@ -1,0 +1,62 @@
+{% set bodyClasses = "v6" %}
+{% set caseNumber = getData.case %}
+
+{% extends "layout-staff-full-sidebar.html" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block serviceName %}
+{{ serviceName }}
+{% endblock %}
+
+
+{# Left panel #}
+
+{% block leftPanel %}
+
+{% include "v6/_current-status.html" %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{# {% include "v6/_other-case-actions.html" %} #}
+
+{% endblock %}
+
+{# Main content #}
+
+{% block content %}
+
+{% include "v6/_staff-heading.html" %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+    <h2 class="govuk-heading-l">Do you want to review the evidence when it returns?</h2>
+
+    <div class="govuk-form-group">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="gp-report" name="radios" type="radio" value="gp-report" data-aria-controls="gp-report-conditional">
+        <label class="govuk-label govuk-radios__label" for="gp-report">
+          Yes, I want to review any evidence that is returned
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="factual-report" name="radios" type="radio" value="phone" data-aria-controls="factual-report-conditional">
+        <label class="govuk-label govuk-radios__label" for="factual-report">
+          No, any practitioner can review the evidence
+        </label>
+      </div>
+    </div>{# /govuk-form-group #}
+
+    <a href="/v6/not-returned?case={{ getData.case }}" class="govuk-button">Save and continue</a>
+
+  </div>{# /govuk-grid-full #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
