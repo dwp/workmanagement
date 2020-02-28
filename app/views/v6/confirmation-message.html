@@ -67,6 +67,12 @@
       </div>{# /govuk-panel #}
     {% endif %}
 
+    {% if (doneReferrals.done | length) == "1" %}
+    <p>You’ve done <strong>{{ doneReferrals.done | length }}</strong> review so far today.</p>
+    {% else %}
+    <p>You’ve done <strong>{{ doneReferrals.done | length }}</strong> reviews so far today.</p>
+    {% endif %}
+
 {#     {% set caseNumber = getData.case | int + 1 %}
     {% set rejectedNumber = rejectedReferrals.rejected | length %}
     {% set savedNumber = savedReferrals.saved | length %}
