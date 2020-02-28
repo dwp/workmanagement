@@ -15,7 +15,11 @@
 
 {% block beforeContent %}
 
-<a href="/v6/dashboard?case={{getData.case}}" class="govuk-back-link">Your dashboard</a>
+{% if getData.done %}
+  <a href="/v6/dashboard?case={{getData.case | int +1}}" class="govuk-back-link">Your dashboard</a>
+  {% else %}  
+  <a href="/v6/dashboard?case={{getData.case}}" class="govuk-back-link">Your dashboard</a>
+{% endif %}
 
 {% endblock %}
 
@@ -92,16 +96,16 @@
     {% if savedReferrals.saved != "" %}
       {% include 'v6/_saved-table.html' %}
     {% endif %}
+    <br>
 
-
+{# 
     <h1>Rejected</h1>
 
     <p>Saved: {{ savedReferrals.saved | length }}</p>
 
     <p>Rejected: {{ rejectedReferrals.rejected | length }}</p>
 
-    <p>Done: {{ doneReferrals.done | length }}</p>
-
+    <p>Done: {{ doneReferrals.done | length }}</p> #}
 
     <p><a href="/v6/case?case={{ getData.case | int +1}}" class="govuk-button">Review another referral</a></p>
 

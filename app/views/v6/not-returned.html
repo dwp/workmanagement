@@ -58,12 +58,29 @@ not returned?</h2>
           Call for face to face assessment
         </label>
       </div>
+{# 
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="how-contacted-conditional-3" name="how-contacted" type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-3">
+        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-3">
+          Text message
+        </label>
+      </div>
+      
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-3">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-by-text">
+            Mobile phone number
+          </label>
+          <input class="govuk-input govuk-!-width-one-third" id="contact-by-text" name="contact-by-text" type="tel">
+        </div>
+
+      </div> #}
 
     </fieldset>
 
   </div>{# /govuk-form-group #}
 
-  <a href="confirmation-message?case={{ getData.case }}&amp;confirmationmessage=evidence" class="govuk-button">Save and continue</a>
+  <a href="confirmation-message?case={{ getData.case }}&amp;confirmationmessage=evidence&amp;done=y" class="govuk-button">Save and continue</a>
 
   </div>{# /govuk-grid-full #}
 </div>{# /govuk-grid-row #}
