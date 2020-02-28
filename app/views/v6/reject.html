@@ -37,25 +37,12 @@
 
    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
-   <h2 class="govuk-heading-l">Why can’t you do this?</h2>
+   <h2 class="govuk-heading-l">Why can’t you review this?</h2>
 
    <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
 
       <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="option1" name="radios" type="radio" value="option1">
-        <label class="govuk-label govuk-radios__label" for="option1">
-          Duplicate referral
-        </label>
-      </div>
-
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="wrong-queue" name="radios" type="radio" value="wrong-queue">
-        <label class="govuk-label govuk-radios__label" for="wrong-queue">
-          Referred to the wrong queue
-        </label>
-      </div>
 
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="no-gp" name="radios" type="radio" value="no-gp">
@@ -67,7 +54,7 @@
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="no-ucb" name="radios" type="radio" value="no-ucb">
         <label class="govuk-label govuk-radios__label" for="no-ucb">
-          No detail of unacceptable claimant behaviour
+          No details of unacceptable claimant behaviour
         </label>
       </div>
 
@@ -79,12 +66,31 @@
       </div>
 
       <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="wrong-queue" name="radios" type="radio" value="wrong-queue">
+        <label class="govuk-label govuk-radios__label" for="wrong-queue">
+          Referred to the wrong queue
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="skills" name="radios" type="radio" value="skills">
+        <label class="govuk-label govuk-radios__label" for="skills">
+          Needs someone with different skills
+        </label>
+      </div>
+    <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="died" name="radios" type="radio" value="died">
         <label class="govuk-label govuk-radios__label" for="died">
           Claimant has died
         </label>
       </div>
 
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="option1" name="radios" type="radio" value="option1">
+        <label class="govuk-label govuk-radios__label" for="option1">
+          Duplicate referral
+        </label>
+      </div>
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="other" name="radios" type="radio" value="text" data-aria-controls="other-conditional">
         <label class="govuk-label govuk-radios__label" for="other">
@@ -106,7 +112,7 @@
           <textarea class="govuk-textarea" id="ucb-details" name="ucb-details" rows="5" aria-describedby="more-detail-hint"></textarea>
         </div>
       </div>
-      
+
     </fieldset>
 
   </div>{# /govuk-form-group #}
