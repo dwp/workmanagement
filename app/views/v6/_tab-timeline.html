@@ -1,6 +1,7 @@
 <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="timeline">
 
-  {% if getData.person === "Fred Flintstone" %}
+
+  {% if cases[caseNumber].type === "New referral" %}
 
   <ol class="dwp-timeline">
     <li class="dwp-timeline__entry">
@@ -23,7 +24,7 @@
     </li>
   </ol>
 
-  {% elif getData.person === "Pink Panther" %}
+  {% elif cases[caseNumber].type === "No questionnaire" %}
 
   <ol class="dwp-timeline">
     <li class="dwp-timeline__entry">
@@ -46,7 +47,7 @@
     </li>
   </ol>
 
-  {% elif getData.person === "Micky Mouse" %}
+  {% elif cases[caseNumber].type === "Had good cause to miss appointment" %}
 
   <ol class="dwp-timeline">
     <li class="dwp-timeline__entry">
@@ -75,7 +76,7 @@
     </li>
   </ol>
 
-  {% elif getData.person === "Bugs Bunny" %}
+  {% elif cases[caseNumber].type === "Re-referral" %}
 
   <ol class="dwp-timeline">
     <li class="dwp-timeline__entry">
@@ -98,7 +99,7 @@
     </li>
   </ol>
 
-  {% elif getData.person === "Donald Duck" %}
+  {% elif cases[caseNumber].type === "Further evidence returned" %}
 
   <ol class="dwp-timeline">
     <li class="dwp-timeline__entry">
@@ -133,7 +134,7 @@
     </li>
   </ol>
 
-  {% elif getData.person === "Charlie Brown" %}
+  {% elif cases[caseNumber].type === "New evidence received" %}
 
   <ol class="dwp-timeline">
     <li class="dwp-timeline__entry">

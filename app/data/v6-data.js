@@ -13,7 +13,7 @@ module.exports = function(req, res, next) {
       benefit: "PIP",
       nino: "XX XX XX XX X",
       dob: "1 January 1991",
-      type: "No paper file"
+      type: "No questionnaire"
     },
     {
       name: "Micky Mouse",
@@ -27,7 +27,7 @@ module.exports = function(req, res, next) {
       benefit: "UC",
       nino: "XX XX XX XX X",
       dob: "1 January 1982",
-      type: "New referral"
+      type: "Re-referral"
     },
     {
       name: "Donald Duck",
@@ -48,7 +48,7 @@ module.exports = function(req, res, next) {
       benefit: "UC",
       nino: "XX XX XX XX X",
       dob: "1 January 1982",
-      type: "No paper file"
+      type: "No questionnaire"
     },
     {
       name: "Woody Woodpecker",
@@ -62,7 +62,7 @@ module.exports = function(req, res, next) {
       benefit: "UC",
       nino: "XX XX XX XX X",
       dob: "9 February 1989",
-      type: "New referral"
+      type: "Re-referral"
     },
     {
       name: "Jessica Rabbit",
