@@ -15,11 +15,13 @@
 
 {% block beforeContent %}
 
-{% if getData.done %}
+{# {% if getData.done %}
   <a href="/v7/dashboard?case={{getData.case | int +1}}" class="govuk-back-link">Your dashboard</a>
   {% else %}  
   <a href="/v7/dashboard?case={{getData.case}}" class="govuk-back-link">Your dashboard</a>
-{% endif %}
+{% endif %} #}
+
+<a href="/v7/dashboard?case={{getData.case | int +1}}" class="govuk-back-link">Your dashboard</a>
 
 {% endblock %}
 
