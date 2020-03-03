@@ -3,7 +3,7 @@ module.exports = function(req, res, next) {
   res.locals.cases = [
     {
       name: "Fred Flintstone",
-      benefit: "UC",
+      benefit: "PIP",
       nino: "XX XX XX XX X",
       dob: "1 January 1982",
       type: "New referral"
@@ -17,14 +17,14 @@ module.exports = function(req, res, next) {
     },
     {
       name: "Micky Mouse",
-      benefit: "UC",
+      benefit: "PIP",
       nino: "XX XX XX XX X",
       dob: "1 January 1982",
       type: "Had good cause to miss appointment"
     },
     {
       name: "Bugs Bunny",
-      benefit: "UC",
+      benefit: "PIP",
       nino: "XX XX XX XX X",
       dob: "1 January 1982",
       type: "Re-referral"
@@ -38,14 +38,14 @@ module.exports = function(req, res, next) {
     },
     {
       name: "Charlie Brown",
-      benefit: "UC",
+      benefit: "PIP",
       nino: "XX XX XX XX X",
       dob: "1 January 1982",
       type: "New evidence received"
     },
     {
       name: "Yosemite Sam",
-      benefit: "UC",
+      benefit: "PIP",
       nino: "XX XX XX XX X",
       dob: "1 January 1982",
       type: "No questionnaire"
@@ -59,14 +59,14 @@ module.exports = function(req, res, next) {
     },
     {
       name: "Foghorn Leghorn",
-      benefit: "UC",
+      benefit: "PIP",
       nino: "XX XX XX XX X",
       dob: "9 February 1989",
       type: "Re-referral"
     },
     {
       name: "Lisa Simpson",
-      benefit: "UC",
+      benefit: "PIP",
       nino: "XX XX XX XX X",
       dob: "11 October 1994",
       type: "Further evidence returned"
