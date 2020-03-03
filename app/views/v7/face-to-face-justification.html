@@ -1,0 +1,93 @@
+{% set bodyClasses = "v7" %}
+{% set caseNumber = getData.case %}
+
+{% extends "layout-staff-full-sidebar.html" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block serviceName %}
+{{ serviceName }}
+{% endblock %}
+
+
+{# Left panel #}
+
+{% block leftPanel %}
+
+{% include "v7/_current-status.html" %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{# Main content #}
+
+{% block content %}
+
+{% include "v7/_staff-heading.html" %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+    <h2 class="govuk-heading-l">Appointment referral justification</h2>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend form-label-bold">
+          <h1 class="govuk-fieldset__heading" data-ga-type="legend" data-ga-question="Why does [claimant forenames] need a face to face assessment?" id="face_to_face_reason-legend"><strong>Why does {{ getData.person }} need a face-to-face assessment?</strong></h1>
+        </legend>
+        <div class="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="f-face_to_face_reason-The evidence we have available is not enough to determine the level of disability" name="face_to_face_reason" type="checkbox" value="The evidence we have available is not enough to determine the level of disability" aria-labelledby="f-face_to_face_reason-The evidence we have available is not enough to determine the level of disability-label face_to_face_reason-legend" data-ga-type="checkbox" data-ga-question="face_to_face_reason-legend" data-ga-answer="The evidence we have available is not enough to determine the level of disability">
+            <label class="govuk-label govuk-checkboxes__label form-label" id="f-face_to_face_reason-The evidence we have available is not enough to determine the level of disability-label" for="f-face_to_face_reason-The evidence we have available is not enough to determine the level of disability">
+            The evidence we have available is not enough to determine the level of disability
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="f-face_to_face_reason-An assessment is needed to determine the level of function" name="face_to_face_reason" type="checkbox" value="An assessment is needed to determine the level of function" aria-labelledby="f-face_to_face_reason-An assessment is needed to determine the level of function-label face_to_face_reason-legend" data-ga-type="checkbox" data-ga-question="face_to_face_reason-legend" data-ga-answer="An assessment is needed to determine the level of function">
+            <label class="govuk-label govuk-checkboxes__label form-label" id="f-face_to_face_reason-An assessment is needed to determine the level of function-label" for="f-face_to_face_reason-An assessment is needed to determine the level of function">
+            An assessment is needed to determine the level of function
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div class="govuk-character-count" data-module="character-count" data-maxlength="1000">
+      <div class="govuk-form-group">
+        <label class="govuk-label form-label-bold" for="f-further_details_text">
+          Do you want to add further details?
+        </label>
+        <textarea class="govuk-textarea js-character-count form-label form-control-3-4" id="f-further_details_text" name="further_details_text" rows="4" aria-describedby="f-further_details_text-info"></textarea>
+      </div>
+    </div>
+    <div id="evidence-considered">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend form-label-bold">
+            <h1 class="govuk-fieldset__heading" data-ga-type="legend" data-ga-question="What evidence did you consider?" id="evidence_summary_text-legend"><strong>What evidence did you consider?</strong>
+            </h1>
+          </legend>
+          <div class="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="f-evidence_summary_text-No evidence has been recorded for Joe" name="evidence_summary_text" type="checkbox" value="No evidence has been recorded for Joe" aria-labelledby="f-evidence_summary_text-No evidence has been recorded for Joe-label evidence_summary_text-legend" data-ga-type="checkbox" data-ga-question="evidence_summary_text-legend" data-ga-answer="No evidence has been recorded for Joe">
+              <label class="govuk-label govuk-checkboxes__label form-label" id="f-evidence_summary_text-No evidence has been recorded for Joe-label" for="f-evidence_summary_text-No evidence has been recorded for Joe">
+                No evidence has been recorded for {{ getData.person }}
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+    <div class="govuk-form-group">
+      <a href="confirmation-message?case={{getData.case}}&amp;confirmationmessage=face&amp;done=y&amp;removesaved={{getData.case}}" class="govuk-button">Save and continue</a>
+    </div>
+  </div>{# /govuk-grid-full #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

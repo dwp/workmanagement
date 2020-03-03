@@ -1,0 +1,7 @@
+<ul class="govuk-list govuk-!-font-size-16" style="margin-top: -10px">
+  {% if getData.case in savedReferrals.saved %}
+  {% else %}
+    <li style="margin-bottom: 10px"><a href="/v7/save?case={{ getData.case }}">Save and do this later</a></li>
+  {% endif %}
+  <li><a href="/v7/reject?case={{ getData.case }}">I cannot review this</a></li>
+</ul>
