@@ -35,13 +35,13 @@
     
     <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
-    <h2 class="govuk-heading-l">Appointment referral justification</h2>
+    <h2 class="govuk-heading-l">Why does {{ cases[caseNumber].name }} need a <span style="display: inline-block">face-to-face</span> assessment?</h2>
 
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend form-label-bold">
+{#         <legend class="govuk-fieldset__legend form-label-bold">
           <h1 class="govuk-fieldset__heading" data-ga-type="legend" data-ga-question="Why does [claimant forenames] need a face to face assessment?" id="face_to_face_reason-legend"><strong>Why does {{ cases[caseNumber].name }} need a face-to-face assessment?</strong></h1>
-        </legend>
+        </legend> #}
         <div class="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="f-face_to_face_reason-The evidence we have available is not enough to determine the level of disability" name="face_to_face_reason" type="checkbox" value="The evidence we have available is not enough to determine the level of disability" aria-labelledby="f-face_to_face_reason-The evidence we have available is not enough to determine the level of disability-label face_to_face_reason-legend" data-ga-type="checkbox" data-ga-question="face_to_face_reason-legend" data-ga-answer="The evidence we have available is not enough to determine the level of disability">
