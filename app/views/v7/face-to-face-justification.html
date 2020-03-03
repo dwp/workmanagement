@@ -40,7 +40,7 @@
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend form-label-bold">
-          <h1 class="govuk-fieldset__heading" data-ga-type="legend" data-ga-question="Why does [claimant forenames] need a face to face assessment?" id="face_to_face_reason-legend"><strong>Why does {{ getData.person }} need a face-to-face assessment?</strong></h1>
+          <h1 class="govuk-fieldset__heading" data-ga-type="legend" data-ga-question="Why does [claimant forenames] need a face to face assessment?" id="face_to_face_reason-legend"><strong>Why does {{ cases[caseNumber].name }} need a face-to-face assessment?</strong></h1>
         </legend>
         <div class="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
@@ -66,7 +66,7 @@
         <textarea class="govuk-textarea js-character-count form-label form-control-3-4" id="f-further_details_text" name="further_details_text" rows="4" aria-describedby="f-further_details_text-info"></textarea>
       </div>
     </div>
-    <div id="evidence-considered">
+{#     <div id="evidence-considered">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend form-label-bold">
@@ -77,13 +77,13 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="f-evidence_summary_text-No evidence has been recorded for Joe" name="evidence_summary_text" type="checkbox" value="No evidence has been recorded for Joe" aria-labelledby="f-evidence_summary_text-No evidence has been recorded for Joe-label evidence_summary_text-legend" data-ga-type="checkbox" data-ga-question="evidence_summary_text-legend" data-ga-answer="No evidence has been recorded for Joe">
               <label class="govuk-label govuk-checkboxes__label form-label" id="f-evidence_summary_text-No evidence has been recorded for Joe-label" for="f-evidence_summary_text-No evidence has been recorded for Joe">
-                No evidence has been recorded for {{ getData.person }}
+                No evidence has been recorded for {{ cases[caseNumber].name }}
               </label>
             </div>
           </div>
         </fieldset>
       </div>
-    </div>
+    </div> #}
     <div class="govuk-form-group">
       <a href="confirmation-message?case={{getData.case}}&amp;confirmationmessage=face&amp;done=y&amp;removesaved={{getData.case}}" class="govuk-button">Save and continue</a>
     </div>
