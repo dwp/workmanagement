@@ -1,0 +1,25 @@
+t{% extends "layout_master.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="/" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-!-margin-top-4">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Details to follow</h1>
+
+      <p><a href="/v8/sign-in">Start</a></p>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+</div>{# /govuk-!-margin-top-8 #}
+
+{% endblock %}
