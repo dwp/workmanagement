@@ -16,7 +16,7 @@ module.exports = function(req, res, next) {
       type: "No questionnaire"
     },
     {
-      name: "Micky Mouse",
+      name: "Mickey Mouse",
       benefit: "PIP",
       nino: "XX XX XX XX X",
       dob: "1 January 1982",
