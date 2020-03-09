@@ -42,80 +42,81 @@
    <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
 
-      <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+      <div class="govuk-checkboxes govuk-checkboxes--conditional" data-module="govuk-checkboxes">
 
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="no-gp" name="radios" type="radio" value="no-gp">
-        <label class="govuk-label govuk-radios__label" for="no-gp">
-          No GP details
-        </label>
-      </div>
-
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="no-ucb" name="radios" type="radio" value="no-ucb">
-        <label class="govuk-label govuk-radios__label" for="no-ucb">
-          No details of unacceptable claimant behaviour
-        </label>
-      </div>
-
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="no-questionnaire" name="radios" type="radio" value="no-questionnaire">
-        <label class="govuk-label govuk-radios__label" for="no-questionnaire">
-          No questionnaire
-        </label>
-      </div>
-
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="wrong-queue" name="radios" type="radio" value="wrong-queue">
-        <label class="govuk-label govuk-radios__label" for="wrong-queue">
-          Referred to the wrong queue
-        </label>
-      </div>
-
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="skills" name="radios" type="radio" value="skills">
-        <label class="govuk-label govuk-radios__label" for="skills">
-          Needs someone with different skills
-        </label>
-      </div>
-    <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="died" name="radios" type="radio" value="died">
-        <label class="govuk-label govuk-radios__label" for="died">
-          Claimant has died
-        </label>
-      </div>
-
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="option1" name="radios" type="radio" value="option1">
-        <label class="govuk-label govuk-radios__label" for="option1">
-          Duplicate referral
-        </label>
-      </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="other" name="radios" type="radio" value="text" data-aria-controls="other-conditional">
-        <label class="govuk-label govuk-radios__label" for="other">
-          Other
-        </label>
-      </div>
-
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="other-conditional">
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="event-name">
-            Reason
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="no-gp" name="no-gp" type="checkbox" value="no-gp">
+          <label class="govuk-label govuk-checkboxes__label" for="no-gp">
+            No GP details
           </label>
-          <input class="govuk-input govuk-!-width-two-thirds" id="event-name" name="event-name" type="text">
         </div>
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="contact-by-text">
-            Details
+
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="no-ucb" name="no-ucb" type="checkbox" value="no-ucb">
+          <label class="govuk-label govuk-checkboxes__label" for="no-ucb">
+            No details of unacceptable claimant behaviour
           </label>
-          <textarea class="govuk-textarea" id="ucb-details" name="ucb-details" rows="5" aria-describedby="more-detail-hint"></textarea>
+        </div>
+
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="no-questionnaire" name="no-questionnaire" type="checkbox" value="no-questionnaire">
+          <label class="govuk-label govuk-checkboxes__label" for="no-questionnaire">
+            No questionnaire
+          </label>
+        </div>
+
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="wrong-queue" name="wrong-queue" type="checkbox" value="wrong-queue">
+          <label class="govuk-label govuk-checkboxes__label" for="wrong-queue">
+            Referred to the wrong queue
+          </label>
+        </div>
+
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="skills" name="skills" type="checkbox" value="skills">
+          <label class="govuk-label govuk-checkboxes__label" for="skills">
+            Needs someone with different skills
+          </label>
+        </div>
+
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="died" name="died" type="checkbox" value="died">
+          <label class="govuk-label govuk-checkboxes__label" for="died">
+            Claimant has died
+          </label>
+        </div>
+
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="duplicate" name="duplicate" type="checkbox" value="duplicate">
+          <label class="govuk-label govuk-checkboxes__label" for="duplicate">
+            Duplicate referral
+          </label>
+        </div>
+
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="citizenship-conditional-3" name="citizen" type="checkbox" value="text message" data-aria-controls="conditional-citizenship-conditional-3">
+          <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-3">
+            Other
+          </label>
+        </div>
+
+        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-3">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="contact-by-text">
+              Reason
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">
+          </div>
         </div>
       </div>
-
     </fieldset>
-
   </div>{# /govuk-form-group #}
+
+  <h3 class="govuk-heading-m">Notes (optional)</h3>
+
+  <div class="govuk-form-group">
+    <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+  </div>
 
   <a href="confirmation-message?case={{ getData.case }}&amp;rejected={{ getData.case }}&amp;confirmationmessage=rejected&amp;removesaved={{getData.case}}" class="govuk-button">Save and continue</a>
 
