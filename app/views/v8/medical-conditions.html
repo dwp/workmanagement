@@ -1,0 +1,100 @@
+{% set bodyClasses = "v8" %}
+{% set caseNumber = getData.case %}
+
+{% extends "layout-staff-full-sidebar.html" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block serviceName %}
+{{ serviceName }}
+{% endblock %}
+
+
+{# Left panel #}
+
+{% block leftPanel %}
+
+{% include "v8/_current-status.html" %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{# Main content #}
+
+{% block content %}
+
+{% include "v8/_staff-heading.html" %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+    <h1 class="govuk-heading-l">Medical conditions</h1>
+
+    <div class="govuk-form-group">
+	  <label class="govuk-label" for="condition-name">
+	    Name of medical condition
+	  </label>
+	  <input class="govuk-input govuk-!-width-two-thirds" id="condition-name" name="condition-name" type="text" value="XXXXXXXXXX">
+	</div>
+
+	<div class="govuk-form-group">
+	  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+	    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+	      <h1 class="govuk-fieldset__heading">
+	        First day of medical condition
+	      </h1>
+	    </legend>
+	    <span id="passport-issued-hint" class="govuk-hint">
+	      For example, 31 1 2017
+	    </span>
+	    <div class="govuk-date-input" id="passport-issued">
+	      <div class="govuk-date-input__item">
+	        <div class="govuk-form-group">
+	          <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+	            Day
+	          </label>
+	          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric" value="25">
+	        </div>
+	      </div>
+	      <div class="govuk-date-input__item">
+	        <div class="govuk-form-group">
+	          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+	            Month
+	          </label>
+	          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric" value="09">
+	        </div>
+	      </div>
+	      <div class="govuk-date-input__item">
+	        <div class="govuk-form-group">
+	          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+	            Year
+	          </label>
+	          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric" value="2016">
+	        </div>
+	      </div>
+	    </div>
+	  </fieldset>
+	</div>
+
+	<div class="govuk-form-group">
+	  <label class="govuk-label" for="condition-name">
+	    Source
+	  </label>
+	  <input class="govuk-input govuk-!-width-one-half" id="condition-name" name="condition-name" type="text" value="GP">
+	</div>
+
+	<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <p><a href="#" role="button" draggable="false" class="govuk-button button secondary-invert">Add another</a> <br ><a href="#" role="button" draggable="false" class="govuk-button button">Save</a></p>
+
+  </div>{# /govuk-grid-full #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

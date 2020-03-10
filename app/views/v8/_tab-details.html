@@ -18,13 +18,13 @@
       			</thead>
       			<tbody class="govuk-table__body">
         			<tr class="govuk-table__row">
-          			<td class="govuk-table__cell" style="color: grey">XXXXXXXXXX</td>
-          			<td class="govuk-table__cell" style="color: grey"></td>
-          			<td class="govuk-table__cell" style="color: grey"></td>
+          			<td class="govuk-table__cell" style="">XXXXXXXXXX</td>
+          			<td class="govuk-table__cell" style="">25 September 2016</td>
+          			<td class="govuk-table__cell" style="">GP</td>
         			</tr>
       			</tbody>
     			</table>
-	        <a href="#" role="button" draggable="false" class="govuk-button button secondary-invert">Add or edit medical conditions</a>
+	        <a href="medical-conditions?case={{ getData.case }}" role="button" draggable="false" class="govuk-button button secondary-invert">Add or edit medical conditions</a>
 	      </div>{# /card-body #}
 	    </div>{# /card #}
 	  </div>{# /govuk-grid-column-two-thirds #}
@@ -34,15 +34,15 @@
 	        <h3 class="govuk-heading-m govuk-!-margin-0">Record</h3>
 	      </div>{# /card-head #}
 	      <div class="card-body">
-          <a href="#" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-bottom-0" id="contact-details">
-          View details
+          <a href="details?case={{ getData.case }}" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-bottom-0" id="contact-details">
+          View {{ cases[caseNumber].firstname }}’s details
           </a>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          <a href="#" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-bottom-0" id="gp-details">
+          <a href="gp-details?case={{ getData.case }}" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-bottom-0" id="gp-details">
           View GP details
           </a>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          <a href="#" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-bottom-0" id="medical-contact-details">
+          <a href="medical-contact?case={{ getData.case }}" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-bottom-0" id="medical-contact-details">
           Add a medical contact
           </a>
 	      </div>{# /card-body #}
