@@ -33,7 +33,7 @@ module.exports = function(req, res, next) {
       dob: "1 January 1982",
       type: "New referral",
       consent: "Yes",
-      ds1500: "Yes",
+      ds1500: "No",
       condition: "Cancer",
       ti: "Yes"
     },
@@ -43,7 +43,7 @@ module.exports = function(req, res, next) {
       benefit: "PIP",
       nino: "XX XX XX XX X",
       dob: "1 January 1982",
-      type: "Re-referral",
+      type: "No questionnaire",
       consent: "Yes",
       ds1500: "Yes",
       condition: "Cancer",
@@ -55,8 +55,8 @@ module.exports = function(req, res, next) {
       benefit: "PIP",
       nino: "XX XX XX XX X",
       dob: "1 January 1991",
-      type: "Further evidence returned",
-      consent: "Yes",
+      type: "New referral",
+      consent: "No",
       ds1500: "No",
       condition: "Cancer",
       ti: "Yes"
@@ -67,7 +67,7 @@ module.exports = function(req, res, next) {
       benefit: "PIP",
       nino: "XX XX XX XX X",
       dob: "1 January 1982",
-      type: "New evidence received",
+      type: "New referral",
       consent: "Yes",
       ds1500: "Yes",
       condition: "Cancer",
@@ -82,7 +82,7 @@ module.exports = function(req, res, next) {
       type: "No questionnaire",
       consent: "Yes",
       ds1500: "Yes",
-      condition: "Cancer",
+      condition: "Depression",
       ti: "Yes"
     },
     {
@@ -93,7 +93,7 @@ module.exports = function(req, res, next) {
       dob: "17 December 1986",
       type: "New referral",
       consent: "Yes",
-      ds1500: "Yes",
+      ds1500: "No",
       condition: "Cancer",
       ti: "No"
     },

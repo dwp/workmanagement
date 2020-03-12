@@ -69,7 +69,12 @@
     </p>
 
     <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Has {{ cases[caseNumber].firstname }} given consent to request further medical information?</h2>
-    <p>Yes</p>
+    
+    {% if cases[caseNumber].consent === "Yes" %}
+      <p>Yes</p>
+    {% else %}  
+      <p>No</p>
+    {% endif %}
 
     <a href="#" role="button" draggable="false" class="govuk-button button secondary-invert">Edit details</a>
 

@@ -4,6 +4,15 @@
   {% if cases[caseNumber].type === "New referral" %}
 
   <ol class="dwp-timeline">
+
+    {% if cases[caseNumber].ds1500 === "Yes" %}
+      <li class="dwp-timeline__entry">
+      <h3 class="dwp-timeline__title">DS1500 received</h3>
+      <p class="dwp-timeline__info">
+        <span class="dwp-timeline__date">12 February 2020</span>
+      </p>
+    </li>
+    {% endif %}
     <li class="dwp-timeline__entry">
       <h3 class="dwp-timeline__title">Questionnaire received</h3>
       <p class="dwp-timeline__info">
@@ -27,12 +36,14 @@
   {% elif cases[caseNumber].type === "No questionnaire" %}
 
   <ol class="dwp-timeline">
-{#     <li class="dwp-timeline__entry">
-      <h3 class="dwp-timeline__title">Questionnaire received</h3>
+    {% if cases[caseNumber].ds1500 === "Yes" %}
+      <li class="dwp-timeline__entry">
+      <h3 class="dwp-timeline__title">DS1500 received</h3>
       <p class="dwp-timeline__info">
         <span class="dwp-timeline__date">12 February 2020</span>
       </p>
-    </li> #}
+    </li>
+    {% endif %}
     <li class="dwp-timeline__entry">
       <h3 class="dwp-timeline__title">Questionnaire sent</h3>
       <p class="dwp-timeline__info">
