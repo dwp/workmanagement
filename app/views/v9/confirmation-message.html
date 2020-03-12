@@ -54,6 +54,12 @@
       </div>{# /govuk-panel #}
     {% endif %}
 
+    {% if getData.confirmationmessage === "report" %}
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">Report complete</h1>
+      </div>{# /govuk-panel #}
+    {% endif %}
+
     {% if getData.confirmationmessage === "rejected" %}
     <div class="govuk-panel govuk-panel--confirmation">
       <h1 class="govuk-panel__title">Review complete</h1>
