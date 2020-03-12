@@ -9,6 +9,7 @@ module.exports = function(req, res, next) {
       dob: "1 January 1982",
       type: "New referral",
       consent: "Yes",
+      ds1500: "Yes",
       condition: "Cancer",
       ti: "Yes"
     },
@@ -20,8 +21,9 @@ module.exports = function(req, res, next) {
       dob: "1 January 1991",
       type: "New referral",
       consent: "Yes",
+      ds1500: "Yes",
       condition: "Cancer",
-      ti: "Yes"
+      ti: "No"
     },
     {
       name: "Mickey Mouse",
@@ -31,6 +33,7 @@ module.exports = function(req, res, next) {
       dob: "1 January 1982",
       type: "New referral",
       consent: "Yes",
+      ds1500: "Yes",
       condition: "Cancer",
       ti: "Yes"
     },
@@ -42,6 +45,7 @@ module.exports = function(req, res, next) {
       dob: "1 January 1982",
       type: "Re-referral",
       consent: "Yes",
+      ds1500: "Yes",
       condition: "Cancer",
       ti: "Yes"
     },
@@ -53,6 +57,7 @@ module.exports = function(req, res, next) {
       dob: "1 January 1991",
       type: "Further evidence returned",
       consent: "Yes",
+      ds1500: "No",
       condition: "Cancer",
       ti: "Yes"
     },
@@ -64,6 +69,7 @@ module.exports = function(req, res, next) {
       dob: "1 January 1982",
       type: "New evidence received",
       consent: "Yes",
+      ds1500: "Yes",
       condition: "Cancer",
       ti: "Yes"
     },
@@ -75,6 +81,7 @@ module.exports = function(req, res, next) {
       dob: "1 January 1982",
       type: "No questionnaire",
       consent: "Yes",
+      ds1500: "Yes",
       condition: "Cancer",
       ti: "Yes"
     },
@@ -86,8 +93,9 @@ module.exports = function(req, res, next) {
       dob: "17 December 1986",
       type: "New referral",
       consent: "Yes",
+      ds1500: "Yes",
       condition: "Cancer",
-      ti: "Yes"
+      ti: "No"
     },
     {
       name: "Foghorn Leghorn",
@@ -97,6 +105,7 @@ module.exports = function(req, res, next) {
       dob: "9 February 1989",
       type: "Re-referral",
       consent: "Yes",
+      ds1500: "Yes",
       condition: "Cancer",
       ti: "Yes"
     },
@@ -108,6 +117,7 @@ module.exports = function(req, res, next) {
       dob: "11 October 1994",
       type: "New referral",
       consent: "Yes",
+      ds1500: "No",
       condition: "Cancer",
       ti: "Yes"
     },

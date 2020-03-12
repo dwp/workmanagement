@@ -7,6 +7,21 @@
 	        <h3 class="govuk-heading-m govuk-!-margin-0">Medical conditions</h3>
 	      </div>{# /card-head #}
 	      <div class="card-body">
+
+          {% if cases[caseNumber].ti === "Yes" %}
+
+          <div class="govuk-inset-text alert-orange" style="margin-top: 0;">
+            <div class="govuk-warning-text">
+              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                Special rules
+              </strong>
+            </div>
+          </div>
+            
+          {% endif %}
+
     			<table class="govuk-table">
       			<caption class="govuk-table__caption">Current medical conditions</caption>
       			<thead class="govuk-table__head">
