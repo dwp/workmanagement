@@ -4,7 +4,7 @@ module.exports = function(req, res, next) {
     {
       name: "Fred Flintstone",
       firstname: "Fred",
-      benefit: "UC",
+      benefit: "PIP",
       nino: "XX XX XX XX X",
       dob: "1 January 1982",
       type: "New referral",
@@ -16,7 +16,7 @@ module.exports = function(req, res, next) {
     {
       name: "Pink Panther",
       firstname: "Pink",
-      benefit: "UC",
+      benefit: "PIP",
       nino: "XX XX XX XX X",
       dob: "1 January 1991",
       type: "New referral",
@@ -28,7 +28,7 @@ module.exports = function(req, res, next) {
     {
       name: "Mickey Mouse",
       firstname: "Mickey",
-      benefit: "UC",
+      benefit: "PIP",
       nino: "XX XX XX XX X",
       dob: "1 January 1982",
       type: "New referral",
@@ -40,7 +40,7 @@ module.exports = function(req, res, next) {
     {
       name: "Bugs Bunny",
       firstname: "Bugs",
-      benefit: "UC",
+      benefit: "PIP",
       nino: "XX XX XX XX X",
       dob: "1 January 1982",
       type: "Re-referral",
@@ -52,7 +52,7 @@ module.exports = function(req, res, next) {
     {
       name: "Donald Duck",
       firstname: "Donald",
-      benefit: "UC",
+      benefit: "PIP",
       nino: "XX XX XX XX X",
       dob: "1 January 1991",
       type: "Further evidence returned",
@@ -64,7 +64,7 @@ module.exports = function(req, res, next) {
     {
       name: "Charlie Brown",
       firstname: "Charlie",
-      benefit: "UC",
+      benefit: "PIP",
       nino: "XX XX XX XX X",
       dob: "1 January 1982",
       type: "New evidence received",
@@ -76,7 +76,7 @@ module.exports = function(req, res, next) {
     {
       name: "Yosemite Sam",
       firstname: "Yosemite",
-      benefit: "UC",
+      benefit: "PIP",
       nino: "XX XX XX XX X",
       dob: "1 January 1982",
       type: "No questionnaire",
@@ -88,7 +88,7 @@ module.exports = function(req, res, next) {
     {
       name: "Woody Woodpecker",
       firstname: "Woody",
-      benefit: "UC",
+      benefit: "PIP",
       nino: "XX XX XX XX X",
       dob: "17 December 1986",
       type: "New referral",
@@ -100,7 +100,7 @@ module.exports = function(req, res, next) {
     {
       name: "Foghorn Leghorn",
       firstname: "Foghorn",
-      benefit: "UC",
+      benefit: "PIP",
       nino: "XX XX XX XX X",
       dob: "9 February 1989",
       type: "Re-referral",
@@ -112,7 +112,7 @@ module.exports = function(req, res, next) {
     {
       name: "Lisa Simpson",
       firstname: "Lisa",
-      benefit: "UC",
+      benefit: "PIP",
       nino: "XX XX XX XX X",
       dob: "11 October 1994",
       type: "New referral",
@@ -123,21 +123,21 @@ module.exports = function(req, res, next) {
     },
     // {
     //   name: "Wilma Flintstone",
-    //   benefit: "UC",
+    //   benefit: "PIP",
     //   nino: "XX XX XX XX X",
     //   dob: "11 October 1994",
     //   type: "Further evidence returned"
     // },
     // {
     //   name: "Tasmanian Devil",
-    //   benefit: "UC",
+    //   benefit: "PIP",
     //   nino: "XX XX XX XX X",
     //   dob: "11 October 1994",
     //   type: "Further evidence returned"
     // },
     // {
     //   name: "Winnie-the-Pooh",
-    //   benefit: "UC",
+    //   benefit: "PIP",
     //   nino: "XX XX XX XX X",
     //   dob: "11 October 1994",
     //   type: "Further evidence returned"
