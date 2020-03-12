@@ -18,9 +18,15 @@
               </tr>
             </thead>
             <tbody class="govuk-table__body">
+            {% if cases[caseNumber].ds1500 === "Yes" %}
               <tr class="govuk-table__row">
-                <td class="govuk-table__cell"><a href="#">UC50</a></td>
-                <td class="govuk-table__cell">  5 March 2020</td>
+                <td class="govuk-table__cell"><a href="#">DS1500</a></td>
+                <td class="govuk-table__cell">12 February 2020</td>
+              </tr>
+            {% endif %}
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="#">PIP2</a></td>
+                <td class="govuk-table__cell">12 February 2020</td>
               </tr>
             </tbody>
           </table>
