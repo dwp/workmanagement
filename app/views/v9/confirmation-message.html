@@ -1,0 +1,123 @@
+{% set bodyClasses = "v9" %}
+{% set caseNumber = getData.case %}
+
+{% extends "layout-staff-full-wide.html" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block serviceName %}
+{{ serviceName }}
+{% endblock %}
+
+{# Left panel #}
+
+{% block beforeContent %}
+
+{# {% if getData.done %}
+  <a href="/v9/dashboard?case={{getData.case | int +1}}" class="govuk-back-link">Your dashboard</a>
+  {% else %}  
+  <a href="/v9/dashboard?case={{getData.case}}" class="govuk-back-link">Your dashboard</a>
+{% endif %} #}
+
+<a href="/v9/dashboard?case={{getData.case | int +1}}" class="govuk-back-link">Your dashboard</a>
+
+{% endblock %}
+
+{# Main content #}
+
+{% block content %}
+
+{# <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"> #}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+{#     <div style="margin-bottom: 25px;"></div> #}
+
+    {% if getData.confirmationmessage === "evidence" %}
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">Review complete</h1>
+        <div class="govuk-panel__body">
+          Evidence requested for {{ cases[caseNumber].name }}
+        </div>{# /govuk-panel__body #}
+      </div>{# /govuk-panel #}
+    {% endif %}
+
+    {% if getData.confirmationmessage === "face" %}
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">Review complete</h1>
+        <div class="govuk-panel__body">
+          {{ cases[caseNumber].name }} will be called for an assessment
+        </div>{# /govuk-panel__body #}
+      </div>{# /govuk-panel #}
+    {% endif %}
+
+    {% if getData.confirmationmessage === "rejected" %}
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">Review complete</h1>
+{#         <div class="govuk-panel__body">
+          MESSAGE NEEDED HERE
+        </div> #}{# /govuk-panel__body #}
+      </div>{# /govuk-panel #}
+    {% endif %}
+
+    {% if getData.confirmationmessage === "saved" %}
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">Referral saved</h1>
+      </div>{# /govuk-panel #}
+    {% endif %}
+
+    {% if (doneReferrals.done | length) == "1" %}
+    <p>You’ve done <strong>{{ doneReferrals.done | length }}</strong> review so far today.</p>
+    {% else %}
+    <p>You’ve done <strong>{{ doneReferrals.done | length }}</strong> reviews so far today.</p>
+    {% endif %}
+
+{#     {% set caseNumber = getData.case | int + 1 %}
+    {% set rejectedNumber = rejectedReferrals.rejected | length %}
+    {% set savedNumber = savedReferrals.saved | length %}
+    {% set doneNumber = caseNumber - rejectedNumber - savedNumber %}
+
+    <p>You’ve just looked at your {{caseNumber}} case</p>
+    <p>You’ve rejected {{rejectedNumber}} cases</p>
+    <p>You’ve saved {{savedNumber}} cases</p> #}
+
+{#     <p>You’ve done {{ caseNumber - rejectedNumber - savedNumber }} reviews so far today.</p>
+
+    <p>You’ve done {{ (getData.case | int) + 1 - (rejectedReferrals.rejected | length) - (rejectedReferrals.saved | length) }} reviews so far today.</p> #}
+
+{#     <p>You’ve done
+      <span >
+        <strong>
+          {{ getData.task | int -1 }}
+        </strong>
+      </span>
+      {% if getData.task === "2" %}
+        review
+      {% else %}
+        reviews
+      {% endif %}
+    so far today.</p> #}
+
+    {% if savedReferrals.saved != "" %}
+      {% include 'v9/_saved-table.html' %}
+    {% endif %}
+    <br>
+
+{# 
+    <h1>Rejected</h1>
+
+    <p>Saved: {{ savedReferrals.saved | length }}</p>
+
+    <p>Rejected: {{ rejectedReferrals.rejected | length }}</p>
+
+    <p>Done: {{ doneReferrals.done | length }}</p> #}
+
+    <p><a href="/v9/case?case={{ getData.case | int +1}}" class="govuk-button">Review another referral</a></p>
+
+  </div>{# /govuk-grid-full #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

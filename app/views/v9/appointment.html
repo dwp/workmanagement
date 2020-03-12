@@ -1,0 +1,358 @@
+{% set bodyClasses = "v9" %}
+{% set caseNumber = getData.case %}
+
+{% extends "layout-staff-full-sidebar.html" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block serviceName %}
+{{ serviceName }}
+{% endblock %}
+
+
+{# Left panel #}
+
+{% block leftPanel %}
+
+{% include "v9/_current-status.html" %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{# Main content #}
+
+{% block content %}
+
+{% include "v9/_staff-heading.html" %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <a href="javascript:history.back()" class="govuk-back-link" style="margin-top: -10px; margin-bottom: 30px">Back</a>
+
+    <h1 class="govuk-heading-l">Appointment preferences</h1>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+          <h2 class="govuk-fieldset__heading">
+            Select the days {{ cases[caseNumber].firstname }} is unavailable:
+          </h2>
+        </legend>
+
+        {# ----- DAY ----- #}
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="monday-conditional" name="monday" type="checkbox" value="monday" data-aria-controls="conditional-monday-conditional">
+            <label class="govuk-label govuk-checkboxes__label" for="monday-conditional">
+              Monday
+            </label>
+          </div>
+          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-monday-conditional">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h3 class="govuk-fieldset__heading">
+                    {{ cases[caseNumber].firstname }} is available:
+                  </h3>
+                </legend>
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="monday-morning" name="monday-times" type="radio" value="monday-morning">
+                    <label class="govuk-label govuk-radios__label" for="monday-morning">
+                      Morning
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="monday-afternoon" name="monday-times" type="radio" value="monday-afternoon">
+                    <label class="govuk-label govuk-radios__label" for="monday-afternoon">
+                      Afternoon
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="monday-all-day" name="monday-times" type="radio" value="monday-all-day">
+                    <label class="govuk-label govuk-radios__label" for="monday-all-day">
+                      All day
+                    </label>
+                  </div>
+
+                </div>{# /govuk-radios #}
+              </fieldset>
+            </div>{# /govuk-form-group #}
+          </div>{# /govuk-checkboxes__conditional #}
+        </div>{# /govuk-checkboxes #}
+        {# ----- END OF DAY ----- #}
+
+        {# ----- DAY ----- #}
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="tuesday-conditional" name="tuesday" type="checkbox" value="tuesday" data-aria-controls="conditional-tuesday-conditional">
+            <label class="govuk-label govuk-checkboxes__label" for="tuesday-conditional">
+              Tuesday
+            </label>
+          </div>
+          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-tuesday-conditional">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h3 class="govuk-fieldset__heading">
+                    {{ cases[caseNumber].firstname }} is available:
+                  </h3>
+                </legend>
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="tuesday-morning" name="tuesday-times" type="radio" value="tuesday-morning">
+                    <label class="govuk-label govuk-radios__label" for="tuesday-morning">
+                      Morning
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="tuesday-afternoon" name="tuesday-times" type="radio" value="tuesday-afternoon">
+                    <label class="govuk-label govuk-radios__label" for="tuesday-afternoon">
+                      Afternoon
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="tuesday-all-day" name="tuesday-times" type="radio" value="tuesday-all-day">
+                    <label class="govuk-label govuk-radios__label" for="tuesday-all-day">
+                      All day
+                    </label>
+                  </div>
+
+                </div>{# /govuk-radios #}
+              </fieldset>
+            </div>{# /govuk-form-group #}
+          </div>{# /govuk-checkboxes__conditional #}
+        </div>{# /govuk-checkboxes #}
+        {# ----- END OF DAY ----- #}
+
+        {# ----- DAY ----- #}
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="wednesday-conditional" name="wednesday" type="checkbox" value="wednesday" data-aria-controls="conditional-wednesday-conditional">
+            <label class="govuk-label govuk-checkboxes__label" for="wednesday-conditional">
+              Wednesday
+            </label>
+          </div>
+          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-wednesday-conditional">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h3 class="govuk-fieldset__heading">
+                    {{ cases[caseNumber].firstname }} is available:
+                  </h3>
+                </legend>
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="wednesday-morning" name="wednesday-times" type="radio" value="wednesday-morning">
+                    <label class="govuk-label govuk-radios__label" for="wednesday-morning">
+                      Morning
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="wednesday-afternoon" name="wednesday-times" type="radio" value="wednesday-afternoon">
+                    <label class="govuk-label govuk-radios__label" for="wednesday-afternoon">
+                      Afternoon
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="wednesday-all-day" name="wednesday-times" type="radio" value="wednesday-all-day">
+                    <label class="govuk-label govuk-radios__label" for="wednesday-all-day">
+                      All day
+                    </label>
+                  </div>
+
+                </div>{# /govuk-radios #}
+              </fieldset>
+            </div>{# /govuk-form-group #}
+          </div>{# /govuk-checkboxes__conditional #}
+        </div>{# /govuk-checkboxes #}
+        {# ----- END OF DAY ----- #}
+
+        {# ----- DAY ----- #}
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="thursday-conditional" name="thursday" type="checkbox" value="thursday" data-aria-controls="conditional-thursday-conditional">
+            <label class="govuk-label govuk-checkboxes__label" for="thursday-conditional">
+              Thursday
+            </label>
+          </div>
+          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-thursday-conditional">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h3 class="govuk-fieldset__heading">
+                    {{ cases[caseNumber].firstname }} is available:
+                  </h3>
+                </legend>
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="thursday-morning" name="thursday-times" type="radio" value="thursday-morning">
+                    <label class="govuk-label govuk-radios__label" for="thursday-morning">
+                      Morning
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="thursday-afternoon" name="thursday-times" type="radio" value="thursday-afternoon">
+                    <label class="govuk-label govuk-radios__label" for="thursday-afternoon">
+                      Afternoon
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="thursday-all-day" name="thursday-times" type="radio" value="thursday-all-day">
+                    <label class="govuk-label govuk-radios__label" for="thursday-all-day">
+                      All day
+                    </label>
+                  </div>
+
+                </div>{# /govuk-radios #}
+              </fieldset>
+            </div>{# /govuk-form-group #}
+          </div>{# /govuk-checkboxes__conditional #}
+        </div>{# /govuk-checkboxes #}
+        {# ----- END OF DAY ----- #}
+
+        {# ----- DAY ----- #}
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="friday-conditional" name="friday" type="checkbox" value="friday" data-aria-controls="conditional-friday-conditional">
+            <label class="govuk-label govuk-checkboxes__label" for="friday-conditional">
+              Friday
+            </label>
+          </div>
+          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-friday-conditional">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h3 class="govuk-fieldset__heading">
+                    {{ cases[caseNumber].firstname }} is available:
+                  </h3>
+                </legend>
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="friday-morning" name="friday-times" type="radio" value="friday-morning">
+                    <label class="govuk-label govuk-radios__label" for="friday-morning">
+                      Morning
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="friday-afternoon" name="friday-times" type="radio" value="friday-afternoon">
+                    <label class="govuk-label govuk-radios__label" for="friday-afternoon">
+                      Afternoon
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="friday-all-day" name="friday-times" type="radio" value="friday-all-day">
+                    <label class="govuk-label govuk-radios__label" for="friday-all-day">
+                      All day
+                    </label>
+                  </div>
+
+                </div>{# /govuk-radios #}
+              </fieldset>
+            </div>{# /govuk-form-group #}
+          </div>{# /govuk-checkboxes__conditional #}
+        </div>{# /govuk-checkboxes #}
+        {# ----- END OF DAY ----- #}
+      </fieldset>
+
+    </div>{# /govuk-form-group #}
+
+    <p><span class="govuk-heading-m">Enter any dates {{ cases[caseNumber].firstname }} is unavailable:</span></p>
+
+    <a href="#" role="button" draggable="false" class="govuk-button button secondary-invert">Add a date range</a>
+
+
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% set interpreterHtml %}
+{{ govukInput({
+  id: "interpreter-language",
+  name: "interpreter-language",
+  type: "text",
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "What language is required?"
+  }
+}) }}
+{% endset -%}
+
+{% set otherHtml %}
+
+{{ govukTextarea({
+  name: "more-detail",
+  id: "more-detail",
+  classes: "govuk-!-width-two-thirds",
+  label: {
+    text: "What is the other requirement?"
+  }
+}) }}
+
+{% endset -%}
+
+{{ govukCheckboxes({
+  idPrefix: "requirements",
+  name: "requirements",
+  fieldset: {
+    legend: {
+      text: "Select any requirements " + cases[caseNumber].firstname + " has:",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  items: [
+    {
+      value: "accessible room",
+      text: "Accessible room"
+    },
+    {
+      value: "interpreter",
+      text: "Interpreter",
+      conditional: {
+        html: interpreterHtml
+      }
+    },
+    {
+      value: "british sign language",
+      text: "British sign language",
+      conditional: {
+        html: textHtml
+      }
+    },
+    {
+      value: "healthcare professional of same gender",
+      text: "Healthcare professional of same gender",
+      conditional: {
+        html: textHtml
+      }
+    },
+    {
+      value: "audio recording",
+      text: "Audio recording",
+      conditional: {
+        html: textHtml
+      }
+    },
+    {
+      value: "other",
+      text: "Other",
+      conditional: {
+        html: otherHtml
+      }
+    }
+  ]
+}) }}
+
+<a href="#" role="button" draggable="false" class="govuk-button button">Save</a>
+
+
+  </div>{# /govuk-grid-full #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% set caseNumber = getData.case %}
+
+    {{ caseNumber }}
+
+    <p>{{ cases[caseNumber].benefit }}</p>
+
+    <p>{{ savedReferrals.saved }}</p>
+
+    {% macro displayCase(name='', benefit='', nino='') %}
+      <h1 class="govuk-heading-m">{{ name }}</h1>
+      <p>Benefit: {{ benefit }}</p>
+      <p>National Insurance number: {{ nino }}</p>
+    {% endmacro %}
+
+    <ul class="govuk-list">
+      {% for item in cases %}
+        <li>
+          <a href="/v9/?case={{ loop.index -1 }}">{{ item.name }} {{ loop.index -1 }}</a> 
+          {% if savedReferrals.saved.includes(loop.index -1) %}
+            (Saved)
+          {% endif %}
+        </li>
+      {% else %}
+        <li>This would display if the ’item‘ collection were empty</li>
+      {% endfor %}
+    </ul>
+
+{#     <p>{{ cases[1].benefit }}</p> #}
+
+{#     {% for item in cases %}
+      {{ displayCase(name=item.name, benefit=item.benefit, nino=item.nino) }}
+    {% endfor %} #}
+
+{#     {{ getData.number }} #}
+
+    {{caseNumber }}
+
+    {{ displayCase(name=cases[caseNumber].name, benefit=cases[caseNumber].benefit, nino=cases[caseNumber].nino ) }}
+
+    {% if savedReferrals.saved.includes(getData.case) %}
+    <p><a href="/v9/?case={{getData.case}}&amp;removesaved={{getData.case}}">Remove case from saved</a></p>
+      
+    {% else %}
+      <p><a href="/v9/?case={{getData.case}}&amp;saved={{getData.case}}">Save this case for later</a></p>
+    {% endif %}
+
+    <p>
+      {% if caseNumber > 0 %}
+        <a href="/v9/?case={{getData.case | int -1}}" class="govuk-button" data-module="govuk-button">Previous case</a>
+      {% endif %}
+      {% if caseNumber < (cases.length -1) %}
+        <a href="/v9/?case={{getData.case | int +1}}" class="govuk-button" data-module="govuk-button">Next case</a>
+      {% endif %}
+    </p>
+    
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+<table class="govuk-table" style="max-width: 100%; margin-top: 15px; margin-bottom: 0;">
+  <thead>
+    <tr>
+      <th colspan="5" class="govuk-table__header">Saved referrals</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    {% for item in cases %}
+      {% if savedReferrals.saved.includes(loop.index -1) %}
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><a href="/v9/case?case={{ loop.index -1 }}">{{ item.name }}</a></th>
+          <td class="govuk-table__cell">{{ item.type }}</td>
+          <td class="govuk-table__cell">Saved until 11:59pm today</td>
+          <td class="govuk-table__cell">&nbsp;
+            <div class="badge" style="font-size: 16px; line-height: 20px; text-align: left;"><strong>Waiting for advice from a colleague</strong></div> 
+          </td>
+        </tr>
+      {% endif %}
+    {% endfor %}
+  </tbody>
+</table>

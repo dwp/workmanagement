@@ -1,0 +1,70 @@
+{% set bodyClasses = "v9" %}
+{% set caseNumber = getData.case %}
+
+{% extends "layout-staff-full-sidebar.html" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block serviceName %}
+{{ serviceName }}
+{% endblock %}
+
+
+{# Left panel #}
+
+{% block leftPanel %}
+
+{% include "v9/_current-status.html" %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{# Main content #}
+
+{% block content %}
+
+{% include "v9/_staff-heading.html" %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <a href="javascript:history.back()" class="govuk-back-link" style="margin-top: -10px; margin-bottom: 30px">Back</a>
+
+    <h1 class="govuk-heading-l">General Practitioner</h1>
+
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Name</h2>
+    <p>Dr Jones</p>
+
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Name of surgery</h2>
+    <p>Manor Surgery</p>
+
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Address</h2>
+    <p>
+      22 Leeds Road<br>
+      London<br>
+      LND 111
+    </p>
+
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Surgery telephone number</h2>
+    <p>01234098765</p>
+
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Surgery fax number</h2>
+    <p>01234098765</p>
+
+    <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Surgery email address</h2>
+    <p><a href="#">email@emailaddress.com</a></p>
+
+
+   
+
+    <a href="#" role="button" draggable="false" class="govuk-button button secondary-invert">Edit details</a>
+
+  </div>{# /govuk-grid-full #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

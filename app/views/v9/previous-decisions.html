@@ -1,0 +1,135 @@
+{% set bodyClasses = "v9" %}
+{% set caseNumber = getData.case %}
+
+{% extends "layout-staff-full-sidebar.html" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block serviceName %}
+{{ serviceName }}
+{% endblock %}
+
+
+{# Left panel #}
+
+{% block leftPanel %}
+
+{% include "v9/_current-status.html" %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{# Main content #}
+
+{% block content %}
+
+{% include "v9/_staff-heading.html" %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <a href="javascript:history.back()" class="govuk-back-link" style="margin-top: -10px; margin-bottom: 30px">Back</a>
+
+    <h1 class="govuk-heading-l">Previous decisions</h1>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+          <h2 class="govuk-fieldset__heading">
+            When was the last review date?
+          </h2>
+        </legend>
+        <span id="passport-issued-hint" class="govuk-hint">
+          For example, 31 1 2017
+        </span>
+        <div class="govuk-date-input" id="passport-issued">
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="day-1">
+                Day
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="day-1" name="day-1" type="text" pattern="[0-9]*" inputmode="numeric">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="month-1">
+                Month
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month-1" name="month-1" type="text" pattern="[0-9]*" inputmode="numeric">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="year-1">
+                Year
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="year-1" name="year-1" type="text" pattern="[0-9]*" inputmode="numeric">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="more-detail">
+        <strong>What was the last decision?</strong>
+      </label>
+      <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+    </div>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+          <h2 class="govuk-fieldset__heading">
+            What was the date of the last decision?
+          </h2>
+        </legend>
+        <span id="passport-issued-hint" class="govuk-hint">
+          For example, 31 1 2017
+        </span>
+        <div class="govuk-date-input" id="passport-issued">
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="day-2">
+                Day
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="day-2" name="day-2" type="text" pattern="[0-9]*" inputmode="numeric">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="month-2">
+                Month
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="month-2" name="month-2" type="text" pattern="[0-9]*" inputmode="numeric">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="year-2">
+                Year
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="year-2" name="year-2" type="text" pattern="[0-9]*" inputmode="numeric">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <a href="#" role="button" draggable="false" class="govuk-button button secondary-invert">Add another</a>
+    <br>
+
+    <a href="#" role="button" draggable="false" class="govuk-button button">Save</a>
+
+  </div>{# /govuk-grid-full #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% set bodyClasses = "v9" %}
+{% set caseNumber = getData.case %}
+
+{% extends "layout-staff-full-sidebar.html" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block serviceName %}
+{{ serviceName }}
+{% endblock %}
+
+{% block leftPanel %}
+{% endblock %}
+
+{% block content %}
+
+<div style="margin-bottom: 30px;"></div>
+
+  <h1 class="govuk-heading-l">Dashboard</h1>
+
+  <h2 class="govuk-heading-m">Welcome back, Paul</p>
+
+  <ul class="govuk-list">
+    <li>
+      <a href="/v9/case?case={{getData.case}}" class="govuk-heading-s govuk-!-margin-bottom-0">Review referrals and evidence</a>
+      You’ve done
+      {{ getData.task | int - 1 }}
+      {% if getData.task === "2" %}
+        review
+      {% else %}
+        reviews
+      {% endif %}
+       so far today
+    </li>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <li>
+      <a href="#" class="govuk-heading-s govuk-!-margin-bottom-0">Complete reports based on written evidence</a>
+      You’ve done 0 reports so far today
+    </li>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <li>
+      <a href="#" class="govuk-heading-s govuk-!-margin-bottom-0">Do face-to-face assessments</a>
+      You’ve done 0 face-to-face assessments so far today
+    </li>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <li>
+      <a href="#" class="govuk-heading-s govuk-!-margin-bottom-0">Audit completed reports</a>
+      You’ve done 0 audits so far today
+    </li>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  </ul>
+
+{% endblock %}
