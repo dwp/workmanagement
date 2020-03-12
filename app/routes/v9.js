@@ -2,9 +2,9 @@
 // VERSION 9
 //////////////////////////////////////
 
-module.exports = function(router, v6Data) {
+module.exports = function(router, v9Data) {
 
-  router.get('/v9/*', v6Data, function(req, res, next) {
+  router.get('/v9/*', v9Data, function(req, res, next) {
     next();
   });
 
