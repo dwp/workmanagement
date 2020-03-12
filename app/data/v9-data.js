@@ -14,18 +14,6 @@ module.exports = function(req, res, next) {
       ti: "Yes"
     },
     {
-      name: "Pink Panther",
-      firstname: "Pink",
-      benefit: "PIP",
-      nino: "QQ 12 34 56 C",
-      dob: "1 January 1991",
-      type: "New referral",
-      consent: "Yes",
-      ds1500: "Yes",
-      condition: "Cancer",
-      ti: "No"
-    },
-    {
       name: "Mickey Mouse",
       firstname: "Mickey",
       benefit: "PIP",
@@ -34,42 +22,6 @@ module.exports = function(req, res, next) {
       type: "New referral",
       consent: "Yes",
       ds1500: "No",
-      condition: "Cancer",
-      ti: "Yes"
-    },
-    {
-      name: "Bugs Bunny",
-      firstname: "Bugs",
-      benefit: "PIP",
-      nino: "QQ 12 34 56 C",
-      dob: "1 January 1982",
-      type: "No questionnaire",
-      consent: "Yes",
-      ds1500: "Yes",
-      condition: "Cancer",
-      ti: "Yes"
-    },
-    {
-      name: "Donald Duck",
-      firstname: "Donald",
-      benefit: "PIP",
-      nino: "QQ 12 34 56 C",
-      dob: "1 January 1991",
-      type: "New referral",
-      consent: "No",
-      ds1500: "No",
-      condition: "Cancer",
-      ti: "Yes"
-    },
-    {
-      name: "Charlie Brown",
-      firstname: "Charlie",
-      benefit: "PIP",
-      nino: "QQ 12 34 56 C",
-      dob: "1 January 1982",
-      type: "New referral",
-      consent: "Yes",
-      ds1500: "Yes",
       condition: "Cancer",
       ti: "Yes"
     },
@@ -86,6 +38,18 @@ module.exports = function(req, res, next) {
       ti: "Yes"
     },
     {
+      name: "Donald Duck",
+      firstname: "Donald",
+      benefit: "PIP",
+      nino: "QQ 12 34 56 C",
+      dob: "1 January 1991",
+      type: "New referral",
+      consent: "No",
+      ds1500: "No",
+      condition: "Cancer",
+      ti: "Yes"
+    },
+    {
       name: "Woody Woodpecker",
       firstname: "Woody",
       benefit: "PIP",
@@ -96,6 +60,42 @@ module.exports = function(req, res, next) {
       ds1500: "No",
       condition: "Arthritis",
       ti: "No"
+    },
+    {
+      name: "Bugs Bunny",
+      firstname: "Bugs",
+      benefit: "PIP",
+      nino: "QQ 12 34 56 C",
+      dob: "1 January 1982",
+      type: "No questionnaire",
+      consent: "Yes",
+      ds1500: "Yes",
+      condition: "Cancer",
+      ti: "Yes"
+    },
+    {
+      name: "Pink Panther",
+      firstname: "Pink",
+      benefit: "PIP",
+      nino: "QQ 12 34 56 C",
+      dob: "1 January 1991",
+      type: "New referral",
+      consent: "Yes",
+      ds1500: "Yes",
+      condition: "Cancer",
+      ti: "No"
+    },
+    {
+      name: "Charlie Brown",
+      firstname: "Charlie",
+      benefit: "PIP",
+      nino: "QQ 12 34 56 C",
+      dob: "1 January 1982",
+      type: "New referral",
+      consent: "Yes",
+      ds1500: "Yes",
+      condition: "Cancer",
+      ti: "Yes"
     },
     {
       name: "Foghorn Leghorn",
@@ -120,28 +120,7 @@ module.exports = function(req, res, next) {
       ds1500: "No",
       condition: "Cancer",
       ti: "Yes"
-    },
-    // {
-    //   name: "Wilma Flintstone",
-    //   benefit: "PIP",
-    //   nino: "XX XX XX XX X",
-    //   dob: "11 October 1994",
-    //   type: "Further evidence returned"
-    // },
-    // {
-    //   name: "Tasmanian Devil",
-    //   benefit: "PIP",
-    //   nino: "XX XX XX XX X",
-    //   dob: "11 October 1994",
-    //   type: "Further evidence returned"
-    // },
-    // {
-    //   name: "Winnie-the-Pooh",
-    //   benefit: "PIP",
-    //   nino: "XX XX XX XX X",
-    //   dob: "11 October 1994",
-    //   type: "Further evidence returned"
-    // }
+    }
   ]
 
   next();
