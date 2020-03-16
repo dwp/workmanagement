@@ -1,4 +1,4 @@
-t{% extends "layout_master.html" %}
+pmt{% extends "layout_master.html" %}
 
 {% block pageTitle %}
   {{ serviceName }}
@@ -15,7 +15,7 @@ t{% extends "layout_master.html" %}
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">Version 6 &ndash; tested in Tresco House on 2 March</h1>
-      <p>In this version we tested the one-at-a-time design with DWP healthcare professionals.</p>
+      <p>In this version we tested the one-at-a-time design with 4 DWP healthcare professionals.</p>
       <h2 class="govuk-heading-m">Screens tested</h2>
       <ul class="govuk-list govuk-list--bullet">
         <li><a href="/v6/sign-in">Start</a></li>
@@ -23,18 +23,27 @@ t{% extends "layout_master.html" %}
 
       <h2 class="govuk-heading-m">Changes since version 5</h2>
       <ul class="govuk-list govuk-list--bullet">
-       <li></li>
-       <li></li>
-       <li></li>
+        <li>We ask if they want to allocate a case back to themselves when evidence returns to test if users want to keep hold of their cases</li>
+        <li>We ask what should be done if no evidence returns &ndash; this is in line with the 'pre-determination' that CHDA and DWP healthcare professionals currently make when they request evidence</li>
+        <li>‘Request evidence’ secondary button added to actions bar to make it clearer</li>
+        <li>‘I cannot do it’ changed to ‘I cannot review this’ so the user doesn't see it as a reflection of their capability</li>
+        <li>Referral type added to the left bar since there is no case list</li>
+        <li>Changed ‘Report based on written evidence’ to ‘Report based on current evidence’ after feedback that all reports are based on evidence</li>
+        <li>'Start report' was changed to 'Complete a report' so users felt that they didn't need to start it right away &ndash; this was more for PIP but we wanted to see how DWP would react</li>
       </ul>
 
       <h2 class="govuk-heading-m">What testing showed</h2>
       <ul class="govuk-list govuk-list--bullet">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>Participants had no issues working one case at a time &ndash; they could relate to getting a case and saving it to one side as it's the same as picking up jackets.</li>
+        <li>They felt they could use the save feature to manage their own queue and still felt in control of their work.</li>
+        <li>Participants navigated through the tabs before looking at the actions to the left, although they got to 'Request evidence' and 'Make recommendation' quicker than before and they were clearer on what to expect.</li>
+        <li>The list of saved referrals made sense to them, although seeing 'type of referral' did make them think that this might be new information and something might have changed since saving.</li>
+        <li>The order of the reasons for saving didn't seem quite right as they were less likely to be 'waiting to receive a call' &ndash; we will reorder and move that down the list.</li>
+        <li>They did not fully understand the new questions about allocating back to themselves and pre-determining what should happen if no evidence returns. At the moment, they were expecting the pre-determination question and this came second in the test. We will try switching the questions round for the next test.</li>
+        <li>The phrase ‘Report based on current evidence’ instead of ‘paper based report’ is still not understood. Someone thought it was when FME returned. DWP do paper-based assessments as part of filework so seeing it as a separate card may have confused them.</li>
+        <li>‘Complete a report’ was better than ‘start report’ &ndash; they could articulate that they would be going in to justify and start the process off, but not write it up.</li>
+        <li>The 'Appointment referral justification' screen confused them &ndash; we might want to cut this down a bit at the next test.</li>
+        <li>They did not understand the difference between 'GP report' and 'Factual report' as evidence types &ndash; we had seen this with Capita (PIP) as well but it is more surprising with DWP, which the current design is based on. It may be because they know the forms as the UC/ESA 113 and FRR2.</li>
       </ul>
 
     </div>{# /govuk-grid-column-two-thirds #}
