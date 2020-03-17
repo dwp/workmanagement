@@ -15,6 +15,7 @@ t{% extends "layout_master.html" %}
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">Version 7 &ndash; tested in Belfast on 4&nbsp;March&nbsp;2020</h1>
+      <p>Tested with 4 PIP healthcare professionals at Capita Belfast.</p>
 
       <h2 class="govuk-heading-m">Screens tested</h2>
       <ul class="govuk-list govuk-list--bullet">
@@ -23,18 +24,24 @@ t{% extends "layout_master.html" %}
 
       <h2 class="govuk-heading-m">Changes since version 6</h2>
       <ul class="govuk-list govuk-list--bullet">
-       <li></li>
-       <li></li>
-       <li></li>
+        <li>Reduced content on appointment justification screen after users felt that parts of it (particularly what evidence they consulted) weren’t relevant</li>
+        <li>Reordered questions within ‘Request evidence’ so they are asked to pre-determine what happens if no evidence returns first</li>
+        <li>Reordered radio items in ‘Save and do this later’ screen to reflect order of frequency</li>
+
       </ul>
 
       <h2 class="govuk-heading-m">What testing showed</h2>
       <ul class="govuk-list govuk-list--bullet">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+      <li>Participants understood the content on the dashboard.</li>
+      <li>They did not understand ‘Make recommendation’ fully. One person thought they would use it to put into ‘awaiting further information’; another thought it would send it back to DWP.</li>
+      <li>They expected to add more information when they call for assessment (for example, where the assessment would be and whether the claimant has special requirements).</li>
+      <li>They did not understand the two options for justifying the appointment &ndash; insufficient evidence sounded like FME.</li>
+      <li>Request evidence was good for written evidence but it is missing the other types of evidence such as calls, faxes, and emails (which are recorded within the evidence tab). Some felt it would not be appropriate for the case to leave their queue in those cases.</li>
+      <li>They need to be able to request evidence from multiple sources so were confused by being asked to choose one type of evidence at a time.</li>
+      <li>They wanted reassurance that consent had been given to contact the claimant’s medical professionals. There is nothing obvious at the moment to stop them just calling the doctor.</li>
+      <li>Some expected that cases would still stay in their queue, even if they’d selected that ‘any practioner can review the case’.</li>
+      <li>It is useful to save cases, but they assume it will stay in their case load for longer than a day. They do not expect it to disappear from their queue when the time runs out.</li>
+      <li>They did not fully understand ‘I cannot review this’&ndash; it was felt that ‘cannot complete’ would be better &ndash; and the options in the list of reasons were not clear.</li>
       </ul>
     </div>{# /govuk-grid-column-two-thirds #}
   </div>{# /govuk-grid-row #}
