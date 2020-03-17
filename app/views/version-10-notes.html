@@ -1,0 +1,34 @@
+t{% extends "layout_master.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="/" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-!-margin-top-4">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Version 10</h1>
+
+      <ul class="govuk-list govuk-list--bullet">
+      	<li><a href="/v10/dashboard">Dashboard</a></li>
+        <li><a href="/v10/dashboard">Dashboard (saved items)</a></li>
+        <li><a href="/v10/case?case=0">Case (no special rules)</a></li>
+        <li><a href="/v10/case?case=0">Case (no special rules, no consent)</a></li>
+        <li><a href="/v10/case?case=1">Case (special rules)</a></li>
+        <li><a href="/v10/case?case=1">Case (special rules, no consent)</a></li>
+      </ul>
+
+      <p><a href="/v10/sign-in">Start</a></p>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+</div>{# /govuk-!-margin-top-8 #}
+
+{% endblock %}

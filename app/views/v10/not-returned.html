@@ -1,0 +1,87 @@
+{% set bodyClasses = "v10" %}
+{% set caseNumber = getData.case %}
+
+{% extends "layout-staff-full-sidebar.html" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block serviceName %}
+{{ serviceName }}
+{% endblock %}
+
+
+{# Left panel #}
+
+{% block leftPanel %}
+
+{% include "v10/_current-status.html" %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{# Main content #}
+
+{% block content %}
+
+{% include "v10/_staff-heading.html" %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+   <a href="javascript:history.back()" class="govuk-back-link" style="margin-top: -10px; margin-bottom: 30px">Back</a>
+
+   <h2 class="govuk-heading-l">If no evidence returns, can we call the claimant for an assessment?</h2>
+
+   <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+
+{#       <legend class="govuk-fieldset__legend">
+        <strong>If medical evidence is not returned, what should happen next?</strong>
+      </legend> #}
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="further-review" name="radios" type="radio" value="further-review">
+        <label class="govuk-label govuk-radios__label" for="further-review">
+          Yes, the claimant can be called for a face-to-face assessment
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="call" name="radios" type="radio" value="call">
+        <label class="govuk-label govuk-radios__label" for="call">
+          No, we will need to do another review
+        </label>
+      </div>
+{# 
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="how-contacted-conditional-3" name="how-contacted" type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-3">
+        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-3">
+          Text message
+        </label>
+      </div>
+      
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-3">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-by-text">
+            Mobile phone number
+          </label>
+          <input class="govuk-input govuk-!-width-one-third" id="contact-by-text" name="contact-by-text" type="tel">
+        </div>
+
+      </div> #}
+
+    </fieldset>
+
+  </div>{# /govuk-form-group #}
+
+  <a href="/v10/get-case-back?case={{ getData.case }}" class="govuk-button">Save and continue</a>
+
+  </div>{# /govuk-grid-full #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

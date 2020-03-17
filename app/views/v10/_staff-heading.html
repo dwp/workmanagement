@@ -1,0 +1,28 @@
+<div class="staff__heading">
+  <div class="govuk-grid-row">
+    <section class="key-details">
+      <div class="govuk-grid-column-one-half">
+        <div class="badges">
+          <div id="benefit-type" class="badge">{{ cases[caseNumber].benefit }}</div>
+        </div>
+        <dl>
+          <dt class="govuk-visually-hidden">Name:</dt>
+          <dd class="key-details-heading-large">{{ cases[caseNumber].name }}</dd>
+        </dl>
+      </div><!-- column -->
+      <div class="govuk-grid-column-one-half">
+        <dl class="key-details-summary-list">
+          <div class="col1">
+            <dt>National Insurance number</dt>
+            <dd>{{ cases[caseNumber].nino }}</dd>
+          </div>
+          <div class="col2">
+            <dt>Date of birth</dt>
+            <dd>{{ cases[caseNumber].dob }}</dd>
+          </div>
+        </dl>
+      </div><!-- column -->
+    </section>
+  </div><!-- / govuk-grid-row -->
+</div><!-- / staff__heading -->
+

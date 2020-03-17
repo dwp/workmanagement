@@ -1,0 +1,105 @@
+{% set bodyClasses = "v10" %}
+{% set caseNumber = getData.case %}
+
+{% extends "layout-staff-full-sidebar.html" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block serviceName %}
+{{ serviceName }}
+{% endblock %}
+
+
+{# Left panel #}
+
+{% block leftPanel %}
+
+{% include "v10/_current-status.html" %}
+
+{% endblock %}
+
+{# Main content #}
+
+{% block content %}
+
+{% include "v10/_staff-heading.html" %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  <a href="javascript:history.back()" class="govuk-back-link" style="margin-top: -10px; margin-bottom: 30px">Back</a>
+
+{{ govukCheckboxes({
+  idPrefix: "waste",
+  name: "waste",
+  fieldset: {
+    legend: {
+      text: "Who do you want to contact for written evidence?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "Select all that apply."
+  },
+  items: [
+    {
+      value: "gp",
+      text: "GP"
+    },
+    {
+      value: "specialist nurse",
+      text: "Specialist nurse"
+    },
+    {
+      value: "carer",
+      text: "Carer"
+    }
+  ]
+}) }}
+
+<div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              Reason for requesting this evidence
+            </legend>
+            <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="f-reasonForRequestFR-INSUFFICIENT" name="reasonForRequestFR" type="radio" value="INSUFFICIENT" aria-labelledby="f-reasonForRequestFR-INSUFFICIENT-label reasonForRequestFR-legend" data-ga-type="radio-button" data-ga-question="reasonForRequestFR-legend" data-ga-answer="Insufficient evidence to support claimant's statements">
+                <label class="govuk-label govuk-radios__label form-label" id="f-reasonForRequestFR-INSUFFICIENT-label" for="f-reasonForRequestFR-INSUFFICIENT">
+                  Insufficient evidence to support claimant’s statements
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="f-reasonForRequestFR-OTHER" name="reasonForRequestFR" type="radio" value="OTHER" aria-labelledby="f-reasonForRequestFR-OTHER-label reasonForRequestFR-legend" data-ga-type="radio-button" data-ga-question="reasonForRequestFR-legend" data-ga-answer="Other reason" aria-controls="conditional-f-reasonForRequestFR-OTHER">
+                <label class="govuk-label govuk-radios__label form-label" id="f-reasonForRequestFR-OTHER-label" for="f-reasonForRequestFR-OTHER">
+                  Other reason
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-f-reasonForRequestFR-OTHER">
+                <div id="fr-other-reason-conditional" blanked-by="f-reasonForRequestFR-INSUFFICIENT">
+                  <div class="govuk-character-count" data-module="character-count" data-maxlength="1000">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label form-label-bold" for="f-otherReasonForEvidenceFR">
+                        Add a reason for requesting this evidence
+                      </label>
+                      <textarea class="govuk-textarea js-character-count form-label textarea-size" id="f-otherReasonForEvidenceFR" name="otherReasonForEvidenceFR" rows="7" aria-describedby="f-otherReasonForEvidenceFR-info"></textarea>
+                    </div>
+                  </div>
+                </div>      
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+
+    <a href="/v10/not-returned?case={{ getData.case }}" class="govuk-button">Save and continue</a>
+
+  </div>{# /govuk-grid-full #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

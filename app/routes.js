@@ -4,6 +4,7 @@ const v6Data = require('./data/v6-data')
 const v7Data = require('./data/v7-data')
 const v8Data = require('./data/v8-data')
 const v9Data = require('./data/v9-data-1')
+const v10Data = require('./data/v10-data')
 
 // Add your routes here - above the module.exports line
 
@@ -28,6 +29,7 @@ require('./routes/v6.js')(router, v6Data);
 require('./routes/v7.js')(router, v7Data);
 require('./routes/v8.js')(router, v8Data);
 require('./routes/v9.js')(router, v9Data);
+require('./routes/v10.js')(router, v10Data);
 
 // Clear data on the index screen
 

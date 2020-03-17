@@ -1,0 +1,60 @@
+<section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="evidence">
+	<h2 class="govuk-heading-l">Evidence</h2>
+	<div class="govuk-grid-row">
+	  <div class="govuk-grid-column-one-half">
+	    <div class="card">
+	      <div class="card-head">
+	        <h3 class="govuk-heading-m govuk-!-margin-0">What we have</h3>
+	      </div>{# /card-head #}
+	      <div class="card-body">
+
+	      	<table class="govuk-table">
+            <caption class="govuk-table__caption">Last recorded evidence</caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Evidence type</th>
+                <th scope="col" class="govuk-table__header">Date recorded</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+            {% if cases[caseNumber].ds1500 === "Yes" %}
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="#">DS1500</a></td>
+                <td class="govuk-table__cell">12 February 2020</td>
+              </tr>
+            {% endif %}
+            {% if cases[caseNumber].name != "Bugs Bunny" %}
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="#">PIP2</a></td>
+                <td class="govuk-table__cell">12 February 2020</td>
+              </tr>
+            {% endif %}
+            </tbody>
+          </table>
+{# 	        <a href="#" role="button" draggable="false" class="govuk-button button secondary-invert">View all recorded evidence</a> #}
+	        <h4 class="govuk-heading-s govuk-!-margin-top-0">Previous decisions</h4>
+	        <a href="/v10/previous-decisions?case={{ getData.case }}" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-bottom-1">
+	        Add previous decisions
+	        </a>
+	      </div>{# /card-body #}
+	    </div>{# /card #}
+	  </div>{# /govuk-grid-column-one-half #}
+	  <div class="govuk-grid-column-one-half">
+	    <div class="card">
+	      <div class="card-head">
+	        <h3 class="govuk-heading-m govuk-!-margin-0">Record</h3>
+	      </div>{# /card-head #}
+	      <div class="card-body">
+	        <h4 class="govuk-heading-s govuk-!-margin-top-0">Choose the evidence type you want to record:</h4>
+	        <a href="record-telephone-conversation?case={{ getData.case }}" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-bottom-1">
+	        Record a telephone conversation
+	        </a>
+	        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+	        <a href="record-other-evidence?case={{ getData.case }}" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-bottom-1">
+	        Record other evidence
+	        </a>
+	      </div>{# /card-body #}
+	    </div>{# /card #}
+	  </div>{# /govuk-grid-column-one-half #}
+	</div>{# /govuk-grid-row #}
+</section>
