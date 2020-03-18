@@ -17,12 +17,12 @@ t{% extends "layout_master.html" %}
       <h1 class="govuk-heading-l">Version 10</h1>
 
       <ul class="govuk-list govuk-list--bullet">
-      	<li><a href="/v10/dashboard">Dashboard</a></li>
-        <li><a href="/v10/dashboard">Dashboard (saved items)</a></li>
-        <li><a href="/v10/case?case=0">Case (no special rules)</a></li>
-        <li><a href="/v10/case?case=0">Case (no special rules, no consent)</a></li>
-        <li><a href="/v10/case?case=1">Case (special rules)</a></li>
-        <li><a href="/v10/case?case=1">Case (special rules, no consent)</a></li>
+      	<li><a href="/v10/dashboard">Dashboard (with saved items)</a></li>
+        <li><a href="/v10/case?case=0">Case (with consent, no special rules)</a></li>
+        <li><a href="/v10/case?case=1">Case (no consent, no special rules)</a></li>
+        <li><a href="/v10/case?case=2">Saved case (no consent, no special rules)</a></li>
+        <li><a href="/v10/case?case=3">Case (special rules, consent)</a></li>
+        <li><a href="/v10/case?case=4">Case (special rules, no consent)</a></li>
       </ul>
 
     </div>{# /govuk-grid-column-two-thirds #}

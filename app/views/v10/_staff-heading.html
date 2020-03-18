@@ -4,6 +4,7 @@
       <div class="govuk-grid-column-one-half">
         <div class="badges">
           <div id="benefit-type" class="badge">{{ cases[caseNumber].benefit }}</div>
+          {% if cases[caseNumber].consent === "No" %}<div id="benefit-type" class="badge">No consent</div>{% endif %}
         </div>
         <dl>
           <dt class="govuk-visually-hidden">Name:</dt>

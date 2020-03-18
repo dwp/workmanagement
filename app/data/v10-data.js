@@ -10,7 +10,19 @@ module.exports = function(req, res, next) {
       type: "New referral",
       consent: "Yes",
       ds1500: "No",
-      condition: "Cancer",
+      condition: "Depression",
+      ti: "No"
+    },
+    {
+      name: "Pink Panther",
+      firstname: "Pink",
+      benefit: "UC",
+      nino: "QQ 12 34 56 C",
+      dob: "1 January 1982",
+      type: "New referral",
+      consent: "No",
+      ds1500: "No",
+      condition: "Depression",
       ti: "No"
     },
     {

@@ -27,7 +27,14 @@
 
 <a href="/v10/recommendation?case={{ getData.case }}" class="govuk-button button">Make recommendation</a><br>
 
-<a href="/v10/request-evidence?case={{ getData.case }}" role="button" draggable="false" class="govuk-button button secondary-invert" style="margin-top: -10px">Request written evidence</a>
+
+{% if cases[caseNumber].consent === "No" %}
+
+{% else %}
+  <a href="/v10/request-evidence?case={{ getData.case }}" role="button" draggable="false" class="govuk-button button secondary-invert" style="margin-top: -10px">Request written evidence</a>
+{% endif %}
+
+
 
 {% include "v10/_other-case-actions.html" %}
 
