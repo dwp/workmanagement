@@ -1,4 +1,4 @@
-{% set bodyClasses = "v10" %}
+report?case=3{% set bodyClasses = "v10" %}
 {% set caseNumber = getData.case %}
 
 {% extends "layout-staff-full-sidebar.html" %}
@@ -25,16 +25,16 @@
   Suggested actions
 </h3>
 
-<a href="/v10/recommendation?case={{ getData.case }}" class="govuk-button button">Make recommendation</a><br>
-
-
-{% if cases[caseNumber].consent === "No" %}
-
+{% if cases[caseNumber].ti === "No" %}
+  <a href="/v10/recommendation?case={{ getData.case }}" class="govuk-button button">Make recommendation</a>
+{% else %}
+  <a href="/v10/report?case={{ getData.case }}" class="govuk-button button">Complete a report</a>
+{% endif %}
+<br>
+{% if cases[caseNumber].consent === "No" or cases[caseNumber].ti === "Yes" %}
 {% else %}
   <a href="/v10/request-evidence?case={{ getData.case }}" role="button" draggable="false" class="govuk-button button secondary-invert" style="margin-top: -10px">Request written evidence</a>
 {% endif %}
-
-
 
 {% include "v10/_other-case-actions.html" %}
 
@@ -63,11 +63,14 @@
             Details
           </a>
         </li>
+        {% if cases[caseNumber].ti === "No" %}
         <li class="govuk-tabs__list-item">
           <a class="govuk-tabs__tab" href="#appointment">
             Appointment
           </a>
         </li>
+        {% else %}
+        {% endif %}
         <li class="govuk-tabs__list-item">
           <a class="govuk-tabs__tab" href="#evidence">
             Evidence
@@ -77,7 +80,10 @@
       
       {% include "v10/_tab-details.html" %}
       {% include "v10/_tab-timeline.html" %}
-      {% include "v10/_tab-appointment.html" %}
+      {% if cases[caseNumber].ti === "No" %}
+        {% include "v10/_tab-appointment.html" %}
+      {% else %}
+      {% endif %}
       {% include "v10/_tab-evidence.html" %}
 
     </div>{# /govuk-tabs #}

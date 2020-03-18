@@ -4,8 +4,17 @@
 
   <ol class="dwp-timeline">
 
+    {% if cases[caseNumber].saved === "Yes" %}
+    <li class="dwp-timeline__entry">
+      <h3 class="dwp-timeline__title">Saved by Gemma Smith until 11:59 today</h3>
+      <p class="dwp-timeline__info">
+        <span class="dwp-timeline__date">12 February 2020</span>
+      </p>
+      <p style="margin-top: -10px">Need to speak to clinical service desk as I have a question about this condition.</p>
+    </li>
+    {% endif %}
     {% if cases[caseNumber].ds1500 === "Yes" %}
-      <li class="dwp-timeline__entry">
+    <li class="dwp-timeline__entry">
       <h3 class="dwp-timeline__title">DS1500 received</h3>
       <p class="dwp-timeline__info">
         <span class="dwp-timeline__date">12 February 2020</span>
