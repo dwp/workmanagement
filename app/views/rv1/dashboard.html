@@ -1,0 +1,63 @@
+{% set bodyClasses = "v10" %}
+{% set caseNumber = getData.case %}
+
+{% extends "layout-staff-full-wide.html" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block serviceName %}
+{{ serviceName }}
+{% endblock %}
+
+{% block leftPanel %}
+{% endblock %}
+
+{% block content %}
+
+  <h1 class="govuk-heading-xl">Your dashboard</h1>
+
+  <h2 class="govuk-heading-l">Send questionnaires to claimants</h2>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="card">
+        <div class="card-head">
+          <h3 class="govuk-heading-m govuk-!-margin-0">Universal Credit</h3>
+        </div>
+        <div class="card-body">
+          <a href="referral" role="button" draggable="false" class="govuk-button button secondary-invert" >See claimants that need a UC50</a>
+          <p><strong>20</strong> Envelopes have been addressed for UC50 forms today</p>
+          <p style="margin-bottom: 0"><a href="/rv1/history">View history</a></p>
+        </div>{# /card-body #}
+      </div>{# /card #}
+
+      <div class="card">
+        <div class="card-head">
+          <h3 class="govuk-heading-m govuk-!-margin-0">Employment Support Allowance</h3>
+        </div>
+        <div class="card-body">
+          <a href="referral" role="button" draggable="false" class="govuk-button button secondary-invert">See claimants that need an ESA50</a>
+          <p><strong>20</strong> Envelopes have been addressed for ESA50 forms today</p>
+          <p style="margin-bottom: 0"><a href="#">View history</a></p>
+        </div>{# /card-body #}
+      </div>{# /card #}
+
+      <div class="card">
+        <div class="card-head">
+          <h3 class="govuk-heading-m govuk-!-margin-0">Personal Independence Payment</h3>
+        </div>
+        <div class="card-body">
+          <a href="referral" role="button" draggable="false" class="govuk-button button secondary-invert">See claimants that need an PIP2</a>
+          <p><strong>20</strong> Envelopes have been addressed for PIP2 forms today</p>
+          <p style="margin-bottom: 0"><a href="#">View history</a></p>
+        </div>{# /card-body #}
+      </div>{# /card #}
+
+     
+    </div>{# /govuk-grid-column-full #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

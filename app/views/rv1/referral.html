@@ -1,0 +1,51 @@
+{% set bodyClasses = "v10" %}
+{% set caseNumber = getData.case %}
+
+{% extends "layout-staff-full-wide.html" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block serviceName %}
+{{ serviceName }}
+{% endblock %}
+
+{% block leftPanel %}
+{% endblock %}
+
+{% block beforeContent %}
+  <p><a href="/rv1/dashboard" class="govuk-back-link">Back to your dashboard</a></p>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Mickey Mouse needs a UC50</h1>
+
+    <p>Put a UC50 form in an envelope and address it to:</p>
+    <p class="govuk-body-l">
+      Mickey Mouse<br>
+      6 Street Lane<br>
+      High Road<br>
+      London<br>
+      E14 1AE
+    </p>
+
+    <div class="govuk-form-group">
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+      <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+        I have addressed this envelope
+      </label>
+    </div>
+    </div>
+
+    <p><a href="#" class="govuk-button" data-module="govuk-button">See details for the next claimant</a></p>
+   
+  </div>{# /govuk-grid-column-full #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

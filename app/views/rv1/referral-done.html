@@ -1,0 +1,39 @@
+{% set bodyClasses = "v10" %}
+{% set caseNumber = getData.case %}
+
+{% extends "layout-staff-full-wide.html" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block serviceName %}
+{{ serviceName }}
+{% endblock %}
+
+{% block leftPanel %}
+{% endblock %}
+
+{% block beforeContent %}
+  <p><a href="/rv1/history" class="govuk-back-link">Back to history</a></p>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Mickey Mouse</h1>
+
+    <p class="govuk-body-l">
+      Mickey Mouse<br>
+      6 Street Lane<br>
+      High Road<br>
+      London<br>
+      E14 1AE
+    </p>
+   
+  </div>{# /govuk-grid-column-full #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
