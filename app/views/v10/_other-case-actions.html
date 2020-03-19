@@ -1,5 +1,9 @@
 <ul class="govuk-list" style="margin-top: -10px">
-  {% if getData.case in savedReferrals.saved %}
+  {% if cases[caseNumber].saved === "Yes" %}
+    <li style="margin-bottom: 10px">
+      Saved in your list until 11:59 today<br>
+      <a href="/v10/save?case={{ getData.case }}">Update saved preferences</a>
+    </li>
   {% else %}
     <li style="margin-bottom: 10px"><a href="/v10/save?case={{ getData.case }}">Save and do this later</a></li>
   {% endif %}

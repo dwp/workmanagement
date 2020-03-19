@@ -1,21 +1,50 @@
-<table class="govuk-table" style="max-width: 100%; margin-top: 15px; margin-bottom: 0;">
-  <thead>
-    <tr>
-      <th colspan="5" class="govuk-table__header">Saved referrals</th>
+<table class="govuk-table" style="max-width: 100%; margin-top: 15px; margin-bottom: -6px;">
+{#             <caption class="govuk-table__caption">Saved referrals</caption> #}
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th colspan="3" scope="col" class="govuk-table__header">Saved referrals</th>
+{#                 <th scope="col" class="govuk-table__header">Notes</th>
+      <th scope="col" class="govuk-table__header" style="width: 19%">Saved until</th> #}
     </tr>
+{#               <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Referral</th>
+      <th scope="col" class="govuk-table__header">Notes</th>
+      <th scope="col" class="govuk-table__header" style="width: 19%">Saved until</th>
+    </tr> #}
   </thead>
   <tbody class="govuk-table__body">
-    {% for item in cases %}
-      {% if savedReferrals.saved.includes(loop.index -1) %}
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><a href="/v10/case?case={{ loop.index -1 }}">{{ item.name }}</a></th>
-          <td class="govuk-table__cell">{{ item.type }}</td>
-          <td class="govuk-table__cell">Saved until 11:59pm today</td>
-          <td class="govuk-table__cell">&nbsp;
-            <div class="badge" style="font-size: 16px; line-height: 20px; text-align: left;"><strong>Waiting for advice from a colleague</strong></div> 
-          </td>
-        </tr>
-      {% endif %}
-    {% endfor %}
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header govuk-!-width-one-quarter">
+        <a href="#">Fred Flintstone</a><br>
+        <span style="font-weight: normal">New referral</span>
+      </th>
+      <td class="govuk-table__cell">
+        <strong>Waiting for advice from a colleague</strong><br>
+        <p style="margin-bottom: 3px">Need to speak to clinical service desk as I have a question...</p>
+      </td>
+      <td class="govuk-table__cell">Saved until<br>11:59pm today</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">
+        <a href="#">Mickey Mouse</a><br>
+        <span style="font-weight: normal">Re-referral</span>
+      </th>
+      <td class="govuk-table__cell">
+        <strong>Waiting to receive a phone call</strong><br>
+        <p style="margin-bottom: 3px">Called Dr Jones on 17 March to ask about Mickey’s treatment...</p>
+      </td>
+      <td class="govuk-table__cell">Saved until<br>11:59pm tomorrow</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header" style="border-bottom: none">
+        <a href="#">Barney Rubble</a><br>
+        {% include "v10/_tag-special-rules.html" %}
+      </th>
+      <td class="govuk-table__cell" style="border-bottom: none">
+        <strong>Waiting for advice from a colleague</strong><br>
+        <p style="margin-bottom: 3px">Will speak to Sheila when she’s back from lunch.</p>
+      </td>
+      <td class="govuk-table__cell" style="border-bottom: none">Saved until<br>11:59pm today</td>
+    </tr>
   </tbody>
 </table>
