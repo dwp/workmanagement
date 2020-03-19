@@ -1,0 +1,39 @@
+t{% extends "layout_master.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="/" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-!-margin-top-4">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Initial referral prototype – version 1</h1>
+
+      <p>Assuming that it’s multiple people who do it and they address the envelopes by hand. Work in progress&hellip;</p>
+
+      {{ govukButton({
+        text: "View prorotype",
+        href: "/rv1/dashboard",
+        isStartButton: true
+      }) }}
+
+      <h2 class="govuk-heading-m">Questions</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>How do staff address the envelopes?</li>
+        <li>Who does it?</li>
+        <li>Is the process different for different benefits?</li>
+      </ul>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+</div>{# /govuk-!-margin-top-8 #}
+
+{% endblock %}
