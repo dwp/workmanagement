@@ -3,9 +3,10 @@
     <section class="key-details">
       <div class="govuk-grid-column-one-half">
         <div class="badges">
-          <div id="benefit-type" class="badge">{{ cases[caseNumber].benefit }}</div>
-          {% if cases[caseNumber].consent === "No" %}<div id="benefit-type" class="badge">No consent</div>{% endif %}
-        </div>
+          {% if cases[caseNumber].ti === "Yes" %}{% include "v10/_tag-special-rules.html" %}{% endif %}
+          <strong class="govuk-tag">{{ cases[caseNumber].benefit }}</strong>
+          {% if cases[caseNumber].consent === "No" %}<strong class="govuk-tag">No consent</strong>{% endif %}
+        </div>{# /badges #}
         <dl>
           <dt class="govuk-visually-hidden">Name:</dt>
           <dd class="key-details-heading-large">{{ cases[caseNumber].name }}</dd>
