@@ -32,7 +32,7 @@
 	  <div class="govuk-grid-column-one-third">
 	    <div class="card">
 	      <div class="card-head">
-	        <h3 class="govuk-heading-m govuk-!-margin-0">Record</h3>
+	        <h3 class="govuk-heading-m govuk-!-margin-0">Contact</h3>
 	      </div>{# /card-head #}
 	      <div class="card-body">
           <a href="details?case={{ getData.case }}" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-bottom-0" id="contact-details">
@@ -40,7 +40,7 @@
           </a>
           {% if cases[caseNumber].consent === "No" %}
 {#             <div id="benefit-type" class="badge">wefwf</div> #}
-            <p style="margin-top: 15px; margin-bottom: 0">{{ cases[caseNumber].firstname }} has not given consent to request further medical information.</p>
+            <p style="margin-top: 15px; margin-bottom: 0">{{ cases[caseNumber].firstname }} has not given consent to contact medical professionals to request further medical information.</p>
           {% else %}
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
             <a href="gp-details?case={{ getData.case }}" role="button" draggable="false" class="govuk-button button secondary-invert govuk-!-margin-bottom-0" id="gp-details">
