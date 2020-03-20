@@ -1,0 +1,47 @@
+{% set bodyClasses = "v10" %}
+{% set caseNumber = getData.case %}
+
+{% extends "layout-staff-full-sidebar.html" %}
+
+{% block pageTitle %}
+{{ serviceName }}
+{% endblock %}
+
+{% block serviceName %}
+{{ serviceName }}
+{% endblock %}
+
+
+{# Left panel #}
+
+{% block leftPanel %}
+
+{% include "v10/_current-status.html" %}
+
+{% endblock %}
+
+{# Main content #}
+
+{% block content %}
+
+{% include "v10/_staff-heading.html" %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <a href="javascript:history.back()" class="govuk-back-link" style="margin-top: -10px; margin-bottom: 30px">Back</a>
+
+    <h2 class="govuk-heading-l">Why are you removing this from your saved list?</h2>
+
+    <div class="govuk-form-group">
+      <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+    </div>
+
+    <a href="confirmation-message?case={{ getData.case }}&amp;confirmationmessage=removed" class="govuk-button">Remove</a>
+
+  </div>{# /govuk-grid-full #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

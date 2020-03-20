@@ -75,6 +75,12 @@
       </div>{# /govuk-panel #}
     {% endif %}
 
+    {% if getData.confirmationmessage === "removed" %}
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">Referral removed from your saved list</h1>
+      </div>{# /govuk-panel #}
+    {% endif %}
+
     {% if (doneReferrals.done | length) == "1" %}
     <p>You’ve done <strong>{{ doneReferrals.done | length }}</strong> review so far today.</p>
     {% else %}
