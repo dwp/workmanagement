@@ -1,11 +1,11 @@
 <ul class="govuk-list" style="margin-top: -10px">
   {% if cases[caseNumber].saved === "Yes" %}
-    <li style="margin-bottom: 10px">
+    <li style="margin-bottom: 15px">
       Saved in your list until 11:59 today<br>
-      <a href="/v10/save?case={{ getData.case }}">Update saved preferences</a>
+      <a href="/v10/save?case={{ getData.case }}">change</a> or <a href="#">remove</a>
     </li>
   {% else %}
-    <li style="margin-bottom: 10px"><a href="/v10/save?case={{ getData.case }}">Save and do this later</a></li>
+    <li style="margin-bottom: 15px"><a href="/v10/save?case={{ getData.case }}">Save and do this later</a></li>
   {% endif %}
   <li><a href="/v10/reject?case={{ getData.case }}">I cannot progress this case</a></li>
 </ul>

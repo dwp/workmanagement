@@ -125,6 +125,7 @@ body.v10 {
   .grey-col {
     background-color: govuk-colour("light-grey");
     border-right: 2px solid govuk-colour("black");
+    min-width: 310px;
     // padding-top: 10px;
   }
 
