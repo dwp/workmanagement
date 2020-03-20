@@ -60,7 +60,7 @@ module.exports = function(req, res, next) {
       nino: "QQ 12 34 56 C",
       dob: "1 January 1982",
       type: "New referral",
-      consent: "Yes",
+      consent: "No",
       ds1500: "Yes",
       condition: "Cancer",
       ti: "Yes",
